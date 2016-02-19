@@ -1,2 +1,2 @@
-# GalleryManager
-Gallery Manager
+# TechnologyRadar
+Technology Radar
