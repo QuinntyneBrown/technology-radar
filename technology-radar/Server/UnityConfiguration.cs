@@ -20,6 +20,7 @@ namespace Chloe.Server
             container.RegisterType<IIdentityService, IdentityService>();
             container.RegisterType<ICacheProvider, CacheProvider>();
             container.RegisterType<IConfigurationProvider,ConfigurationProvider>();
+            container.RegisterType<ITechnologyService, TechnologyService>();
             return container;
         }
     }

@@ -1,4 +1,4 @@
-﻿import { UserLoggedInAction } from "../../actions";
+﻿import { UserLoggedInAction } from "../actions";
 
 export const userLoggedInReducer = (state, action) => {
     if (action instanceof UserLoggedInAction) {

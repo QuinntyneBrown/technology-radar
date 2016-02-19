@@ -161,8 +161,6 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="dist\app.js" />
-    <Content Include="dist\galleryManagerApp.css" />
-    <Content Include="dist\galleryManagerAppTemplates.js" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
     <Content Include="libs\angular-animate.min.js" />
@@ -259,9 +257,11 @@
     <Compile Include="Server\Dtos\SignInDto.cs" />
     <Compile Include="Server\Dtos\TokenDto.cs" />
     <Compile Include="Server\Models\BaseEntity.cs" />
+    <Compile Include="Server\Models\BaseTechnology.cs" />
     <Compile Include="Server\Models\Framework.cs" />
     <Compile Include="Server\Models\Language.cs" />
     <Compile Include="Server\Models\Platform.cs" />
+    <Compile Include="Server\Models\Rating.cs" />
     <Compile Include="Server\Models\Role.cs" />
     <Compile Include="Server\Models\Technique.cs" />
     <Compile Include="Server\Models\Tool.cs" />
@@ -270,12 +270,20 @@
     <Compile Include="Server\Services\Contracts\ICache.cs" />
     <Compile Include="Server\Services\Contracts\ICacheProvider.cs" />
     <Compile Include="Server\Services\Contracts\IEncryptionService.cs" />
+    <Compile Include="Server\Services\Contracts\IFrameworkService.cs" />
     <Compile Include="Server\Services\Contracts\IIdentityService.cs" />
+    <Compile Include="Server\Services\Contracts\ILanguageService.cs" />
+    <Compile Include="Server\Services\Contracts\IPlatformService.cs" />
+    <Compile Include="Server\Services\Contracts\ITechnologyService.cs" />
+    <Compile Include="Server\Services\Contracts\IToolService.cs" />
     <Compile Include="Server\Services\Contracts\IUserService.cs" />
     <Compile Include="Server\Services\Contracts\MemoryCache.cs" />
     <Compile Include="Server\Services\EncryptionService.cs" />
     <Compile Include="Server\Services\IdentityService.cs" />
+    <Compile Include="Server\Services\PlatformService.cs" />
     <Compile Include="Server\Services\StreamHelper.cs" />
+    <Compile Include="Server\Services\TechnologyService.cs" />
+    <Compile Include="Server\Services\ToolService.cs" />
     <Compile Include="Server\Services\UserService.cs" />
     <Compile Include="Server\UnityConfiguration.cs" />
     <Compile Include="Startup.cs" />
@@ -285,6 +293,12 @@
     <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\actions\framework-actions.ts" />
+    <TypeScriptCompile Include="wwwroot\actions\language-actions.ts" />
+    <TypeScriptCompile Include="wwwroot\actions\platform-actions.ts" />
+    <TypeScriptCompile Include="wwwroot\actions\rating-actions.ts" />
+    <TypeScriptCompile Include="wwwroot\actions\technique-actions.ts" />
+    <TypeScriptCompile Include="wwwroot\actions\tool-actions.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.actions.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.components.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.reducers.ts" />
@@ -313,10 +327,20 @@
     <TypeScriptCompile Include="libs\fetch.ts" />
     <TypeScriptCompile Include="libs\localStorageManager.ts" />
     <TypeScriptCompile Include="libs\safeDigest.ts" />
+    <TypeScriptCompile Include="wwwroot\reducers\frameworkReducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\index.ts" />
-    <TypeScriptCompile Include="wwwroot\reducers\user\userLoggedInReducer.ts" />
+    <TypeScriptCompile Include="wwwroot\reducers\languageReducers.ts" />
+    <TypeScriptCompile Include="wwwroot\reducers\platformReducers.ts" />
+    <TypeScriptCompile Include="wwwroot\reducers\techniqueReducers.ts" />
+    <TypeScriptCompile Include="wwwroot\reducers\toolReducers.ts" />
+    <TypeScriptCompile Include="wwwroot\reducers\userReducers.ts" />
+    <TypeScriptCompile Include="wwwroot\services\framework-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\index.ts" />
     <TypeScriptCompile Include="libs\store.ts" />
+    <TypeScriptCompile Include="wwwroot\services\language-service.ts" />
+    <TypeScriptCompile Include="wwwroot\services\platform-service.ts" />
+    <TypeScriptCompile Include="wwwroot\services\technique-service.ts" />
+    <TypeScriptCompile Include="wwwroot\services\tool-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\user-service.ts" />
   </ItemGroup>
   <ItemGroup>
