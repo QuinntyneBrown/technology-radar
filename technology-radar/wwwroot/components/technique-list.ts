@@ -1,5 +1,5 @@
 ﻿export class TechniqueListComponent {
-    constructor(private $location: angular.ILocationService, private techniqueActionCreator) { }
+    constructor(private techniqueActionCreator) { }
 
     storeOnChange = state => this.entities = state.techniques;
 

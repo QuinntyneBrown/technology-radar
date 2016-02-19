@@ -1,12 +1,10 @@
 ﻿/// <reference path="../typings/tsd.d.ts" />
 
-import { UserActionCreator } from "./actions";
-
 import { userLoggedInReducer } from "./reducers";
-
 
 require("./bootstrap.services");
 require("./bootstrap.components");
+require("./bootstrap.actions");
 
 var app = (<any>angular.module("app", [
     "addOrUpdate",
@@ -22,21 +20,21 @@ var app = (<any>angular.module("app", [
     "safeDigest",
     "store",
     
+    "actions",
     "components",
     "services",
 
 ]));
 
-app.service("userActionCreator", ["dispatcher", "guid", "userService", UserActionCreator]);
 
 
 app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", ($routeProvider, apiEndpointProvider, initialStateProvider) => {
     initialStateProvider.configure({
-        brands:[],
-        galleries: [],
-        photos: [],
-        tags: [],
-        users: [],
+        frameworks:[],
+        languages: [],
+        platforms: [],
+        techniques: [],
+        tools: [],
         currentUser: null
     });
 
@@ -44,10 +42,15 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", ($r
 
     $routeProvider
         .when("/", { template: "<login></login>" })
+        .when("/framework/list", { template: "<framework-list></framework-list>" })
+        .when("/language/list", { template: "<language-list></language-list>" })
+        .when("/platform/list", { template: "<platform-list></platform-list>" })
+        .when("/technique/list", { template: "<technique-list></technique-list>" })
+        .when("/tool/list", { template: "<tool-list></tool-list>" })
         .otherwise("/");
 
 }])
     .config(["reducersProvider", reducersProvider => {
         reducersProvider.configure(userLoggedInReducer);
     }])
-    .config(["loginRedirectProvider", loginRedirectProvider => loginRedirectProvider.setDefaultUrl("/gallery/list")]);
+    .config(["loginRedirectProvider", loginRedirectProvider => loginRedirectProvider.setDefaultUrl("/language/list")]);
