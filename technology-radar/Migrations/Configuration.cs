@@ -10,6 +10,7 @@ namespace Chloe.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Chloe.Server.Data.ChloeContext context)

@@ -19,7 +19,13 @@ namespace Chloe.Server.Services
 
         public TechniqueAddOrUpdateResponseDto AddOrUpdate(TechniqueAddOrUpdateRequestDto request)
         {
-            throw new NotImplementedException();
+            var entity = repository.GetAll()
+                .Where(x => x.Name == request.Name && x.IsDeleted == false)
+                .FirstOrDefault();
+            if (entity == null) repository.Add(entity = new Technique());
+            entity.Name = request.Name;
+            uow.SaveChanges();
+            return new TechniqueAddOrUpdateResponseDto(entity);
         }
 
         public ICollection<TechniqueDto> GetAll()

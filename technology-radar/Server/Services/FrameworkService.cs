@@ -18,7 +18,13 @@ namespace Chloe.Server.Services
 
         public FrameworkAddOrUpdateResponseDto AddOrUpdate(FrameworkAddOrUpdateRequestDto request)
         {
-            throw new NotImplementedException();
+            var entity = repository.GetAll()
+                .Where(x => x.Name == request.Name && x.IsDeleted == false)
+                .FirstOrDefault();
+            if (entity == null) repository.Add(entity = new Framework());
+            entity.Name = request.Name;
+            uow.SaveChanges();
+            return new FrameworkAddOrUpdateResponseDto(entity);
         }
 
         public ICollection<FrameworkDto> GetAll()

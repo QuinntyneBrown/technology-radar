@@ -18,7 +18,13 @@ namespace Chloe.Server.Services
         }
         public ToolAddOrUpdateResponseDto AddOrUpdate(ToolAddOrUpdateRequestDto request)
         {
-            throw new NotImplementedException();
+            var entity = repository.GetAll()
+                .Where(x => x.Name == request.Name && x.IsDeleted == false)
+                .FirstOrDefault();
+            if (entity == null) repository.Add(entity = new Tool());
+            entity.Name = request.Name;
+            uow.SaveChanges();
+            return new ToolAddOrUpdateResponseDto(entity);
         }
 
         public ICollection<ToolDto> GetAll()

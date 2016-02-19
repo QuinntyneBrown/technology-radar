@@ -307,6 +307,7 @@
     <Compile Include="Server\Models\BaseEntity.cs" />
     <Compile Include="Server\Models\BaseTechnology.cs" />
     <Compile Include="Server\Models\Framework.cs" />
+    <Compile Include="Server\Models\ILoggable.cs" />
     <Compile Include="Server\Models\Language.cs" />
     <Compile Include="Server\Models\Platform.cs" />
     <Compile Include="Server\Models\Rating.cs" />
