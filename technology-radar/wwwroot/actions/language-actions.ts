@@ -2,7 +2,7 @@
 
 
 export class LanguageActionCreator {
-    constructor(private dispatcher: IDispatcher, private languageService, private guid) { }
+    constructor(private dispatcher: IDispatcher, private guid, private languageService) { }
 
     addOrUpdate = options => {
         var newId = this.guid();

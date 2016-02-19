@@ -182,6 +182,8 @@
     <Content Include="wwwroot\components\framework-list.html">
       <DependentUpon>framework-list.ts</DependentUpon>
     </Content>
+    <Content Include="wwwroot\components\language-editor.css" />
+    <Content Include="wwwroot\components\language-editor.html" />
     <Content Include="wwwroot\components\language-list.css">
       <DependentUpon>language-list.ts</DependentUpon>
     </Content>
@@ -327,6 +329,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="libs\responsivir.ts" />
     <TypeScriptCompile Include="wwwroot\actions\framework-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\language-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\platform-actions.ts" />
@@ -357,6 +360,7 @@
     <TypeScriptCompile Include="wwwroot\components\header.ts" />
     <TypeScriptCompile Include="wwwroot\components\home.ts" />
     <TypeScriptCompile Include="wwwroot\components\index.ts" />
+    <TypeScriptCompile Include="wwwroot\components\language-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\language-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\login.ts" />
     <TypeScriptCompile Include="libs\component-extension.ts" />
