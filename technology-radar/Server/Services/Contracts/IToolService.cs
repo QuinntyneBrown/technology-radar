@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Chloe.Server.Dtos;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Chloe.Server.Services.Contracts
 {
     public interface IToolService
     {
+        ToolAddOrUpdateResponseDto AddOrUpdate(ToolAddOrUpdateRequestDto request);
+        ICollection<ToolDto> GetAll();
+        dynamic Remove(int id);
     }
 }

@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Chloe.Server.Dtos;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+
 
 namespace Chloe.Server.Services.Contracts
 {
     public interface IPlatformService
     {
+        PlatformAddOrUpdateResponseDto AddOrUpdate(PlatformAddOrUpdateRequestDto request);
+        ICollection<PlatformDto> GetAll();
+        dynamic Remove(int id);
     }
 }

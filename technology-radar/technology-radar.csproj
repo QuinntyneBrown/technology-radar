@@ -176,6 +176,21 @@
     <Content Include="wwwroot\components\app.html">
       <DependentUpon>app.ts</DependentUpon>
     </Content>
+    <Content Include="wwwroot\components\framework-list.css">
+      <DependentUpon>framework-list.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\framework-list.html">
+      <DependentUpon>framework-list.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\language-list.css">
+      <DependentUpon>language-list.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\language-list.html">
+      <DependentUpon>language-list.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\platform-list.css">
+      <DependentUpon>platform-list.ts</DependentUpon>
+    </Content>
     <Content Include="wwwroot\components\header.css">
       <DependentUpon>header.ts</DependentUpon>
     </Content>
@@ -195,6 +210,21 @@
       <DependentUpon>login.ts</DependentUpon>
     </Content>
     <Content Include="typings.json" />
+    <Content Include="wwwroot\components\platform-list.html">
+      <DependentUpon>platform-list.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\technique-list.css">
+      <DependentUpon>technique-list.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\technique-list.html">
+      <DependentUpon>technique-list.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\tool-list.css">
+      <DependentUpon>tool-list.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\tool-list.html">
+      <DependentUpon>tool-list.ts</DependentUpon>
+    </Content>
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -253,9 +283,27 @@
     <Compile Include="Server\Data\EFRepository.cs" />
     <Compile Include="Server\Data\RepositoryProvider.cs" />
     <Compile Include="Server\Data\RespositoryFactories.cs" />
+    <Compile Include="Server\Dtos\FrameworkAddOrUpdateRequestDto.cs" />
+    <Compile Include="Server\Dtos\FrameworkAddOrUpdateResponseDto.cs" />
+    <Compile Include="Server\Dtos\FrameworkDto.cs" />
+    <Compile Include="Server\Dtos\LanguageAddOrUpdateResponseDto.cs" />
+    <Compile Include="Server\Dtos\LanguageAddOrUpdateRequestDto.cs" />
+    <Compile Include="Server\Dtos\LanguageDto.cs" />
+    <Compile Include="Server\Dtos\PlatformAddOrUpdateRequestDto.cs" />
+    <Compile Include="Server\Dtos\PlatformAddOrUpdateResponseDto.cs" />
+    <Compile Include="Server\Dtos\PlatformDto.cs" />
     <Compile Include="Server\Dtos\RegistrationRequestDto.cs" />
     <Compile Include="Server\Dtos\SignInDto.cs" />
+    <Compile Include="Server\Dtos\TechniqueAddOrUpdateRequestDto.cs" />
+    <Compile Include="Server\Dtos\TechniqueAddOrUpdateResponseDto.cs" />
+    <Compile Include="Server\Dtos\TechniqueDto.cs" />
+    <Compile Include="Server\Dtos\TechnologyAddOrUpdateRequestDto.cs" />
+    <Compile Include="Server\Dtos\TechnologyAddOrUpdateResponseDto.cs" />
+    <Compile Include="Server\Dtos\TechnologyDto.cs" />
     <Compile Include="Server\Dtos\TokenDto.cs" />
+    <Compile Include="Server\Dtos\ToolAddOrUpdateRequestDto.cs" />
+    <Compile Include="Server\Dtos\ToolAddOrUpdateResponseDto.cs" />
+    <Compile Include="Server\Dtos\ToolDto.cs" />
     <Compile Include="Server\Models\BaseEntity.cs" />
     <Compile Include="Server\Models\BaseTechnology.cs" />
     <Compile Include="Server\Models\Framework.cs" />
@@ -274,14 +322,18 @@
     <Compile Include="Server\Services\Contracts\IIdentityService.cs" />
     <Compile Include="Server\Services\Contracts\ILanguageService.cs" />
     <Compile Include="Server\Services\Contracts\IPlatformService.cs" />
+    <Compile Include="Server\Services\Contracts\ITechniqueService.cs" />
     <Compile Include="Server\Services\Contracts\ITechnologyService.cs" />
     <Compile Include="Server\Services\Contracts\IToolService.cs" />
     <Compile Include="Server\Services\Contracts\IUserService.cs" />
     <Compile Include="Server\Services\Contracts\MemoryCache.cs" />
     <Compile Include="Server\Services\EncryptionService.cs" />
+    <Compile Include="Server\Services\FrameworkService.cs" />
     <Compile Include="Server\Services\IdentityService.cs" />
+    <Compile Include="Server\Services\LanguageService.cs" />
     <Compile Include="Server\Services\PlatformService.cs" />
     <Compile Include="Server\Services\StreamHelper.cs" />
+    <Compile Include="Server\Services\TechniqueService.cs" />
     <Compile Include="Server\Services\TechnologyService.cs" />
     <Compile Include="Server\Services\ToolService.cs" />
     <Compile Include="Server\Services\UserService.cs" />
@@ -319,14 +371,19 @@
     <TypeScriptCompile Include="wwwroot\actions\user-actions.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.ts" />
     <TypeScriptCompile Include="wwwroot\components\app.ts" />
+    <TypeScriptCompile Include="wwwroot\components\framework-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\header.ts" />
     <TypeScriptCompile Include="wwwroot\components\home.ts" />
     <TypeScriptCompile Include="wwwroot\components\index.ts" />
+    <TypeScriptCompile Include="wwwroot\components\language-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\login.ts" />
     <TypeScriptCompile Include="libs\component-extension.ts" />
     <TypeScriptCompile Include="libs\fetch.ts" />
     <TypeScriptCompile Include="libs\localStorageManager.ts" />
     <TypeScriptCompile Include="libs\safeDigest.ts" />
+    <TypeScriptCompile Include="wwwroot\components\platform-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technique-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\tool-list.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\frameworkReducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\index.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\languageReducers.ts" />

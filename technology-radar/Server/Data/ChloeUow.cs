@@ -29,6 +29,12 @@ namespace Chloe.Server.Data
         
         public IRepository<User> Users { get { return GetStandardRepo<User>(); } }
         public IRepository<Role> Roles { get { return GetStandardRepo<Role>(); } }
+        public IRepository<Framework> Frameworks { get { return GetStandardRepo<Framework>(); } }
+        public IRepository<Language> Languages { get { return GetStandardRepo<Language>(); } }
+        public IRepository<Platform> Platforms { get { return GetStandardRepo<Platform>(); } }
+        public IRepository<Technique> Techniques { get { return GetStandardRepo<Technique>(); } }
+        public IRepository<Tool> Tools { get { return GetStandardRepo<Tool>(); } }
+
         protected void ConfigureDbContext(IDbContext dbContext)
         {
             dbContext.Configuration.ProxyCreationEnabled = false;

@@ -21,6 +21,13 @@ namespace Chloe.Server
             container.RegisterType<ICacheProvider, CacheProvider>();
             container.RegisterType<IConfigurationProvider,ConfigurationProvider>();
             container.RegisterType<ITechnologyService, TechnologyService>();
+
+            container.RegisterType<IFrameworkService, FrameworkService>();
+            container.RegisterType<ILanguageService, LanguageService>();
+            container.RegisterType<IPlatformService, PlatformService>();
+            container.RegisterType<ITechniqueService, TechniqueService>();
+            container.RegisterType<IToolService, ToolService>();
+
             return container;
         }
     }
