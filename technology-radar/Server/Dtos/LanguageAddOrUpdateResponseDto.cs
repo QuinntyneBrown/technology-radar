@@ -9,6 +9,7 @@ namespace Chloe.Server.Dtos
             this.Id = entity.Id;
             this.Name = entity.Name;
             this.Rating = entity.Rating;
+            this.Description = entity.Description;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Web.Http;
 
 namespace Chloe.Server.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/tool")]
     public class ToolController : ApiController
     {
@@ -20,6 +21,7 @@ namespace Chloe.Server.Controllers
         [HttpPut]
         public IHttpActionResult Update(ToolAddOrUpdateRequestDto dto) { return Ok(this.service.AddOrUpdate(dto)); }
 
+        [AllowAnonymous]
         [Route("get")]
         [HttpGet]
         public IHttpActionResult Get() { return Ok(this.service.GetAll()); }
@@ -27,6 +29,7 @@ namespace Chloe.Server.Controllers
         [Route("remove")]
         [HttpDelete]
         public IHttpActionResult Remove(int id) { return Ok(this.service.Remove(id)); }
+
         protected readonly IToolService service;
     }
 }

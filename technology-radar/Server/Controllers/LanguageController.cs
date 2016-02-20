@@ -4,6 +4,7 @@ using System.Web.Http;
 
 namespace Chloe.Server.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/language")]
     public class LanguageController : ApiController
     {
@@ -20,10 +21,11 @@ namespace Chloe.Server.Controllers
         [HttpPut]
         public IHttpActionResult Update(LanguageAddOrUpdateRequestDto dto) { return Ok(this.service.AddOrUpdate(dto)); }
 
+        [AllowAnonymous]
         [Route("get")]
         [HttpGet]
         public IHttpActionResult Get() { return Ok(this.service.GetAll()); }
-
+        
         [Route("remove")]
         [HttpDelete]
         public IHttpActionResult Remove(int id) { return Ok(this.service.Remove(id)); }

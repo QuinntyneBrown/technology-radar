@@ -5,6 +5,7 @@
     <h1>Languages</h1>
 
     <div data-ng-repeat="entity in vm.entities" data-ng-click="vm.remove(entity)">
-        <h1>{{ entity.name }}</h1>
+        <h1>{{ ::entity.name }}</h1>
+        <div ng-bind-html="entity.description"></div>
     </div>
 </div>

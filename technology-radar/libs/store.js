@@ -23,15 +23,17 @@ var ReducersProvider = (function () {
 })();
 var Store = (function (_super) {
     __extends(Store, _super);
-    function Store(dispatcher, initialState, reducers) {
+    function Store(dispatcher, initialState, localStorageManager, reducers) {
         var _this = this;
         _super.call(this, initialState);
+        this.localStorageManager = localStorageManager;
         this.reducers = reducers;
         this.onDispatcherNext = function (action) {
             for (var i = 0; i < _this.reducers.length; i++) {
                 _this.state = _this.reducers[i](_this.state, action);
             }
             _this.state = _this.setLastTriggeredByActionId(_this.state, action);
+            _this.localStorageManager.put({ name: "initialState", value: _this.state });
             _this.onNext(_this.state);
         };
         this.setLastTriggeredByActionId = function (state, action) {
@@ -61,8 +63,8 @@ var Dispatcher = (function (_super) {
     }
     return Dispatcher;
 })(Rx.Subject);
-angular.module("store", [])
-    .service("store", ["dispatcher", "initialState", "reducers", Store])
+angular.module("store", ["localStorageManager"])
+    .service("store", ["dispatcher", "initialState", "localStorageManager", "reducers", Store])
     .service("dispatcher", [Dispatcher])
     .provider("reducers", ReducersProvider)
     .provider("initialState", InitialStateProvider)

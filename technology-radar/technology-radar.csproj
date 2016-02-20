@@ -292,6 +292,7 @@
     <Content Include="index.html" />
     <Content Include="libs\angular-animate.min.js" />
     <Content Include="libs\angular-route.min.js" />
+    <Content Include="libs\angular-sanitize.min.js" />
     <Content Include="libs\angular.js" />
     <Content Include="libs\angular.min.js" />
     <Content Include="libs\rx.all.compat.min.js" />

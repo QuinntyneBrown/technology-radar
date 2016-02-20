@@ -31,7 +31,7 @@ class ReducersProvider implements ng.IServiceProvider {
 }
 
 class Store<T> extends Rx.BehaviorSubject<T> implements IStore {
-    constructor(dispatcher: IDispatcher, initialState: T, private reducers: any[]) {
+    constructor(dispatcher: IDispatcher, initialState: T, private localStorageManager, private reducers: any[]) {
         super(initialState);
         this.state = initialState;
         dispatcher.subscribe(action => this.onDispatcherNext(action));
@@ -42,6 +42,7 @@ class Store<T> extends Rx.BehaviorSubject<T> implements IStore {
             this.state = this.reducers[i](this.state, action);
         }
         this.state = this.setLastTriggeredByActionId(this.state, action);
+        this.localStorageManager.put({ name: "initialState", value: this.state });
         this.onNext(this.state);
     }
 
@@ -71,8 +72,8 @@ class Dispatcher<T> extends Rx.Subject<T> implements IDispatcher {
 
 }
 
-angular.module("store", [])
-    .service("store", ["dispatcher", "initialState", "reducers", Store])
+angular.module("store", ["localStorageManager"])
+    .service("store", ["dispatcher", "initialState", "localStorageManager","reducers", Store])
     .service("dispatcher", [Dispatcher])
     .provider("reducers", ReducersProvider)
     .provider("initialState", InitialStateProvider)

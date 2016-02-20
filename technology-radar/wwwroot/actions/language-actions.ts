@@ -8,7 +8,8 @@ export class LanguageActionCreator {
         var newId = this.guid();
         this.languageService.add({
             data: {
-                name: options.name
+                name: options.name,
+                description: options.description
             }
         }).then(results => {
             this.dispatcher.dispatch(new AddLanguageAction(newId, results));

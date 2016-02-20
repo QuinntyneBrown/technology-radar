@@ -6,4 +6,10 @@
 }
 .mainContent {
     min-height:400px;
+    padding-right:30px;
+    padding-left:30px;
+}
+
+[ui-tinymce] {
+    min-height:400px;
 }

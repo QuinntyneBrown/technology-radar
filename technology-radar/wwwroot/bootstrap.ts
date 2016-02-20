@@ -8,6 +8,9 @@ require("./bootstrap.reducers");
 import { Responsivir } from "../libs";
 
 var app = (<any>angular.module("app", [
+
+    "ngSanitize",
+
     "addOrUpdate",
     "apiEndpoint",
     "authInterceptor",
@@ -32,15 +35,21 @@ var app = (<any>angular.module("app", [
 
 
 
-app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", ($routeProvider, apiEndpointProvider, initialStateProvider) => {
-    initialStateProvider.configure({
-        frameworks:[],
-        languages: [],
-        platforms: [],
-        techniques: [],
-        tools: [],
-        currentUser: null
-    });
+app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "localStorageManagerProvider", ($routeProvider, apiEndpointProvider, initialStateProvider, localStorageManagerProvider) => {
+
+    if (!localStorageManagerProvider.get({ name: "initialState" })) 
+        localStorageManagerProvider.put({
+            name: "initialState", value: {
+                frameworks: [],
+                languages: [],
+                platforms: [],
+                techniques: [],
+                tools: [],
+                currentUser: null
+            }
+        });
+    
+        initialStateProvider.configure(localStorageManagerProvider.get({ name: "initialState" }));
 
     apiEndpointProvider.configure("/api");
 

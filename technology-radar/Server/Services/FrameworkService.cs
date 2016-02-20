@@ -23,6 +23,7 @@ namespace Chloe.Server.Services
                 .FirstOrDefault();
             if (entity == null) repository.Add(entity = new Framework());
             entity.Name = request.Name;
+            entity.Description = request.Description;
             uow.SaveChanges();
             return new FrameworkAddOrUpdateResponseDto(entity);
         }

@@ -4,6 +4,7 @@ using System.Web.Http;
 
 namespace Chloe.Server.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/framework")]
     public class FrameworkController : ApiController
     {
@@ -20,6 +21,7 @@ namespace Chloe.Server.Controllers
         [HttpPut]
         public IHttpActionResult Update(FrameworkAddOrUpdateRequestDto dto) { return Ok(this.service.AddOrUpdate(dto)); }
 
+        [AllowAnonymous]
         [Route("get")]
         [HttpGet]
         public IHttpActionResult Get() { return Ok(this.service.GetAll()); }
