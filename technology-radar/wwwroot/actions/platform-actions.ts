@@ -8,7 +8,10 @@ export class PlatformActionCreator {
         var newId = this.guid();
         this.platformService.add({
             data: {
-                name: options.name
+                id: options.id,
+                name: options.name,
+                description: options.description,
+                rating: options.rating
             }
         }).then(results => {
             this.dispatcher.dispatch(new AddPlatformAction(newId, results));

@@ -70,4 +70,3 @@ angular.module("store", ["localStorageManager"])
     .provider("initialState", InitialStateProvider)
     .value("guid", guid)
     .run(["store", function (store) { }]);
-//# sourceMappingURL=store.js.map

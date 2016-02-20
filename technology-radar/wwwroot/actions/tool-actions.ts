@@ -8,7 +8,10 @@ export class ToolActionCreator {
         var newId = this.guid();
         this.toolService.add({
             data: {
-                name: options.name
+                id: options.id,
+                name: options.name,
+                description: options.description,
+                rating: options.rating
             }
         }).then(results => {
             this.dispatcher.dispatch(new AddToolAction(newId, results));

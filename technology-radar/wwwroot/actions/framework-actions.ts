@@ -5,7 +5,14 @@ export class FrameworkActionCreator {
 
     addOrUpdate = options => {
         var newId = this.guid();
-        this.frameworkService.add({data: {name: options.name }})
+        this.frameworkService.add({
+            data: {
+                id: options.id,
+                name: options.name,
+                description: options.description,
+                rating: options.rating
+            }
+        })
             .then(results => this.dispatcher.dispatch(new AddFrameworkAction(newId, results)));
         return newId;
     }

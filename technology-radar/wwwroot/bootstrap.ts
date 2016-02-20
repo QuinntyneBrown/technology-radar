@@ -37,7 +37,7 @@ var app = (<any>angular.module("app", [
 
 app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "localStorageManagerProvider", ($routeProvider, apiEndpointProvider, initialStateProvider, localStorageManagerProvider) => {
 
-    if (!localStorageManagerProvider.get({ name: "initialState" })) 
+    if (!localStorageManagerProvider.get({ name: "initialState" }))
         localStorageManagerProvider.put({
             name: "initialState", value: {
                 frameworks: [],
@@ -48,8 +48,8 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "lo
                 currentUser: null
             }
         });
-    
-        initialStateProvider.configure(localStorageManagerProvider.get({ name: "initialState" }));
+
+    initialStateProvider.configure(localStorageManagerProvider.get({ name: "initialState" }));
 
     apiEndpointProvider.configure("/api");
 
@@ -72,4 +72,4 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "lo
 
     new Responsivir(window);
 }])
-    .config(["loginRedirectProvider", loginRedirectProvider => loginRedirectProvider.setDefaultUrl("/language/list")]);
+    .config(["loginRedirectProvider", loginRedirectProvider => loginRedirectProvider.setDefaultUrl("/language/list")]);    

@@ -102,9 +102,11 @@ app.component({
 });
 
 app.component({
+    routes: ['/frameworks', '/languages', '/platforms', '/techniques', '/tools'],
     templateUrl: "wwwroot/components/technology.html",
     component: TechnologyComponent,
     selector: "technology",
+    providers:['$route']
 });
 
 

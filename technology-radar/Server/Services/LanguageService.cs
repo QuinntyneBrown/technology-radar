@@ -24,6 +24,7 @@ namespace Chloe.Server.Services
             if (entity == null) repository.Add(entity = new Language());
             entity.Name = request.Name;
             entity.Description = request.Description;
+            entity.Rating = request.Rating;
             uow.SaveChanges();
             return new LanguageAddOrUpdateResponseDto(entity);
         }

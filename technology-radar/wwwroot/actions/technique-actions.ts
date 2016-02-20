@@ -8,7 +8,10 @@ export class TechniqueActionCreator {
         var newId = this.guid();
         this.techniqueService.add({
             data: {
-                name: options.name
+                id: options.id,
+                name: options.name,
+                description: options.description,
+                rating: options.rating
             }
         }).then(results => {
             this.dispatcher.dispatch(new AddTechniqueAction(newId, results));
