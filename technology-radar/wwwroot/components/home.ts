@@ -1,12 +1,6 @@
 ﻿export class HomeComponent {
 
-    constructor() {
-        
-    }
-
-    //static canActivate = () => [
-    //    "brandActionCreator", "invokeAsync",
-    //    (brandActionCreator: IBrandActionCreator, invokeAsync) => invokeAsync(brandActionCreator.get)
-    //];
+    constructor() { }
     
+    navigateTo = sectionName => alert(sectionName);
 }

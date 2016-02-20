@@ -1,6 +1,5 @@
 ﻿/// <reference path="../typings/tsd.d.ts" />
 
-
 require("./bootstrap.services");
 require("./bootstrap.components");
 require("./bootstrap.actions");
@@ -44,7 +43,8 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", ($r
     apiEndpointProvider.configure("/api");
 
     $routeProvider
-        .when("/", { template: "<login></login>" })
+        .when("/", { template: "<home></home>" })
+        .when("/login", { template: "<login></login>" })
         .when("/framework/list", { template: "<framework-list></framework-list>" })
         .when("/language/list", { template: "<language-list></language-list>" })
         .when("/platform/list", { template: "<platform-list></platform-list>" })

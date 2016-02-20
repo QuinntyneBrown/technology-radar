@@ -3,6 +3,7 @@ import {
 HeaderComponent,
 HomeComponent,
 AppComponent,
+FooterComponent,
 
 FrameworkListComponent,
 FrameworkEditorComponent,
@@ -112,8 +113,6 @@ app.component({
     selector: "login"
 });
 
-
-
 app.component({
     templateUrl: "wwwroot/components/header.html",
     providers: ["$rootScope", "$route"],
@@ -122,7 +121,14 @@ app.component({
 });
 
 app.component({
+    templateUrl: "wwwroot/components/footer.html",
+    component: FooterComponent,
+    selector: "app-footer"
+});
+
+app.component({
     templateUrl: "wwwroot/components/home.html",
     componentName: "homeComponent",
-    component: HomeComponent
+    component: HomeComponent,
+    selector:"home"
 });

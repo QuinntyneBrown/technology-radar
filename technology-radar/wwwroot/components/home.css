@@ -1,1 +1,35 @@
-﻿
+﻿.clear {
+    clear: both;
+}
+
+.technologyRadarMatrix {
+    max-width:1075px;
+    margin:0 auto;
+}
+
+.technologyRadarMatrixCell {
+    float:left;
+    position:relative;
+    width:200px;
+    height:75px;
+    margin:7.5px;
+    background-color:#EEE;
+    text-align:center;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+.technologyRadarMatrixCell:hover h1 {
+    font-weight: 400;
+}
+
+.technologyRadarMatrixCell h1 {
+    font-weight:100;
+    font-size:1.5em;
+    line-height:1.5em;
+}
+
+.home > h1{
+    width:100%;
+    text-align:center;
+}
