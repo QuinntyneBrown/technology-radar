@@ -18,11 +18,11 @@ namespace Chloe.Server.Controllers
 
         [Route("update")]
         [HttpPut]
-        public IHttpActionResult Update(dynamic dto) { return Ok(this.service.AddOrUpdate(dto)); }
+        public IHttpActionResult Update(LanguageAddOrUpdateRequestDto dto) { return Ok(this.service.AddOrUpdate(dto)); }
 
         [Route("get")]
         [HttpGet]
-        public IHttpActionResult Get(dynamic dto) { return Ok(this.service.GetAll()); }
+        public IHttpActionResult Get() { return Ok(this.service.GetAll()); }
 
         [Route("remove")]
         [HttpDelete]

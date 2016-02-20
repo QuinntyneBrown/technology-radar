@@ -1,4 +1,5 @@
-﻿using Chloe.Server.Services.Contracts;
+﻿using Chloe.Server.Dtos;
+using Chloe.Server.Services.Contracts;
 using System.Web.Http;
 
 namespace Chloe.Server.Controllers
@@ -13,15 +14,15 @@ namespace Chloe.Server.Controllers
 
         [Route("add")]
         [HttpPost]
-        public IHttpActionResult Add(dynamic dto) { return Ok(this.service.AddOrUpdate(dto)); }
+        public IHttpActionResult Add(PlatformAddOrUpdateRequestDto dto) { return Ok(this.service.AddOrUpdate(dto)); }
 
         [Route("update")]
         [HttpPut]
-        public IHttpActionResult Update(dynamic dto) { return Ok(this.service.AddOrUpdate(dto)); }
+        public IHttpActionResult Update(PlatformAddOrUpdateRequestDto dto) { return Ok(this.service.AddOrUpdate(dto)); }
 
         [Route("get")]
         [HttpGet]
-        public IHttpActionResult Get(dynamic dto) { return Ok(this.service.GetAll()); }
+        public IHttpActionResult Get() { return Ok(this.service.GetAll()); }
 
         [Route("remove")]
         [HttpDelete]
