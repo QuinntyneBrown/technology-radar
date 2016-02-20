@@ -1,4 +1,4 @@
-﻿export class LanguageEditor {
+﻿export class LanguageEditorComponent {
     constructor(private languageActionCreator) { }
 
     storeOnChange = state => {

@@ -5,7 +5,10 @@ HomeComponent,
 AppComponent,
 
 FrameworkListComponent,
+
 LanguageListComponent,
+LanguageEditorComponent,
+
 PlatformListComponent,
 TechniqueListComponent,
 ToolListComponent,
@@ -33,6 +36,12 @@ app.component({
     providers: ["languageActionCreator"]
 });
 
+app.component({
+    templateUrl: "wwwroot/components/language-editor.html",
+    component: LanguageEditorComponent,
+    selector: "language-editor",
+    providers: ["languageActionCreator"]
+});
 
 app.component({
     route: "/platform/list",

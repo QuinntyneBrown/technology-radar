@@ -176,19 +176,35 @@
     <Content Include="wwwroot\components\app.html">
       <DependentUpon>app.ts</DependentUpon>
     </Content>
+    <Content Include="wwwroot\components\framework-editor.css">
+      <DependentUpon>framework-editor.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\framework-editor.html">
+      <DependentUpon>framework-editor.ts</DependentUpon>
+    </Content>
     <Content Include="wwwroot\components\framework-list.css">
       <DependentUpon>framework-list.ts</DependentUpon>
     </Content>
     <Content Include="wwwroot\components\framework-list.html">
       <DependentUpon>framework-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\language-editor.css" />
-    <Content Include="wwwroot\components\language-editor.html" />
+    <Content Include="wwwroot\components\language-editor.css">
+      <DependentUpon>language-editor.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\language-editor.html">
+      <DependentUpon>language-editor.ts</DependentUpon>
+    </Content>
     <Content Include="wwwroot\components\language-list.css">
       <DependentUpon>language-list.ts</DependentUpon>
     </Content>
     <Content Include="wwwroot\components\language-list.html">
       <DependentUpon>language-list.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\platform-editor.css">
+      <DependentUpon>platform-editor.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\platform-editor.html">
+      <DependentUpon>platform-editor.ts</DependentUpon>
     </Content>
     <Content Include="wwwroot\components\platform-list.css">
       <DependentUpon>platform-list.ts</DependentUpon>
@@ -215,11 +231,23 @@
     <Content Include="wwwroot\components\platform-list.html">
       <DependentUpon>platform-list.ts</DependentUpon>
     </Content>
+    <Content Include="wwwroot\components\technique-editor.css">
+      <DependentUpon>technique-editor.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\technique-editor.html">
+      <DependentUpon>technique-editor.ts</DependentUpon>
+    </Content>
     <Content Include="wwwroot\components\technique-list.css">
       <DependentUpon>technique-list.ts</DependentUpon>
     </Content>
     <Content Include="wwwroot\components\technique-list.html">
       <DependentUpon>technique-list.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\tool-editor.css">
+      <DependentUpon>tool-editor.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\tool-editor.html">
+      <DependentUpon>tool-editor.ts</DependentUpon>
     </Content>
     <Content Include="wwwroot\components\tool-list.css">
       <DependentUpon>tool-list.ts</DependentUpon>
@@ -356,6 +384,7 @@
     <TypeScriptCompile Include="wwwroot\actions\user-actions.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.ts" />
     <TypeScriptCompile Include="wwwroot\components\app.ts" />
+    <TypeScriptCompile Include="wwwroot\components\framework-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\framework-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\header.ts" />
     <TypeScriptCompile Include="wwwroot\components\home.ts" />
@@ -368,7 +397,10 @@
     <TypeScriptCompile Include="libs\localStorageManager.ts" />
     <TypeScriptCompile Include="libs\safeDigest.ts" />
     <TypeScriptCompile Include="wwwroot\components\platform-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\platform-editor.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technique-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\technique-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\tool-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\tool-list.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\frameworkReducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\index.ts" />
