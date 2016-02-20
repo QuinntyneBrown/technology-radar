@@ -27,9 +27,9 @@ export class ToolActionCreator {
     remove = options => {
         var newId = this.guid();
         this.toolService.remove({
-            id: options.Tool.id
+            id: options.entity.id
         }).then(results => {
-            this.dispatcher.dispatch(new RemoveToolAction(newId, options.Tool));
+            this.dispatcher.dispatch(new RemoveToolAction(newId, options.entity));
         });
         return newId;
     }

@@ -6,20 +6,20 @@ import { addOrUpdate } from "../../libs";
 
 export const addTechniqueReducer = (state, action) => {
     if (action instanceof AddTechniqueAction) {
-        addOrUpdate({ items: state.Techniques, item: action.entity });
+        addOrUpdate({ items: state.techniques, item: action.entity });
     }
     return state;
 }
 
 export const removeTechniqueReducer = (state, action) => {
     if (action instanceof RemoveTechniqueAction)
-        pluckOut({ items: state.Techniques, value: action.entity.id });
+        pluckOut({ items: state.techniques, value: action.entity.id });
     return state;
 }
 
 export const allTechniquesReducer = (state, action) => {
     if (action instanceof AllTechniquesAction) {
-        state.Techniques = action.entities;
+        state.techniques = action.entities;
     }
     return state;
 }

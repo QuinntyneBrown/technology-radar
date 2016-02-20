@@ -27,9 +27,9 @@ export class PlatformActionCreator {
     remove = options => {
         var newId = this.guid();
         this.platformService.remove({
-            id: options.Platform.id
+            id: options.entity.id
         }).then(results => {
-            this.dispatcher.dispatch(new RemovePlatformAction(newId, options.Platform));
+            this.dispatcher.dispatch(new RemovePlatformAction(newId, options.entity));
         });
         return newId;
     }

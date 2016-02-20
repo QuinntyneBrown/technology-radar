@@ -27,9 +27,9 @@ export class TechniqueActionCreator {
     remove = options => {
         var newId = this.guid();
         this.techniqueService.remove({
-            id: options.Technique.id
+            id: options.entity.id
         }).then(results => {
-            this.dispatcher.dispatch(new RemoveTechniqueAction(newId, options.Technique));
+            this.dispatcher.dispatch(new RemoveTechniqueAction(newId, options.entity));
         });
         return newId;
     }

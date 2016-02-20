@@ -17,10 +17,12 @@ export class FrameworkActionCreator {
         return newId;
     }
 
+
+
     remove = options => {
         var newId = this.guid();
-        this.frameworkService.remove({ id: options.Framework.id })
-            .then(results => this.dispatcher.dispatch(new RemoveFrameworkAction(newId, options.Framework)));
+        this.frameworkService.remove({ id: options.entity.id })
+            .then(results => this.dispatcher.dispatch(new RemoveFrameworkAction(newId, options.entity)));
         return newId;
     }
 }

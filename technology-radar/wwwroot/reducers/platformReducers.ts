@@ -6,20 +6,20 @@ import { addOrUpdate } from "../../libs";
 
 export const addPlatformReducer = (state, action) => {
     if (action instanceof AddPlatformAction) {
-        addOrUpdate({ items: state.Platforms, item: action.entity });
+        addOrUpdate({ items: state.platforms, item: action.entity });
     }
     return state;
 }
 
 export const removePlatformReducer = (state, action) => {
     if (action instanceof RemovePlatformAction)
-        pluckOut({ items: state.Platforms, value: action.entity.id });
+        pluckOut({ items: state.platforms, value: action.entity.id });
     return state;
 }
 
 export const allPlatformsReducer = (state, action) => {
     if (action instanceof AllPlatformsAction) {
-        state.Platforms = action.entities;
+        state.platforms = action.entities;
     }
     return state;
 }
