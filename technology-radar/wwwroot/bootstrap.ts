@@ -26,6 +26,8 @@ var app = (<any>angular.module("app", [
     "reducers",
     "services",
 
+    "ui.tinymce"
+
 ]));
 
 

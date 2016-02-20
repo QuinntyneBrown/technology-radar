@@ -1,0 +1,21 @@
+{
+  "name": "technology-radar",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Quinntyne Brown <quinntynebrown@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/QuinntyneBrown/technology-radar",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-tinymce": "^0.0.14"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "gallery-manager",
+  "name": "technology-radar",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -12,6 +12,7 @@
     "angular": "^1.5.0",
     "angular-animate": "^1.5.0",
     "angular-route": "^1.5.0",
+    "angular-ui-tinymce": "0.0.14",
     "css-loader": "^0.23.1",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.34.4",
@@ -24,9 +25,13 @@
     "rx": "^4.0.7",
     "rxjs": "5.0.0-beta.0",
     "style-loader": "^0.13.0",
+    "tinymce": "^4.3.5",
     "ts-loader": "^0.8.1",
     "typescript": "^1.7.5",
     "typings": "^0.6.8",
     "webpack": "^1.12.13"
+  },
+  "devDependencies": {
+    "bower": "^1.7.7"
   }
 }

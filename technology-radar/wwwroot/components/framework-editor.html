@@ -6,9 +6,8 @@
     </div>
 
     <div>
-        <input type="text" placeholder="Description" data-ng-model="vm.description" />
+        <textarea ui-tinymce ng-model="vm.description"></textarea>
     </div>
-
 
     <div>
         <button data-ng-click="vm.addOrUpdate()">Save</button>
