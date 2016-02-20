@@ -364,10 +364,6 @@
     <TypeScriptCompile Include="wwwroot\actions\rating-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\technique-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\tool-actions.ts" />
-    <TypeScriptCompile Include="wwwroot\bootstrap.actions.ts" />
-    <TypeScriptCompile Include="wwwroot\bootstrap.components.ts" />
-    <TypeScriptCompile Include="wwwroot\bootstrap.reducers.ts" />
-    <TypeScriptCompile Include="wwwroot\bootstrap.services.ts" />
     <TypeScriptCompile Include="libs\addOrUpdate.ts" />
     <TypeScriptCompile Include="libs\apiEndpointProvider.ts" />
     <TypeScriptCompile Include="libs\authInterceptor.ts" />
@@ -382,6 +378,10 @@
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="wwwroot\actions\index.ts" />
     <TypeScriptCompile Include="wwwroot\actions\user-actions.ts" />
+    <TypeScriptCompile Include="wwwroot\bootstrap.actions.ts" />
+    <TypeScriptCompile Include="wwwroot\bootstrap.components.ts" />
+    <TypeScriptCompile Include="wwwroot\bootstrap.reducers.ts" />
+    <TypeScriptCompile Include="wwwroot\bootstrap.services.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.ts" />
     <TypeScriptCompile Include="wwwroot\components\app.ts" />
     <TypeScriptCompile Include="wwwroot\components\framework-editor.ts" />

@@ -1,10 +1,10 @@
 ﻿/// <reference path="../typings/tsd.d.ts" />
 
-import { userLoggedInReducer } from "./reducers";
 
 require("./bootstrap.services");
 require("./bootstrap.components");
 require("./bootstrap.actions");
+require("./bootstrap.reducers");
 
 var app = (<any>angular.module("app", [
     "addOrUpdate",
@@ -22,6 +22,7 @@ var app = (<any>angular.module("app", [
     
     "actions",
     "components",
+    "reducers",
     "services",
 
 ]));
@@ -50,7 +51,4 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", ($r
         .otherwise("/");
 
 }])
-    .config(["reducersProvider", reducersProvider => {
-        reducersProvider.configure(userLoggedInReducer);
-    }])
     .config(["loginRedirectProvider", loginRedirectProvider => loginRedirectProvider.setDefaultUrl("/language/list")]);
