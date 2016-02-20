@@ -19,3 +19,5 @@ export * from "./technique-editor";
 
 export * from "./tool-list";
 export * from "./tool-editor";
+
+export * from "./technology";

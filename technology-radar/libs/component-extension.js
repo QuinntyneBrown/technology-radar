@@ -70,10 +70,11 @@ angular.module = function () {
                     var store = $injector.get("store");
                     var safeDigest = $injector.get("safeDigest");
                     if (scope.vm && scope.vm.storeOnChange) {
-                        store.subscribe(function (state) {
+                        var subscription = store.subscribe(function (state) {
                             scope.vm.storeOnChange(state);
                             safeDigest(scope);
                         });
+                        scope.$on("$destroy", function () { return subscription.dispose(); });
                     }
                 },
                 post: function (scope) {

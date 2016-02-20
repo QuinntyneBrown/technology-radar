@@ -86,10 +86,12 @@ angular.module = function () {
                     var safeDigest = $injector.get("safeDigest");
 
                     if (scope.vm && scope.vm.storeOnChange) {
-                        store.subscribe(function (state) {
+                        var subscription = store.subscribe(state => {
                             scope.vm.storeOnChange(state);
                             safeDigest(scope);
                         });
+
+                        scope.$on("$destroy", () =>  subscription.dispose());
                     }
                 },
                 post: function (scope: any) {
@@ -106,6 +108,8 @@ angular.module = function () {
                         scope.$on("$destroy", () => {
                             scope.vm.dispose();
                         });
+
+
                 }
             }
         }

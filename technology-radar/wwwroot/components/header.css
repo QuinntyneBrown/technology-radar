@@ -12,7 +12,7 @@
 .appHeader a:visited
  {
     text-decoration:none;
-    color:#000;
+    color:#333;
 }
 
 .appHeader a.selected { 

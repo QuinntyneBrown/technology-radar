@@ -16,6 +16,8 @@ TechniqueEditorComponent,
 ToolListComponent,
 ToolEditorComponent,
 
+TechnologyComponent,
+
 LoginComponent
 } from "./components";
 
@@ -99,6 +101,12 @@ app.component({
     providers: ["toolActionCreator"]
 });
 
+app.component({
+    templateUrl: "wwwroot/components/technology.html",
+    component: TechnologyComponent,
+    selector: "technology",
+});
+
 
 app.component({
     templateUrl: "wwwroot/components/app.html",
@@ -130,5 +138,6 @@ app.component({
     templateUrl: "wwwroot/components/home.html",
     componentName: "homeComponent",
     component: HomeComponent,
-    selector:"home"
+    selector: "home",
+    providers:["$location"]
 });

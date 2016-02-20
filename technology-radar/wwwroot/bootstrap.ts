@@ -50,6 +50,13 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", ($r
         .when("/platform/list", { template: "<platform-list></platform-list>" })
         .when("/technique/list", { template: "<technique-list></technique-list>" })
         .when("/tool/list", { template: "<tool-list></tool-list>" })
+
+        .when("/frameworks", { template: "<technology></technology>" })
+        .when("/languages", { template: "<technology></technology>" })
+        .when("/platforms", { template: "<technology></technology>" })
+        .when("/techniques", { template: "<technology></technology>" })
+        .when("/tools", { template: "<technology></technology>" })
+
         .otherwise("/");
 
     new Responsivir(window);

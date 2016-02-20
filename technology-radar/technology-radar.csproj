@@ -249,6 +249,12 @@
     <Content Include="wwwroot\components\technique-list.html">
       <DependentUpon>technique-list.ts</DependentUpon>
     </Content>
+    <Content Include="wwwroot\components\technology.css">
+      <DependentUpon>technology.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\technology.html">
+      <DependentUpon>technology.ts</DependentUpon>
+    </Content>
     <Content Include="wwwroot\components\tool-editor.css">
       <DependentUpon>tool-editor.ts</DependentUpon>
     </Content>
@@ -407,6 +413,7 @@
     <TypeScriptCompile Include="wwwroot\components\platform-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\technique-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\technique-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technology.ts" />
     <TypeScriptCompile Include="wwwroot\components\tool-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\tool-list.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\frameworkReducers.ts" />

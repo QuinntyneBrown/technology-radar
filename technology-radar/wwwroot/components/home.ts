@@ -1,6 +1,5 @@
 ﻿export class HomeComponent {
 
-    constructor() { }
+    constructor(private $location) { }
     
-    navigateTo = sectionName => alert(sectionName);
 }
