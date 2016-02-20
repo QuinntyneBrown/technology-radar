@@ -5,13 +5,15 @@ HomeComponent,
 AppComponent,
 
 FrameworkListComponent,
-
+FrameworkEditorComponent,
 LanguageListComponent,
 LanguageEditorComponent,
-
 PlatformListComponent,
+PlatformEditorComponent,
 TechniqueListComponent,
+TechniqueEditorComponent,
 ToolListComponent,
+ToolEditorComponent,
 
 LoginComponent
 } from "./components";
@@ -25,6 +27,13 @@ app.component({
     templateUrl: "wwwroot/components/framework-list.html",
     component: FrameworkListComponent,
     selector: "framework-list",
+    providers: ["frameworkActionCreator"]
+});
+
+app.component({
+    templateUrl: "wwwroot/components/framework-editor.html",
+    component: FrameworkEditorComponent,
+    selector: "framework-editor",
     providers: ["frameworkActionCreator"]
 });
 
@@ -51,6 +60,13 @@ app.component({
     providers: ["platformActionCreator"]
 });
 
+app.component({
+    templateUrl: "wwwroot/components/platform-editor.html",
+    component: PlatformEditorComponent,
+    selector: "platform-editor",
+    providers: ["platformActionCreator"]
+});
+
 
 app.component({
     route: "/technique/list",
@@ -60,12 +76,25 @@ app.component({
     providers: ["techniqueActionCreator"]
 });
 
+app.component({
+    templateUrl: "wwwroot/components/technique-editor.html",
+    component: TechniqueEditorComponent,
+    selector: "technique-editor",
+    providers: ["techniqueActionCreator"]
+});
 
 app.component({
     route: "/tool/list",
     templateUrl: "wwwroot/components/tool-list.html",
     component: ToolListComponent,
     selector: "tool-list",
+    providers: ["toolActionCreator"]
+});
+
+app.component({
+    templateUrl: "wwwroot/components/tool-editor.html",
+    component: ToolEditorComponent,
+    selector: "tool-editor",
     providers: ["toolActionCreator"]
 });
 

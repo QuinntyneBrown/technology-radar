@@ -41,3 +41,4 @@ var Responsivir = (function () {
 document.addEventListener("DOMContentLoaded", function (event) { return Responsivir.onChange(event); });
 window.addEventListener("resize", function (event) { return Responsivir.onChange(event); });
 window.addEventListener("orientationchange", function (event) { return Responsivir.onChange(event); });
+//# sourceMappingURL=responsivir.js.map
