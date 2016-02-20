@@ -1,16 +1,11 @@
 ﻿<div class="techniqueList">
-    <h1>Create Technique</h1>
 
-    <div>
-        <input type="text" placeholder="Technique Name" data-ng-model="vm.name" />
-    </div>
+    <technique-editor></technique-editor>
 
-    <div>
-        <input type="text" placeholder="Description" data-ng-model="vm.description" />
-    </div>
+    <h1>Techniques</h1>
 
-
-    <div>
-        <button data-ng-click="vm.addOrUpdate()">Save</button>
+    <div data-ng-repeat="entity in vm.entities" data-ng-click="vm.remove(entity)">
+        <h1>{{ entity.name }}</h1>
     </div>
 </div>
+

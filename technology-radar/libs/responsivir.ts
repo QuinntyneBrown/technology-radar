@@ -1,47 +1,51 @@
-﻿class Responsivir {
+﻿/// <reference path="formencode.ts" />
+export class Responsivir {
 
-    static timeoutId; 
-
-    static removeResponsiveClasses = () => {
-        document.body.classList.remove("small");
-        document.body.classList.remove("midSmall");
-        document.body.classList.remove("medium");
-        document.body.classList.remove("large");
-        document.body.classList.remove("extraLarge");
+    constructor(private $window) {
+        $window.document.addEventListener("DOMContentLoaded", event => this.onChange(event));
+        $window.addEventListener("resize", event => this.onChange(event));
+        $window.addEventListener("orientationchange", event => this.onChange(event));
+        this.onChange(null);
     }
 
-    static updateResponsiveClass = (className) => {
-        Responsivir.removeResponsiveClasses();
-        document.body.classList.add(className);
+    timeoutId; 
+
+    removeResponsiveClasses = () => {
+        this.$window.document.body.classList.remove("small");
+        this.$window.document.body.classList.remove("midSmall");
+        this.$window.document.body.classList.remove("medium");
+        this.$window.document.body.classList.remove("large");
+        this.$window.document.body.classList.remove("extraLarge");
     }
 
-    static onChange(event) {
-        if (Responsivir.timeoutId) clearTimeout(Responsivir.timeoutId);
-        Responsivir.timeoutId = setTimeout(() => {
-            var screenWidth = window.screen.width;
+    updateResponsiveClass = (className) => {
+        this.removeResponsiveClasses();
+        this.$window.document.body.classList.add(className);
+    }
+
+    onChange(event) {
+        if (this.timeoutId) this.$window.clearTimeout(this.timeoutId);
+        this.timeoutId = this.$window.setTimeout(() => {
+            var innerWidth = this.$window.innerWidth;
             switch (true) {
-                case (screenWidth < 480):
-                    Responsivir.updateResponsiveClass("small");
+                case (innerWidth < 480):
+                    this.updateResponsiveClass("small");
                     break;
-                case (screenWidth < 752):
-                    Responsivir.updateResponsiveClass("midSmall");
+                case (innerWidth < 752):
+                    this.updateResponsiveClass("midSmall");
                     break;
-                case (screenWidth < 960):
-                    Responsivir.updateResponsiveClass("medium");
+                case (innerWidth < 960):
+                    this.updateResponsiveClass("medium");
                     break;
-                case (screenWidth < 1280):
-                    Responsivir.updateResponsiveClass("large");
+                case (innerWidth < 1280):
+                    this.updateResponsiveClass("large");
                     break;
                 default:
-                    Responsivir.updateResponsiveClass("extraLarge")
+                    this.updateResponsiveClass("extraLarge")
                     break;
             }
         }, 100);
     }
 }
 
-document.addEventListener("DOMContentLoaded", event => Responsivir.onChange(event));
 
-window.addEventListener("resize", event => Responsivir.onChange(event));
-
-window.addEventListener("orientationchange", event => Responsivir.onChange(event));

@@ -2,7 +2,7 @@
 
 
 export class PlatformActionCreator {
-    constructor(private dispatcher: IDispatcher, private platformService, private guid) { }
+    constructor(private dispatcher: IDispatcher, private guid, private platformService) { }
 
     addOrUpdate = options => {
         var newId = this.guid();

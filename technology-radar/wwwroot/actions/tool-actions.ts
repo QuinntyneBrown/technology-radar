@@ -2,7 +2,7 @@
 
 
 export class ToolActionCreator {
-    constructor(private dispatcher: IDispatcher, private toolService, private guid) { }
+    constructor(private dispatcher: IDispatcher, private guid, private toolService) { }
 
     addOrUpdate = options => {
         var newId = this.guid();

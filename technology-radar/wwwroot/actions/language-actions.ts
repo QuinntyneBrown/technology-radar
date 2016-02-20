@@ -27,9 +27,9 @@ export class LanguageActionCreator {
     remove = options => {
         var newId = this.guid();
         this.languageService.remove({
-            id: options.Language.id
+            id: options.entity.id
         }).then(results => {
-            this.dispatcher.dispatch(new RemoveLanguageAction(newId, options.Language));
+            this.dispatcher.dispatch(new RemoveLanguageAction(newId, options.entity));
         });
         return newId;
     }

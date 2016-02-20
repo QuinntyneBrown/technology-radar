@@ -1,3 +1,11 @@
 ﻿<div class="toolList">
 
+    <tool-editor></tool-editor>
+
+    <h1>Tools</h1>
+
+    <div data-ng-repeat="entity in vm.entities" data-ng-click="vm.remove(entity)">
+        <h1>{{ entity.name }}</h1>
+    </div>
 </div>
+

@@ -2,7 +2,7 @@
 
 
 export class TechniqueActionCreator {
-    constructor(private dispatcher: IDispatcher, private techniqueService, private guid) { }
+    constructor(private dispatcher: IDispatcher, private guid, private techniqueService) { }
 
     addOrUpdate = options => {
         var newId = this.guid();

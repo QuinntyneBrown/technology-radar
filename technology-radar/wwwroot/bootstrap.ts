@@ -6,6 +6,8 @@ require("./bootstrap.components");
 require("./bootstrap.actions");
 require("./bootstrap.reducers");
 
+import { Responsivir } from "../libs";
+
 var app = (<any>angular.module("app", [
     "addOrUpdate",
     "apiEndpoint",
@@ -50,5 +52,6 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", ($r
         .when("/tool/list", { template: "<tool-list></tool-list>" })
         .otherwise("/");
 
+    new Responsivir(window);
 }])
     .config(["loginRedirectProvider", loginRedirectProvider => loginRedirectProvider.setDefaultUrl("/language/list")]);
