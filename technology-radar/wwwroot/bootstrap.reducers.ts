@@ -1,41 +1,28 @@
 ﻿
-import { userLoggedInReducer, userLoggedOutReducer,
+import * as reducers from "./reducers";
 
-allLanguagesReducer, addLanguageReducer, removeLanguageReducer,
+var app = (<any>angular.module("reducers", ["store"]))
+    .config(["reducersProvider", reducersProvider => {
+        reducersProvider.configure(reducers.userLoggedInReducer);
+        reducersProvider.configure(reducers.userLoggedOutReducer);
 
-allFrameworksReducer, addFrameworkReducer, removeFrameworkReducer,
+        reducersProvider.configure(reducers.allFrameworksReducer);
+        reducersProvider.configure(reducers.addFrameworkReducer);
+        reducersProvider.configure(reducers.removeFrameworkReducer);
 
-allPlatformsReducer, addPlatformReducer, removePlatformReducer,
+        reducersProvider.configure(reducers.allLanguagesReducer);
+        reducersProvider.configure(reducers.addLanguageReducer);
+        reducersProvider.configure(reducers.removeLanguageReducer);
 
-allTechniquesReducer, addTechniqueReducer, removeTechniqueReducer,
+        reducersProvider.configure(reducers.allPlatformsReducer);
+        reducersProvider.configure(reducers.addPlatformReducer);
+        reducersProvider.configure(reducers.removePlatformReducer);
 
-allToolsReducer, addToolReducer, removeToolReducer
+        reducersProvider.configure(reducers.allTechniquesReducer);
+        reducersProvider.configure(reducers.addTechniqueReducer);
+        reducersProvider.configure(reducers.removeTechniqueReducer);
 
-} from "./reducers";
-
-var app = (<any>angular.module("reducers", [
-    "store"
-])).config(["reducersProvider", reducersProvider => {
-        reducersProvider.configure(userLoggedInReducer);
-        reducersProvider.configure(userLoggedOutReducer);
-
-        reducersProvider.configure(allFrameworksReducer);
-        reducersProvider.configure(addFrameworkReducer);
-        reducersProvider.configure(removeFrameworkReducer);
-
-        reducersProvider.configure(allLanguagesReducer);
-        reducersProvider.configure(addLanguageReducer);
-        reducersProvider.configure(removeLanguageReducer);
-
-        reducersProvider.configure(allPlatformsReducer);
-        reducersProvider.configure(addPlatformReducer);
-        reducersProvider.configure(removePlatformReducer);
-
-        reducersProvider.configure(allTechniquesReducer);
-        reducersProvider.configure(addTechniqueReducer);
-        reducersProvider.configure(removeTechniqueReducer);
-
-        reducersProvider.configure(allToolsReducer);
-        reducersProvider.configure(addToolReducer);
-        reducersProvider.configure(removeToolReducer);
+        reducersProvider.configure(reducers.allToolsReducer);
+        reducersProvider.configure(reducers.addToolReducer);
+        reducersProvider.configure(reducers.removeToolReducer);
 }]);

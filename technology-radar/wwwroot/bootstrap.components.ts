@@ -1,42 +1,18 @@
-﻿
-import {
-HeaderComponent,
-HomeComponent,
-AppComponent,
-FooterComponent,
+﻿import * as components from "./components";
 
-FrameworkListComponent,
-FrameworkEditorComponent,
-LanguageListComponent,
-LanguageEditorComponent,
-PlatformListComponent,
-PlatformEditorComponent,
-TechniqueListComponent,
-TechniqueEditorComponent,
-ToolListComponent,
-ToolEditorComponent,
-
-TechnologyComponent,
-TechnologiesComponent,
-
-LoginComponent
-} from "./components";
-
-var app = (<any>angular.module("components", [
-    "store"
-]));
+var app = (<any>angular.module("components", [ "store" ]));
 
 app.component({
     route:"/framework/list",
     templateUrl: "wwwroot/components/framework-list.html",
-    component: FrameworkListComponent,
+    component: components.FrameworkListComponent,
     selector: "framework-list",
     providers: ["frameworkActionCreator"]
 });
 
 app.component({
     templateUrl: "wwwroot/components/framework-editor.html",
-    component: FrameworkEditorComponent,
+    component: components.FrameworkEditorComponent,
     selector: "framework-editor",
     providers: ["frameworkActionCreator"]
 });
@@ -44,14 +20,14 @@ app.component({
 app.component({
     route: "/language/list",
     templateUrl: "wwwroot/components/language-list.html",
-    component: LanguageListComponent,
+    component: components.LanguageListComponent,
     selector: "language-list",
     providers: ["languageActionCreator"]
 });
 
 app.component({
     templateUrl: "wwwroot/components/language-editor.html",
-    component: LanguageEditorComponent,
+    component: components.LanguageEditorComponent,
     selector: "language-editor",
     providers: ["languageActionCreator"]
 });
@@ -59,14 +35,14 @@ app.component({
 app.component({
     route: "/platform/list",
     templateUrl: "wwwroot/components/platform-list.html",
-    component: PlatformListComponent,
+    component: components.PlatformListComponent,
     selector: "platform-list",
     providers: ["platformActionCreator"]
 });
 
 app.component({
     templateUrl: "wwwroot/components/platform-editor.html",
-    component: PlatformEditorComponent,
+    component: components.PlatformEditorComponent,
     selector: "platform-editor",
     providers: ["platformActionCreator"]
 });
@@ -75,14 +51,14 @@ app.component({
 app.component({
     route: "/technique/list",
     templateUrl: "wwwroot/components/technique-list.html",
-    component: TechniqueListComponent,
+    component: components.TechniqueListComponent,
     selector: "technique-list",
     providers: ["techniqueActionCreator"]
 });
 
 app.component({
     templateUrl: "wwwroot/components/technique-editor.html",
-    component: TechniqueEditorComponent,
+    component: components.TechniqueEditorComponent,
     selector: "technique-editor",
     providers: ["techniqueActionCreator"]
 });
@@ -90,14 +66,14 @@ app.component({
 app.component({
     route: "/tool/list",
     templateUrl: "wwwroot/components/tool-list.html",
-    component: ToolListComponent,
+    component: components.ToolListComponent,
     selector: "tool-list",
     providers: ["toolActionCreator"]
 });
 
 app.component({
     templateUrl: "wwwroot/components/tool-editor.html",
-    component: ToolEditorComponent,
+    component: components.ToolEditorComponent,
     selector: "tool-editor",
     providers: ["toolActionCreator"]
 });
@@ -105,7 +81,7 @@ app.component({
 app.component({
     routes: ['/frameworks', '/languages', '/platforms', '/techniques', '/tools'],
     templateUrl: "wwwroot/components/technologies.html",
-    component: TechnologiesComponent,
+    component: components.TechnologiesComponent,
     selector: "technologies",
     providers:['$route']
 });
@@ -113,20 +89,20 @@ app.component({
 app.component({
     route: '/technology/:type/:id',
     templateUrl: "wwwroot/components/technology.html",
-    component: TechnologyComponent,
+    component: components.TechnologyComponent,
     selector: "technology"
 });
 
 
 app.component({
     templateUrl: "wwwroot/components/app.html",
-    component: AppComponent,
+    component: components.AppComponent,
     selector: "app"
 });
 
 app.component({
     templateUrl: "wwwroot/components/login.html",
-    component: LoginComponent,
+    component: components.LoginComponent,
     providers: ["invokeAsync", "loginRedirect", "userActionCreator"],
     selector: "login"
 });
@@ -134,20 +110,20 @@ app.component({
 app.component({
     templateUrl: "wwwroot/components/header.html",
     providers: ["$rootScope", "$route"],
-    component: HeaderComponent,
+    component: components.HeaderComponent,
     selector: "app-header"
 });
 
 app.component({
     templateUrl: "wwwroot/components/footer.html",
-    component: FooterComponent,
+    component: components.FooterComponent,
     selector: "app-footer"
 });
 
 app.component({
     templateUrl: "wwwroot/components/home.html",
     componentName: "homeComponent",
-    component: HomeComponent,
+    component: components.HomeComponent,
     selector: "home",
     providers:["$location"]
 });

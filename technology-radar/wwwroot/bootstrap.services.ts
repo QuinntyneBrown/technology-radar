@@ -1,15 +1,5 @@
 ﻿
-import {
-
-UserService,
-
-FrameworkService,
-LanguageService,
-PlatformService,
-TechniqueService,
-ToolService
-
-} from "./services";
+import * as services from "./services";
 
 var app = (<any>angular.module("services", [
     "addOrUpdate",
@@ -26,11 +16,9 @@ var app = (<any>angular.module("services", [
     "store"
 ]));
 
-
-app.service("userService", ["$q", "apiEndpoint", "fetch", "formEncode", UserService]);
-
-app.service("frameworkService", ["$q", "apiEndpoint", "fetch", FrameworkService]);
-app.service("languageService", ["$q", "apiEndpoint", "fetch", LanguageService]);
-app.service("platformService", ["$q", "apiEndpoint", "fetch", PlatformService]);
-app.service("techniqueService", ["$q", "apiEndpoint", "fetch", TechniqueService]);
-app.service("toolService", ["$q", "apiEndpoint", "fetch", ToolService]);
+app.service("userService", ["$q", "apiEndpoint", "fetch", "formEncode", services.UserService]);
+app.service("frameworkService", ["$q", "apiEndpoint", "fetch", services.FrameworkService]);
+app.service("languageService", ["$q", "apiEndpoint", "fetch", services.LanguageService]);
+app.service("platformService", ["$q", "apiEndpoint", "fetch", services.PlatformService]);
+app.service("techniqueService", ["$q", "apiEndpoint", "fetch", services.TechniqueService]);
+app.service("toolService", ["$q", "apiEndpoint", "fetch", services.ToolService]);
