@@ -1,5 +1,5 @@
 ﻿
-import { userLoggedInReducer,
+import { userLoggedInReducer, userLoggedOutReducer,
 
 allLanguagesReducer, addLanguageReducer, removeLanguageReducer,
 
@@ -17,6 +17,7 @@ var app = (<any>angular.module("reducers", [
     "store"
 ])).config(["reducersProvider", reducersProvider => {
         reducersProvider.configure(userLoggedInReducer);
+        reducersProvider.configure(userLoggedOutReducer);
 
         reducersProvider.configure(allFrameworksReducer);
         reducersProvider.configure(addFrameworkReducer);

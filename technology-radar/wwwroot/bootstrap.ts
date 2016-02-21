@@ -62,11 +62,11 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "lo
         .when("/technique/list", { template: "<technique-list></technique-list>" })
         .when("/tool/list", { template: "<tool-list></tool-list>" })
 
-        .when("/frameworks", { template: "<technology></technology>" })
-        .when("/languages", { template: "<technology></technology>" })
-        .when("/platforms", { template: "<technology></technology>" })
-        .when("/techniques", { template: "<technology></technology>" })
-        .when("/tools", { template: "<technology></technology>" })
+        .when("/frameworks", { template: "<technologies></technologies>" })
+        .when("/languages", { template: "<technologies></technologies>" })
+        .when("/platforms", { template: "<technologies></technologies>" })
+        .when("/techniques", { template: "<technologies></technologies>" })
+        .when("/tools", { template: "<technologies></technologies>" })
 
         .otherwise("/");
 

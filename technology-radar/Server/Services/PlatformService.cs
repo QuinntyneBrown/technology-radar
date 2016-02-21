@@ -26,6 +26,7 @@ namespace Chloe.Server.Services
             entity.Name = request.Name;
             entity.Description = request.Description;
             entity.Rating = request.Rating;
+            entity.Abstract = request.Abstract;
             uow.SaveChanges();
             return new PlatformAddOrUpdateResponseDto(entity);
         }

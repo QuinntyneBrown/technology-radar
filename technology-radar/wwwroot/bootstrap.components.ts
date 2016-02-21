@@ -17,6 +17,7 @@ ToolListComponent,
 ToolEditorComponent,
 
 TechnologyComponent,
+TechnologiesComponent,
 
 LoginComponent
 } from "./components";
@@ -103,10 +104,17 @@ app.component({
 
 app.component({
     routes: ['/frameworks', '/languages', '/platforms', '/techniques', '/tools'],
+    templateUrl: "wwwroot/components/technologies.html",
+    component: TechnologiesComponent,
+    selector: "technologies",
+    providers:['$route']
+});
+
+app.component({
+    route: '/technology/:type/:id',
     templateUrl: "wwwroot/components/technology.html",
     component: TechnologyComponent,
-    selector: "technology",
-    providers:['$route']
+    selector: "technology"
 });
 
 

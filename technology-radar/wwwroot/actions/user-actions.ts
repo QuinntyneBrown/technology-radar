@@ -2,8 +2,7 @@
 
 
 export class UserActionCreator {
-    constructor(private dispatcher: IDispatcher, private guid, private userService) {
-    }
+    constructor(private dispatcher: IDispatcher, private guid, private userService) {}
 
     tryToLogin = options => {
         var newId = this.guid();
@@ -17,6 +16,12 @@ export class UserActionCreator {
         });
         return newId;
     }
+
+    logOut = () => {
+        var newId = this.guid();
+        this.dispatcher.dispatch(new UserLoggedOutAction(newId));
+        return newId;
+    } 
 }
 
 export class AddUserAction { constructor(public entity) { } }
@@ -28,4 +33,6 @@ export class RemoveUserAction { constructor(public id) { } }
 export class UsersFilterAction { constructor(public term) { } }
 
 export class UserLoggedInAction { constructor(public id, public userData) { } }
+
+export class UserLoggedOutAction { constructor(public id) { } }
 

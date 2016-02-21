@@ -1,14 +1,14 @@
 ﻿<div class="toolEditor">
     <h1>Create Tool</h1>
-
     <div>
         <input type="text" placeholder="Tool Name" data-ng-model="vm.name" />
     </div>
-
+    <div>
+        <textarea ui-tinymce ng-model="vm.abstract"></textarea>
+    </div>
     <div>
         <textarea ui-tinymce ng-model="vm.description"></textarea>
     </div>
-
     <div>
         <button data-ng-click="vm.addOrUpdate()">Save</button>
     </div>

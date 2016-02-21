@@ -7,6 +7,7 @@ namespace Chloe.Server.Dtos
         public TechniqueAddOrUpdateResponseDto(Technique entity)
         {
             this.Id = entity.Id;
+            this.Abstract = entity.Abstract;
             this.Name = entity.Name;
             this.Rating = entity.Rating;
             this.Description = entity.Description;

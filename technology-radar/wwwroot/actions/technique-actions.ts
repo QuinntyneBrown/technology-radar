@@ -9,6 +9,7 @@ export class TechniqueActionCreator {
         this.techniqueService.add({
             data: {
                 id: options.id,
+                abstract: options.abstract,
                 name: options.name,
                 description: options.description,
                 rating: options.rating

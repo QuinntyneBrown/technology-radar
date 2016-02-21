@@ -6,13 +6,15 @@
         this.name = null;
         this.rating = null;
         this.description = null;
+        this.abstract = null;
     }
 
     addOrUpdate = () => this.techniqueActionCreator.addOrUpdate({
         id: this.id,
         name: this.name,
         description: this.description,
-        rating: this.rating
+        rating: this.rating,
+        abstract: this.abstract
     });
 
     remove = () => this.techniqueActionCreator.remove({ id: this.id });
@@ -21,5 +23,6 @@
     name;
     rating;
     description;
+    abstract;
 
 }
