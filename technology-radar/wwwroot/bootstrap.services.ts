@@ -1,20 +1,7 @@
 ﻿
 import * as services from "./services";
 
-var app = (<any>angular.module("services", [
-    "addOrUpdate",
-    "apiEndpoint",
-    "authInterceptor",
-    "fetch",
-    "formEncode",
-    "invokeAsync",
-    "localStorageManager",
-    "loginRedirect",
-    "routeResolver",
-    "routeWhenExtension",
-    "safeDigest",
-    "store"
-]));
+var app = (<any>angular.module("services", ["apiEndpoint","fetch","formEncode" ]));
 
 app.service("userService", ["$q", "apiEndpoint", "fetch", "formEncode", services.UserService]);
 app.service("frameworkService", ["$q", "apiEndpoint", "fetch", services.FrameworkService]);

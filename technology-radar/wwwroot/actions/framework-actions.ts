@@ -24,9 +24,7 @@ export class FrameworkActionCreator {
             .then(results => this.dispatcher.dispatch(new AllFrameworksAction(newId, results)));
         return newId;
     }
-
-
-
+    
     remove = options => {
         var newId = this.guid();
         this.frameworkService.remove({ id: options.entity.id })

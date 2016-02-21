@@ -1,4 +1,6 @@
-﻿namespace Chloe.Server.Dtos
+﻿using Chloe.Server.Models;
+
+namespace Chloe.Server.Dtos
 {
     public class TechnologyDto
     {
@@ -7,5 +9,6 @@
         public string Abstract { get; set; }
         public int Rating { get; set; }
         public string Description { get; set; }
+        public TechnologyType TechnologyType { get; set; }
     }
 }

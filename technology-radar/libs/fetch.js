@@ -4,10 +4,10 @@ angular.module("fetch", ["localStorageManager"]).service("fetch", ["$http", "$q"
             this.$http = $http;
             this.$q = $q;
             this.localStorageManager = localStorageManager;
-            this.inMemoryCache = {};
             this.fromService = function (options) {
                 var deferred = _this.$q.defer();
                 _this.$http({ method: options.method, url: options.url, data: options.data, params: options.params, headers: options.headers }).then(function (results) {
+                    _this.localStorageManager.put({ name: _this.getCacheKey(options), value: results });
                     deferred.resolve(results);
                 }).catch(function (error) {
                 });
@@ -15,7 +15,7 @@ angular.module("fetch", ["localStorageManager"]).service("fetch", ["$http", "$q"
             };
             this.fromCacheOrService = function (options) {
                 var deferred = _this.$q.defer();
-                var cachedData = _this.localStorageManager.get({ name: options.url });
+                var cachedData = _this.localStorageManager.get({ name: _this.getCacheKey(options) });
                 if (!cachedData) {
                     _this.fromService(options).then(function (results) {
                         deferred.resolve(results);
@@ -24,18 +24,11 @@ angular.module("fetch", ["localStorageManager"]).service("fetch", ["$http", "$q"
                     });
                 }
                 else {
-                    deferred.resolve(cachedData.value);
+                    deferred.resolve(cachedData);
                 }
                 return deferred.promise;
             };
+            this.getCacheKey = function (options) { return options.params ? options.url + JSON.stringify(options.params) : options.url; };
         }
-        Object.defineProperty(fetch.prototype, "bodyNativeElement", {
-            get: function () {
-                return document.getElementsByTagName("body")[0];
-            },
-            enumerable: true,
-            configurable: true
-        });
         return fetch;
     })()]);
-//# sourceMappingURL=fetch.js.map

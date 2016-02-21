@@ -2,5 +2,9 @@
 {
     public class Language: BaseTechnology
     {
+        public Language()
+        {
+            this.TechnologyType = TechnologyType.Language;
+        }
     }
 }

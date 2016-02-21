@@ -2,5 +2,9 @@
 {
     public class Technique: BaseTechnology
     {
+        public Technique()
+        {
+            this.TechnologyType = TechnologyType.Technique;
+        }
     }
 }

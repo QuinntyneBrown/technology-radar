@@ -3,7 +3,7 @@
 
     get() {
         let deferred = this.$q.defer();
-        this.fetch.fromService({ method: "GET", url: this.baseUri + "/get" })
+        this.fetch.fromCacheOrService({ method: "GET", url: this.baseUri + "/get" })
             .then(results => deferred.resolve(results.data));
         return deferred.promise;
     };

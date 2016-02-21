@@ -2,6 +2,9 @@
 {
     public class Framework: BaseTechnology
     {
-
+        public Framework()
+        {
+            this.TechnologyType = TechnologyType.Framework;
+        }
     }
 }

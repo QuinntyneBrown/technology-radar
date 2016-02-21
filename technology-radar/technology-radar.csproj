@@ -386,6 +386,12 @@
     <Content Include="wwwroot\components\technologies.html">
       <DependentUpon>technologies.ts</DependentUpon>
     </Content>
+    <Content Include="wwwroot\components\technology-tile.css">
+      <DependentUpon>technology-tile.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\technology-tile.html">
+      <DependentUpon>technology-tile.ts</DependentUpon>
+    </Content>
     <Content Include="wwwroot\components\technology.css">
       <DependentUpon>technology.ts</DependentUpon>
     </Content>
@@ -486,6 +492,7 @@
     <Compile Include="Server\Dtos\ToolDto.cs" />
     <Compile Include="Server\Models\BaseEntity.cs" />
     <Compile Include="Server\Models\BaseTechnology.cs" />
+    <Compile Include="Server\Models\TechnologyType.cs" />
     <Compile Include="Server\Models\Framework.cs" />
     <Compile Include="Server\Models\ILoggable.cs" />
     <Compile Include="Server\Models\Language.cs" />
@@ -570,7 +577,9 @@
     <TypeScriptCompile Include="wwwroot\components\technique-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\technique-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\technologies.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technology-tile.ts" />
     <TypeScriptCompile Include="wwwroot\components\technology.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technology-type.ts" />
     <TypeScriptCompile Include="wwwroot\components\tool-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\tool-list.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\frameworkReducers.ts" />

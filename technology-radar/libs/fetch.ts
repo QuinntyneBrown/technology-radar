@@ -1,12 +1,11 @@
 ﻿angular.module("fetch", ["localStorageManager"]).service("fetch", ["$http","$q","localStorageManager", class fetch {
 
     constructor(private $http: ng.IHttpService, private $q: ng.IQService, private localStorageManager) { }
-
-    public inMemoryCache: any = {};
-
-    public fromService = (options: any) => {
+    
+    fromService = (options: any) => {
         var deferred = this.$q.defer();
         this.$http({ method: options.method, url: options.url, data: options.data, params: options.params, headers: options.headers }).then((results) => {
+            this.localStorageManager.put({ name: this.getCacheKey(options), value: results });
             deferred.resolve(results);
         }).catch((error) => {
 
@@ -14,9 +13,9 @@
         return deferred.promise;
     }
 
-    public fromCacheOrService = (options: any) => {
+    fromCacheOrService = (options: any) => {
         var deferred = this.$q.defer();
-        var cachedData = this.localStorageManager.get({ name: options.url });
+        var cachedData = this.localStorageManager.get({ name: this.getCacheKey(options) });
         if (!cachedData) {
             this.fromService(options).then((results) => {
                 deferred.resolve(results);
@@ -24,13 +23,11 @@
                 deferred.reject(error);
             });
         } else {
-            deferred.resolve(cachedData.value);
+            deferred.resolve(cachedData);
         }
         return deferred.promise;
     }
 
-    public get bodyNativeElement() {
-        return document.getElementsByTagName("body")[0];
-    }
-
+    getCacheKey = options => options.params ? options.url + JSON.stringify(options.params) : options.url;
+    
 }]);

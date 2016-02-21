@@ -67,6 +67,7 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "lo
         .when("/platforms", { template: "<technologies></technologies>" })
         .when("/techniques", { template: "<technologies></technologies>" })
         .when("/tools", { template: "<technologies></technologies>" })
+        .when('/technology/:technology/:id', { template: "<technology></technology>" })
 
         .otherwise("/");
 

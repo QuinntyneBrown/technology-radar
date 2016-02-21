@@ -1,8 +1,4 @@
 ﻿<div class="technology">
     <h1>{{ ::vm.title }}</h1>
-    <div data-ng-repeat="technology in vm.entities">
-        <h1>{{::technology.name}}</h1>
-        <div ng-bind-html="technology.abstract"></div>
-        <div ng-bind-html="technology.description"></div>
-    </div>
+    <technology-tile technology="technology" data-ng-repeat="technology in vm.entities"></technology-tile>
 </div>

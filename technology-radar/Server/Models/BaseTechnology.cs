@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Chloe.Server.Models
 {
-    public class BaseTechnology: BaseEntity
+    public class BaseTechnology : BaseEntity
     {
         public BaseTechnology()
         {
@@ -13,5 +13,6 @@ namespace Chloe.Server.Models
         public string Description { get; set; }
         public int Rating { get; set; }
         public ICollection<Rating> Ratings { get; set; }
+        public TechnologyType TechnologyType { get; set;}
     }
 }

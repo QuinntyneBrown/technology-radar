@@ -1,0 +1,21 @@
+﻿.technologyTile {
+    float:left;
+    position:relative;
+    width:200px;
+    height:75px;
+    margin:7.5px;
+    background-color:#EEE;
+    text-align:center;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+.technologyTile h1 {
+    font-weight:100;
+    font-size:1.5em;
+    line-height:1.5em;
+}
+
+.technologyTile:hover h1 {
+    font-weight: 400;
+}

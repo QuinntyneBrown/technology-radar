@@ -87,12 +87,18 @@ app.component({
 });
 
 app.component({
-    route: '/technology/:type/:id',
+    route: '/technology/:technology/:id',
     templateUrl: "wwwroot/components/technology.html",
     component: components.TechnologyComponent,
     selector: "technology"
 });
 
+app.component({
+    templateUrl: "wwwroot/components/technology-tile.html",
+    component: components.TechnologyTileComponent,
+    selector: "technology-tile",
+    inputs:['technology']
+});
 
 app.component({
     templateUrl: "wwwroot/components/app.html",
