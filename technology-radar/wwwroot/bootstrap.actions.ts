@@ -8,3 +8,4 @@ app.service("languageActionCreator", ["dispatcher", "guid", "languageService", a
 app.service("platformActionCreator", ["dispatcher", "guid", "platformService", actions.PlatformActionCreator]);
 app.service("techniqueActionCreator", ["dispatcher", "guid", "techniqueService", actions.TechniqueActionCreator]);
 app.service("toolActionCreator", ["dispatcher", "guid", "toolService", actions.ToolActionCreator]);
+app.service("tabActionCreator", ["dispatcher", actions.TabActionCreator]);

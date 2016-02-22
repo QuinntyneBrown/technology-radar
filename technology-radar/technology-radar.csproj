@@ -368,6 +368,10 @@
     <Content Include="wwwroot\components\platform-list.html">
       <DependentUpon>platform-list.ts</DependentUpon>
     </Content>
+    <Content Include="wwwroot\components\tab.css" />
+    <Content Include="wwwroot\components\tab.html" />
+    <Content Include="wwwroot\components\tabs.css" />
+    <Content Include="wwwroot\components\tabs.html" />
     <Content Include="wwwroot\components\technique-editor.css">
       <DependentUpon>technique-editor.ts</DependentUpon>
     </Content>
@@ -555,6 +559,7 @@
     <TypeScriptCompile Include="wwwroot\actions\language-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\platform-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\rating-actions.ts" />
+    <TypeScriptCompile Include="wwwroot\actions\tab-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\tag-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\technique-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\tool-actions.ts" />
@@ -594,6 +599,8 @@
     <TypeScriptCompile Include="libs\safeDigest.ts" />
     <TypeScriptCompile Include="wwwroot\components\platform-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\platform-editor.ts" />
+    <TypeScriptCompile Include="wwwroot\components\tab.ts" />
+    <TypeScriptCompile Include="wwwroot\components\tabs.ts" />
     <TypeScriptCompile Include="wwwroot\components\technique-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\technique-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\technologies.ts" />
@@ -607,6 +614,7 @@
     <TypeScriptCompile Include="wwwroot\reducers\index.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\languageReducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\platformReducers.ts" />
+    <TypeScriptCompile Include="wwwroot\reducers\tab-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\tag-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\techniqueReducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\toolReducers.ts" />

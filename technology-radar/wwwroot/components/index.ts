@@ -17,6 +17,10 @@ export * from "./platform-editor";
 export * from "./technique-list";
 export * from "./technique-editor";
 
+export * from "./tabs";
+export * from "./tab";
+
+
 export * from "./tool-list";
 export * from "./tool-editor";
 

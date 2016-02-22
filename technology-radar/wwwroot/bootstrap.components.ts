@@ -133,3 +133,24 @@ app.component({
     selector: "home",
     providers:["$location"]
 });
+
+app.component({
+    templateUrl: "wwwroot/components/tab.html",
+    component: components.TabComponent,
+    selector: "tab"
+});
+
+app.component({
+    templateUrl: "wwwroot/components/tabs.html",
+    component: components.TabsComponent,
+    selector: "tabs",
+    transclude: {
+        'title': '?tabTitle',
+        'content': '?tabContent'
+    },
+    providers: [
+        '$attrs',
+        '$element',
+        'tabActionCreator'
+    ]
+});
