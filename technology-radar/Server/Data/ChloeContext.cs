@@ -25,6 +25,10 @@ namespace Chloe.Server.Data
         public DbSet<Technique> Techniques { get; set; }
         public DbSet<Tool> Tools { get; set; }
 
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<TechnologyArticle> TechnologyArticles { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
      

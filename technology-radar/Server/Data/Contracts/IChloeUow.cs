@@ -11,6 +11,9 @@ namespace Chloe.Server.Data.Contracts
         IRepository<Platform> Platforms { get; }
         IRepository<Technique> Techniques { get; }
         IRepository<Tool> Tools { get; }
+
+        IRepository<Article> Articles { get; }
+        IRepository<TechnologyArticle> TechnologyArticles { get; }
         void SaveChanges();
     }
 }

@@ -35,6 +35,10 @@ namespace Chloe.Server.Data
         public IRepository<Technique> Techniques { get { return GetStandardRepo<Technique>(); } }
         public IRepository<Tool> Tools { get { return GetStandardRepo<Tool>(); } }
 
+        public IRepository<Article> Articles { get { return GetStandardRepo<Article>(); } }
+        public IRepository<TechnologyArticle> TechnologyArticles { get { return GetStandardRepo<TechnologyArticle>(); } }
+        public IRepository<Tag> Tags { get { return GetStandardRepo<Tag>(); } }
+
         protected void ConfigureDbContext(IDbContext dbContext)
         {
             dbContext.Configuration.ProxyCreationEnabled = false;

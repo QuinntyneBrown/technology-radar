@@ -453,6 +453,7 @@
     <Compile Include="Server\Config\ConfigurationProvider.cs" />
     <Compile Include="Server\Config\Contracts\IAuthConfiguration.cs" />
     <Compile Include="Server\Config\Contracts\IConfigurationProvider.cs" />
+    <Compile Include="Server\Controllers\ArticleController.cs" />
     <Compile Include="Server\Controllers\FrameworkController.cs" />
     <Compile Include="Server\Controllers\LanguageController.cs" />
     <Compile Include="Server\Controllers\PlatformController.cs" />
@@ -460,6 +461,7 @@
     <Compile Include="Server\Controllers\TechniqueController.cs" />
     <Compile Include="Server\Controllers\ToolController.cs" />
     <Compile Include="Server\Controllers\UserController.cs" />
+    <Compile Include="Server\Controllers\YouTubeVideoController.cs" />
     <Compile Include="Server\Data\ChloeContext.cs" />
     <Compile Include="Server\Data\ChloeUow.cs" />
     <Compile Include="Server\Data\Contracts\IChloeUow.cs" />
@@ -469,6 +471,9 @@
     <Compile Include="Server\Data\EFRepository.cs" />
     <Compile Include="Server\Data\RepositoryProvider.cs" />
     <Compile Include="Server\Data\RespositoryFactories.cs" />
+    <Compile Include="Server\Dtos\ArticleAddOrUpdateRequestDto.cs" />
+    <Compile Include="Server\Dtos\ArticleAddOrUpdateResponseDto.cs" />
+    <Compile Include="Server\Dtos\ArticleDto.cs" />
     <Compile Include="Server\Dtos\FrameworkAddOrUpdateRequestDto.cs" />
     <Compile Include="Server\Dtos\FrameworkAddOrUpdateResponseDto.cs" />
     <Compile Include="Server\Dtos\FrameworkDto.cs" />
@@ -490,8 +495,12 @@
     <Compile Include="Server\Dtos\ToolAddOrUpdateRequestDto.cs" />
     <Compile Include="Server\Dtos\ToolAddOrUpdateResponseDto.cs" />
     <Compile Include="Server\Dtos\ToolDto.cs" />
+    <Compile Include="Server\Dtos\YouTubeVideoDto.cs" />
+    <Compile Include="Server\Models\Article.cs" />
     <Compile Include="Server\Models\BaseEntity.cs" />
     <Compile Include="Server\Models\BaseTechnology.cs" />
+    <Compile Include="Server\Models\Tag.cs" />
+    <Compile Include="Server\Models\TechnologyArticle.cs" />
     <Compile Include="Server\Models\TechnologyType.cs" />
     <Compile Include="Server\Models\Framework.cs" />
     <Compile Include="Server\Models\ILoggable.cs" />
@@ -500,9 +509,13 @@
     <Compile Include="Server\Models\Rating.cs" />
     <Compile Include="Server\Models\Role.cs" />
     <Compile Include="Server\Models\Technique.cs" />
+    <Compile Include="Server\Models\TechnologyYouTubeVideo.cs" />
     <Compile Include="Server\Models\Tool.cs" />
     <Compile Include="Server\Models\User.cs" />
+    <Compile Include="Server\Models\YouTubeVideo.cs" />
+    <Compile Include="Server\Services\ArticleService.cs" />
     <Compile Include="Server\Services\CacheProvider.cs" />
+    <Compile Include="Server\Services\Contracts\IArticleService.cs" />
     <Compile Include="Server\Services\Contracts\ICache.cs" />
     <Compile Include="Server\Services\Contracts\ICacheProvider.cs" />
     <Compile Include="Server\Services\Contracts\IEncryptionService.cs" />
@@ -510,10 +523,12 @@
     <Compile Include="Server\Services\Contracts\IIdentityService.cs" />
     <Compile Include="Server\Services\Contracts\ILanguageService.cs" />
     <Compile Include="Server\Services\Contracts\IPlatformService.cs" />
+    <Compile Include="Server\Services\Contracts\ITagService.cs" />
     <Compile Include="Server\Services\Contracts\ITechniqueService.cs" />
     <Compile Include="Server\Services\Contracts\ITechnologyService.cs" />
     <Compile Include="Server\Services\Contracts\IToolService.cs" />
     <Compile Include="Server\Services\Contracts\IUserService.cs" />
+    <Compile Include="Server\Services\Contracts\IYouTubeVideoService.cs" />
     <Compile Include="Server\Services\Contracts\MemoryCache.cs" />
     <Compile Include="Server\Services\EncryptionService.cs" />
     <Compile Include="Server\Services\FrameworkService.cs" />
@@ -521,10 +536,12 @@
     <Compile Include="Server\Services\LanguageService.cs" />
     <Compile Include="Server\Services\PlatformService.cs" />
     <Compile Include="Server\Services\StreamHelper.cs" />
+    <Compile Include="Server\Services\TagService.cs" />
     <Compile Include="Server\Services\TechniqueService.cs" />
     <Compile Include="Server\Services\TechnologyService.cs" />
     <Compile Include="Server\Services\ToolService.cs" />
     <Compile Include="Server\Services\UserService.cs" />
+    <Compile Include="Server\Services\YouTubeVideoService.cs" />
     <Compile Include="Server\UnityConfiguration.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -533,10 +550,12 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="libs\responsivir.ts" />
+    <TypeScriptCompile Include="wwwroot\actions\article-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\framework-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\language-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\platform-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\rating-actions.ts" />
+    <TypeScriptCompile Include="wwwroot\actions\tag-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\technique-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\tool-actions.ts" />
     <TypeScriptCompile Include="libs\addOrUpdate.ts" />
@@ -553,6 +572,7 @@
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="wwwroot\actions\index.ts" />
     <TypeScriptCompile Include="wwwroot\actions\user-actions.ts" />
+    <TypeScriptCompile Include="wwwroot\actions\you-tube-video-actions.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.actions.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.components.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.reducers.ts" />
@@ -582,21 +602,27 @@
     <TypeScriptCompile Include="wwwroot\components\technology-type.ts" />
     <TypeScriptCompile Include="wwwroot\components\tool-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\tool-list.ts" />
+    <TypeScriptCompile Include="wwwroot\reducers\article-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\frameworkReducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\index.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\languageReducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\platformReducers.ts" />
+    <TypeScriptCompile Include="wwwroot\reducers\tag-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\techniqueReducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\toolReducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\userReducers.ts" />
+    <TypeScriptCompile Include="wwwroot\reducers\you-tube-video-reducers.ts" />
+    <TypeScriptCompile Include="wwwroot\services\article-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\framework-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\index.ts" />
     <TypeScriptCompile Include="libs\store.ts" />
     <TypeScriptCompile Include="wwwroot\services\language-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\platform-service.ts" />
+    <TypeScriptCompile Include="wwwroot\services\tag-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\technique-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\tool-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\user-service.ts" />
+    <TypeScriptCompile Include="wwwroot\services\you-tube-video-service.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

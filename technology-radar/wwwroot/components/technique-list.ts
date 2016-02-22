@@ -1,4 +1,5 @@
 ﻿export class TechniqueListComponent {
+
     constructor(private techniqueActionCreator) { }
 
     storeOnChange = state => this.entities = state.techniques;
