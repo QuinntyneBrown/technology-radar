@@ -26,12 +26,6 @@
         }
     }
     
-    onInit = () => {
-        // show all the titles
-        //set first one to selected
-        
-    }
-
     get tabTitles() { return this.$element.find("tab-title"); }
 
     get tabContents() { return this.$element.find("tab-content"); }

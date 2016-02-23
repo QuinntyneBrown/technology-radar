@@ -3,8 +3,6 @@
 
     storeOnChange = state => { }
 
-    onInit = () => this.tabActionCreator.tabChildLoaded();
-
-
+    ngOnInit = () => this.tabActionCreator.tabChildLoaded();
     
 }

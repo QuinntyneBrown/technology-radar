@@ -1,12 +1,16 @@
-﻿export class LanguageEditorComponent {
-    constructor(private languageActionCreator) { }
+﻿import { AddLanguageAction } from "../actions";
 
-    storeOnChange = state => {
-        //this.id = null;
-        //this.name = null;
-        //this.rating = null;
-        //this.description = null;
-        //this.abstract = null;
+export class LanguageEditorComponent {
+    constructor(private invokeAsync, private languageActionCreator) { }
+
+    storeOnChange = state=> {
+        if (state.lastTriggeredByAction === AddLanguageAction) {
+            this.id = null;
+            this.name = null;
+            this.rating = null;
+            this.description = null;
+            this.abstract = null;
+        }
     }
 
     addOrUpdate = () => this.languageActionCreator.addOrUpdate({
@@ -16,7 +20,7 @@
         rating: this.rating,
         abstract: this.abstract
     });
-
+            
     remove = () => this.languageActionCreator.remove({ id: this.id });
 
     id;

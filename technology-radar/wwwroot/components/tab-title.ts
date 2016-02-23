@@ -3,7 +3,7 @@
     
     storeOnChange = state => { }
 
-    onInit = () => this.tabActionCreator.tabChildLoaded();
+    ngOnInit = () => this.tabActionCreator.tabChildLoaded();
 
     onTabTitleClick = () => this.tabActionCreator.setCurrentTab({
         tabName: this.$attrs.$$element[0].getAttribute("tabs-name"),

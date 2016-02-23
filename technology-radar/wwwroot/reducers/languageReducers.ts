@@ -6,6 +6,7 @@ import { addOrUpdate } from "../../libs";
 
 export const addLanguageReducer = (state, action) => {
     if (action instanceof AddLanguageAction) {
+        state.lastTriggeredByAction = AddLanguageAction;
         addOrUpdate({ items: state.languages, item: action.entity });
     }
     return state;

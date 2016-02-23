@@ -29,7 +29,7 @@ app.component({
     templateUrl: "wwwroot/components/language-editor.html",
     component: components.LanguageEditorComponent,
     selector: "language-editor",
-    providers: ["languageActionCreator"]
+    providers: ["invokeAsync","languageActionCreator"]
 });
 
 app.component({
