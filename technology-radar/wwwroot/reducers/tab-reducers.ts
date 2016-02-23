@@ -1,8 +1,9 @@
 ﻿import { SetCurrentTabAction } from "../actions";
 
 export const setCurrentTabReducer = (state, action) => {
-    if (action instanceof SetCurrentTabAction)        
-        state[action.tabName + "-tab-index"] = action.index;
+    if (action instanceof SetCurrentTabAction)
+        state.tabIndex[action.tabName] = action.index;
+        
     
     return state;
 }

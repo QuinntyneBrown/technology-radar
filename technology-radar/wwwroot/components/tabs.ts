@@ -3,14 +3,33 @@
         
     }
 
-    storeOnChange = state => {  }
+    storeOnChange = state => {        
+        this.currentIndex = state.tabIndex[this.$attrs["tabsName"]] || 0;       
+        var titleElements = angular.element(this.$element[0].querySelectorAll('.tab-title'));
+        for (var i = 0; i < titleElements.length; i++) {
+            
+            titleElements[i].setAttribute("index", i.toString());
+            titleElements[i].setAttribute("tabs-name", this.$attrs["tabsName"]);
+            if (i != this.currentIndex) {
+                titleElements[i].classList.remove("tabs-titleselected");
+            } else {
+                titleElements[i].classList.add("tabs-titleselected")
+            }
+        }
+        var contentElements = angular.element(this.$element[0].querySelectorAll('.tab-content'));         
+        for (var i = 0; i < contentElements.length; i++) {
+            if (i != this.currentIndex) {
+                contentElements[i].classList.add("tabs-contentInActive");
+            } else {
+                contentElements[i].classList.remove("tabs-contentInActive")
+            }
+        }
+    }
     
     onInit = () => {
         // show all the titles
         //set first one to selected
-
-        // hide all the contents except the first one
-        this.tabContents[0].parentElement.removeChild(this.tabContents[0]);
+        
     }
 
     get tabTitles() { return this.$element.find("tab-title"); }

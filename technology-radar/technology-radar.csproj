@@ -368,10 +368,24 @@
     <Content Include="wwwroot\components\platform-list.html">
       <DependentUpon>platform-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\tab.css" />
-    <Content Include="wwwroot\components\tab.html" />
-    <Content Include="wwwroot\components\tabs.css" />
-    <Content Include="wwwroot\components\tabs.html" />
+    <Content Include="wwwroot\components\tab-content.css">
+      <DependentUpon>tab-content.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\tab-content.html">
+      <DependentUpon>tab-content.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\tab-title.css">
+      <DependentUpon>tab-title.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\tab-title.html">
+      <DependentUpon>tab-title.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\tabs.css">
+      <DependentUpon>tabs.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\tabs.html">
+      <DependentUpon>tabs.ts</DependentUpon>
+    </Content>
     <Content Include="wwwroot\components\technique-editor.css">
       <DependentUpon>technique-editor.ts</DependentUpon>
     </Content>
@@ -599,7 +613,8 @@
     <TypeScriptCompile Include="libs\safeDigest.ts" />
     <TypeScriptCompile Include="wwwroot\components\platform-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\platform-editor.ts" />
-    <TypeScriptCompile Include="wwwroot\components\tab.ts" />
+    <TypeScriptCompile Include="wwwroot\components\tab-content.ts" />
+    <TypeScriptCompile Include="wwwroot\components\tab-title.ts" />
     <TypeScriptCompile Include="wwwroot\components\tabs.ts" />
     <TypeScriptCompile Include="wwwroot\components\technique-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\technique-list.ts" />

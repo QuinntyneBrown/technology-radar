@@ -1,3 +1,10 @@
-﻿.tabs .hidden-content {
+﻿
+
+.tabs-contentInActive {
     display:none;
 }
+
+.tabs-titleselected {
+    text-decoration:underline;
+}
+

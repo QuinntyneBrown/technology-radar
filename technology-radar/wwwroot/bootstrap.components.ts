@@ -135,9 +135,19 @@ app.component({
 });
 
 app.component({
-    templateUrl: "wwwroot/components/tab.html",
-    component: components.TabComponent,
-    selector: "tab"
+    templateUrl: "wwwroot/components/tab-content.html",
+    component: components.TabContentComponent,
+    transclude: true,
+    selector: "tab-content",
+    providers: ['tabActionCreator']
+});
+
+app.component({
+    templateUrl: "wwwroot/components/tab-title.html",
+    component: components.TabTitleComponent,
+    transclude: true,
+    selector: "tab-title",
+    providers: ["$attrs","tabActionCreator"]
 });
 
 app.component({

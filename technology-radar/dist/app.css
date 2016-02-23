@@ -10,9 +10,6 @@ body {
     padding-left:30px;
 }
 
-[ui-tinymce] {
-    height:200px;
-}
 .footer {
     min-height:200px;
     background-color:#DB4886;
@@ -90,9 +87,20 @@ body {
 
 
 
-.tabs .hidden-content {
+.tab-title {
+    display:inline;
+}
+
+
+.tabs-contentInActive {
     display:none;
 }
+
+.tabs-titleselected {
+    text-decoration:underline;
+}
+
+
 
 
 

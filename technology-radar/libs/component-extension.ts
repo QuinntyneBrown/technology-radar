@@ -81,7 +81,7 @@ angular.module = function () {
                         }
                     }
 
-                    var $injector = element.injector();
+                    var $injector = angular.element(document.body.childNodes[0]).injector();
                     var store = $injector.get("store");
                     var safeDigest = $injector.get("safeDigest");
 

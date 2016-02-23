@@ -46,11 +46,7 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "lo
                 techniques: [],
                 tools: [],
                 youTubeVideos: [],
-                frameworkEditorTabIndex: 0,
-                languageEditorTabIndex: 0,
-                platformEditorTabIndex: 0,
-                techniqueEditorTabIndex: 0,
-                toolEditorTabIndex: 0,
+                tabIndex: {},
                 currentUser: null
             }
         });

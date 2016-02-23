@@ -2,11 +2,11 @@
     constructor(private languageActionCreator) { }
 
     storeOnChange = state => {
-        this.id = null;
-        this.name = null;
-        this.rating = null;
-        this.description = null;
-        this.abstract = null;
+        //this.id = null;
+        //this.name = null;
+        //this.rating = null;
+        //this.description = null;
+        //this.abstract = null;
     }
 
     addOrUpdate = () => this.languageActionCreator.addOrUpdate({

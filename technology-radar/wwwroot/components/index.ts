@@ -18,8 +18,8 @@ export * from "./technique-list";
 export * from "./technique-editor";
 
 export * from "./tabs";
-export * from "./tab";
-
+export * from "./tab-content";
+export * from "./tab-title";
 
 export * from "./tool-list";
 export * from "./tool-editor";
