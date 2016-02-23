@@ -34,11 +34,16 @@ var Store = (function (_super) {
             }
             _this.state = _this.setLastTriggeredByActionId(_this.state, action);
             _this.localStorageManager.put({ name: "initialState", value: _this.state });
+            console.log(_this.functionToString(action.__proto__.constructor));
+            console.log(_this.state.token);
             _this.onNext(_this.state);
         };
         this.setLastTriggeredByActionId = function (state, action) {
             state.lastTriggeredByActionId = action.id;
             return state;
+        };
+        this.functionToString = function (fn) {
+            return fn.toString();
         };
         this.state = initialState;
         dispatcher.subscribe(function (action) { return _this.onDispatcherNext(action); });

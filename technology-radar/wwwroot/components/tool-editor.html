@@ -3,12 +3,21 @@
     <div>
         <input type="text" placeholder="Tool Name" data-ng-model="vm.name" />
     </div>
-    <div>
-        <textarea ui-tinymce ng-model="vm.abstract"></textarea>
-    </div>
-    <div>
-        <textarea ui-tinymce ng-model="vm.description"></textarea>
-    </div>
+    <tabs tabs-name="tool-editor">
+        <tab-title>Abstract</tab-title>
+        <tab-content>
+            <div>
+                <textarea ui-tinymce ng-model="vm.abstract"></textarea>
+            </div>
+        </tab-content>
+
+        <tab-title>Description</tab-title>
+        <tab-content>
+            <div>
+                <textarea ui-tinymce ng-model="vm.description"></textarea>
+            </div>
+        </tab-content>
+    </tabs>
     <div>
         <button data-ng-click="vm.addOrUpdate()">Save</button>
     </div>

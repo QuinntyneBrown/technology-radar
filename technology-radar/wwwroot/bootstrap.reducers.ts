@@ -27,4 +27,5 @@ var app = (<any>angular.module("reducers", ["store"]))
         reducersProvider.configure(reducers.removeToolReducer);
 
         reducersProvider.configure(reducers.setCurrentTabReducer);
+        reducersProvider.configure(reducers.tabChildLoadedReducer);
 }]);

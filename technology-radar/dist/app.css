@@ -4,6 +4,7 @@ body {
     margin:0;
     padding:0;
 }
+
 .mainContent {
     min-height:400px;
     padding-right:30px;
@@ -14,7 +15,22 @@ body {
     min-height:200px;
     background-color:#DB4886;
     color:#FFF;
+    padding-right:30px;
+    padding-left:30px;
+    padding-top:30px;
 }
+
+
+.footer a,
+.footer a:link,
+.footer a:visited,
+.footer a:hover {
+    display:block;
+    color:white;
+    text-decoration:none;
+    line-height:1.5em;
+}
+
 
 
 

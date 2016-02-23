@@ -35,7 +35,9 @@ var app = (<any>angular.module("app", [
 
 app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "localStorageManagerProvider", ($routeProvider, apiEndpointProvider, initialStateProvider, localStorageManagerProvider) => {
 
-    if (!localStorageManagerProvider.get({ name: "initialState" }))
+    var localStorageInitialState = localStorageManagerProvider.get({ name: "initialState" });
+
+    if (!localStorageInitialState)
         localStorageManagerProvider.put({
             name: "initialState", value: {
                 articles:[],
