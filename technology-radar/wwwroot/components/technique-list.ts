@@ -7,8 +7,7 @@
     entities;
 
     remove = entity => this.techniqueActionCreator.remove({ entity: entity });
-
-
+    
     static canActivate = () => [
         "techniqueActionCreator", "invokeAsync",
         (techniqueActionCreator, invokeAsync) => invokeAsync(techniqueActionCreator.all)

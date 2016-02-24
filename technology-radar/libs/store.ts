@@ -2,6 +2,7 @@
 
 export interface IAppState {
     lastTriggeredByActionId: any;
+    lastTriggeredByAction: any;
 }
 
 export type AppState = {
@@ -37,19 +38,18 @@ class Store<T> extends Rx.BehaviorSubject<T> implements IStore {
         dispatcher.subscribe(action => this.onDispatcherNext(action));
     }
 
-    onDispatcherNext = (action) => {
+    onDispatcherNext = (action) => {        
+        this.state = this.setLastTriggeredByActionId(this.state, action);
         for (var i = 0; i < this.reducers.length; i++) {
             this.state = this.reducers[i](this.state, action);
-        }
-        this.state = this.setLastTriggeredByActionId(this.state, action);
+        }        
         this.localStorageManager.put({ name: "initialState", value: this.state });
-        console.log(this.functionToString(action.__proto__.constructor));
-        console.log((<any>this.state).token);
         this.onNext(this.state);
     }
 
     setLastTriggeredByActionId = (state, action) => {
         state.lastTriggeredByActionId = action.id;
+        state.lastTriggeredByAction = null;
         return state;
     }
 

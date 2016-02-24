@@ -14,7 +14,7 @@ app.component({
     templateUrl: "wwwroot/components/framework-editor.html",
     component: components.FrameworkEditorComponent,
     selector: "framework-editor",
-    providers: ["frameworkActionCreator"]
+    providers: ["invokeAsync", "frameworkActionCreator"]
 });
 
 app.component({
@@ -44,7 +44,7 @@ app.component({
     templateUrl: "wwwroot/components/platform-editor.html",
     component: components.PlatformEditorComponent,
     selector: "platform-editor",
-    providers: ["platformActionCreator"]
+    providers: ["invokeAsync", "platformActionCreator"]
 });
 
 
@@ -60,7 +60,7 @@ app.component({
     templateUrl: "wwwroot/components/technique-editor.html",
     component: components.TechniqueEditorComponent,
     selector: "technique-editor",
-    providers: ["techniqueActionCreator"]
+    providers: ["invokeAsync", "techniqueActionCreator"]
 });
 
 app.component({
@@ -75,7 +75,7 @@ app.component({
     templateUrl: "wwwroot/components/tool-editor.html",
     component: components.ToolEditorComponent,
     selector: "tool-editor",
-    providers: ["toolActionCreator"]
+    providers: ["invokeAsync", "toolActionCreator"]
 });
 
 app.component({
@@ -132,6 +132,20 @@ app.component({
     component: components.HomeComponent,
     selector: "home",
     providers:["$location"]
+});
+
+app.component({
+    templateUrl: "wwwroot/components/form-control.html",
+    componentName: "formControlComponent",
+    component: components.FormControlComponent,
+    selector: "form-control"
+});
+
+app.component({
+    templateUrl: "wwwroot/components/input-field.html",
+    componentName: "inputFieldComponent",
+    component: components.InputFieldComponent,
+    selector: "input-field"
 });
 
 app.component({

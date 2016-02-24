@@ -1,21 +1,24 @@
 ﻿export class PlatformEditorComponent {
-    constructor(private platformActionCreator) { }
+    constructor(private invokeAsync, private platformActionCreator) { }
 
-    storeOnChange = state => {
-        this.id = null;
-        this.name = null;
-        this.rating = null;
-        this.description = null;
-        this.abstract = null;
-    }
-
-    addOrUpdate = () => this.platformActionCreator.addOrUpdate({
-        id: this.id,
-        name: this.name,
-        description: this.description,
-        rating: this.rating,
-        abstract: this.abstract
-    });
+    addOrUpdate = () => {
+        this.invokeAsync({
+            action: this.platformActionCreator.addOrUpdate,
+            params: {
+                id: this.id,
+                name: this.name,
+                description: this.description,
+                rating: this.rating,
+                abstract: this.abstract
+            }
+        }).then(() => {
+            this.id = null;
+            this.name = null;
+            this.rating = null;
+            this.description = null;
+            this.abstract = null;
+        });
+    } 
 
     remove = () => this.platformActionCreator.remove({ id: this.id });
 

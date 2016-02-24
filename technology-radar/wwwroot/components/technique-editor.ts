@@ -1,21 +1,24 @@
 ﻿export class TechniqueEditorComponent {
-    constructor(private techniqueActionCreator) { }
+    constructor(private invokeAsync, private techniqueActionCreator) { }
 
-    storeOnChange = state => {
-        this.id = null;
-        this.name = null;
-        this.rating = null;
-        this.description = null;
-        this.abstract = null;
-    }
-
-    addOrUpdate = () => this.techniqueActionCreator.addOrUpdate({
-        id: this.id,
-        name: this.name,
-        description: this.description,
-        rating: this.rating,
-        abstract: this.abstract
-    });
+    addOrUpdate = () => {
+        this.invokeAsync({
+            action: this.techniqueActionCreator.addOrUpdate,
+            params: {
+                id: this.id,
+                name: this.name,
+                description: this.description,
+                rating: this.rating,
+                abstract: this.abstract
+            }
+        }).then(() => {
+            this.id = null;
+            this.name = null;
+            this.rating = null;
+            this.description = null;
+            this.abstract = null;
+        });
+    } 
 
     remove = () => this.techniqueActionCreator.remove({ id: this.id });
 

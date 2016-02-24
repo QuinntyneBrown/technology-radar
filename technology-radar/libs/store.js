@@ -29,17 +29,16 @@ var Store = (function (_super) {
         this.localStorageManager = localStorageManager;
         this.reducers = reducers;
         this.onDispatcherNext = function (action) {
+            _this.state = _this.setLastTriggeredByActionId(_this.state, action);
             for (var i = 0; i < _this.reducers.length; i++) {
                 _this.state = _this.reducers[i](_this.state, action);
             }
-            _this.state = _this.setLastTriggeredByActionId(_this.state, action);
             _this.localStorageManager.put({ name: "initialState", value: _this.state });
-            console.log(_this.functionToString(action.__proto__.constructor));
-            console.log(_this.state.token);
             _this.onNext(_this.state);
         };
         this.setLastTriggeredByActionId = function (state, action) {
             state.lastTriggeredByActionId = action.id;
+            state.lastTriggeredByAction = null;
             return state;
         };
         this.functionToString = function (fn) {

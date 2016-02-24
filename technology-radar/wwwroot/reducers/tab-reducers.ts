@@ -3,6 +3,7 @@
 export const setCurrentTabReducer = (state, action) => {
     if (action instanceof SetCurrentTabAction) {
         state.tabIndex[action.tabName] = action.index;
+        state.lastTriggeredByAction = SetCurrentTabAction;
     }    
     return state;
 }

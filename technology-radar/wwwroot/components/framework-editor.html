@@ -1,11 +1,16 @@
 ﻿<div class="frameworkEditor">
-    <h1>Create Framework</h1>
-
-    <div>
-        <input type="text" placeholder="Framework Name" data-ng-model="vm.name" />
-    </div>
+    <h1 data-ng-if="!vm.id">Create Framework <span data-ng-if="vm.name.length > 0">: {{ vm.name }}</span></h1>
 
     <tabs tabs-name="framework-editor">
+
+        <tab-title>General</tab-title>
+
+        <tab-content>
+            <div>
+                <input type="text" placeholder="Framework Name" data-ng-model="vm.name" />
+            </div>
+        </tab-content>
+
         <tab-title>Abstract</tab-title>
 
         <tab-content>
@@ -19,6 +24,12 @@
             <div>
                 <textarea ui-tinymce ng-model="vm.description"></textarea>
             </div>
+        </tab-content>
+
+        <tab-title>Tags</tab-title>
+
+        <tab-content>
+
         </tab-content>
     </tabs>
 

@@ -1,25 +1,24 @@
-﻿import { AddLanguageAction } from "../actions";
-
-export class LanguageEditorComponent {
+﻿export class LanguageEditorComponent {
     constructor(private invokeAsync, private languageActionCreator) { }
 
-    storeOnChange = state=> {
-        if (state.lastTriggeredByAction === AddLanguageAction) {
+    addOrUpdate = () => {
+        this.invokeAsync({
+            action: this.languageActionCreator.addOrUpdate,
+            params: {
+                id: this.id,
+                name: this.name,
+                description: this.description,
+                rating: this.rating,
+                abstract: this.abstract
+            }
+        }).then(() => {
             this.id = null;
             this.name = null;
             this.rating = null;
             this.description = null;
             this.abstract = null;
-        }
-    }
-
-    addOrUpdate = () => this.languageActionCreator.addOrUpdate({
-        id: this.id,
-        name: this.name,
-        description: this.description,
-        rating: this.rating,
-        abstract: this.abstract
-    });
+        });
+    } 
             
     remove = () => this.languageActionCreator.remove({ id: this.id });
 

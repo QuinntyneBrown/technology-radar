@@ -6,7 +6,7 @@ body {
 }
 
 .mainContent {
-    min-height:400px;
+    min-height:600px;
     padding-right:30px;
     padding-left:30px;
 }
@@ -31,6 +31,9 @@ body {
     line-height:1.5em;
 }
 
+.formControl {
+
+}
 
 
 
@@ -94,6 +97,9 @@ body {
     width:100%;
     text-align:center;
 }
+.inputField {
+
+}
 
 
 body {
@@ -104,7 +110,17 @@ body {
 
 
 .tab-title {
-    display:inline;
+    display:inline-block;
+    font-weight:100;
+    width:200px;
+    height:75px;
+    text-align:center;
+    text-transform:uppercase;    
+}
+
+
+.tab-title.tabs-titleselected {
+    font-weight:800;
 }
 
 
@@ -112,9 +128,6 @@ body {
     display:none;
 }
 
-.tabs-titleselected {
-    text-decoration:underline;
-}
 
 
 

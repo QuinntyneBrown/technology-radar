@@ -3,7 +3,8 @@ export * from "./app";
 export * from "./header";
 export * from "./footer";
 export * from "./login";
-
+export * from "./form-control";
+export * from "./input-field";
 
 export * from "./framework-list";
 export * from "./framework-editor";

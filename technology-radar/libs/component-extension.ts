@@ -104,7 +104,7 @@ angular.module = function () {
                     if (scope.vm && scope.vm.ngOnInit)
                         scope.vm.ngOnInit();
 
-                    if (scope.vm.dispose)
+                    if (scope.vm.ngOnDestroy)
                         scope.$on("$destroy", () => {
                             scope.vm.dispose();
                         });
