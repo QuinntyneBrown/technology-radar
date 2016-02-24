@@ -96,3 +96,4 @@ angular.module = function () {
     };
     return m;
 };
+//# sourceMappingURL=component-extension.js.map
