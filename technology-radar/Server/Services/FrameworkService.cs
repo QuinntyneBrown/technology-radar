@@ -50,6 +50,12 @@ namespace Chloe.Server.Services
             return id;
         }
 
+        public FrameworkDto GetById(int id)
+        {
+            var entity = this.uow.Frameworks.GetAll().Where(x => x.Id == id).Single();
+            return new FrameworkDto(entity);
+        }
+
         protected readonly IChloeUow uow;
         protected readonly IRepository<Framework> repository;
 

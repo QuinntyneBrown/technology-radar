@@ -7,6 +7,7 @@ namespace Chloe.Server.Services.Contracts
     {
         ToolAddOrUpdateResponseDto AddOrUpdate(ToolAddOrUpdateRequestDto request);
         ICollection<ToolDto> GetAll();
+        ToolDto GetById(int id);
         dynamic Remove(int id);
     }
 }

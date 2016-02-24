@@ -7,6 +7,7 @@ namespace Chloe.Server.Services.Contracts
     {
         LanguageAddOrUpdateResponseDto AddOrUpdate(LanguageAddOrUpdateRequestDto request);
         ICollection<LanguageDto> GetAll();
+        LanguageDto GetById(int id);
         dynamic Remove(int id);
     }
 }

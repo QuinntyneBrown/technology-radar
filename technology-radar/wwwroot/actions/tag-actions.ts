@@ -12,7 +12,7 @@ export class TagActionCreator {
                 description: options.description
             }
         })
-            .then(results => this.dispatcher.dispatch(new AddTagAction(newId, results)));
+            .then(results => this.dispatcher.dispatch(new AddOrUpdateTagAction(newId, results)));
         return newId;
     }
 
@@ -32,7 +32,7 @@ export class TagActionCreator {
 }
 
 
-export class AddTagAction { constructor(public id, public entity) { } }
+export class AddOrUpdateTagAction { constructor(public id, public entity) { } }
 
 export class AllTagsAction { constructor(public id, public entities) { } }
 

@@ -27,4 +27,10 @@
     rating;
     description;
     abstract;
+
+    //static canActivate = () => {
+    //    return ["$route", "invokeAsync", "platformActionCreator", ($route, invokeAsync, platformActionCreator) => {
+
+    //    }];
+    //}
 }

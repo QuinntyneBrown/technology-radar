@@ -1,8 +1,20 @@
 ﻿import { IDispatcher } from "../../libs/store";
+import { TechnologyActionCreator } from "./technology-actions";
 
+export class LanguageActionCreator extends TechnologyActionCreator {
+    constructor($location: angular.ILocationService, private dispatcher: IDispatcher, private guid, private languageService) {
+        super($location);
+    }
 
-export class LanguageActionCreator {
-    constructor(private dispatcher: IDispatcher, private guid, private languageService) { }
+    getById = options => {
+        var newId = this.guid();
+        this.languageService.getById({
+            id: options.id
+        }).then(results => {
+            this.dispatcher.dispatch(new LanguageByIdAction(newId, results));
+        });
+        return newId;
+    }
 
     addOrUpdate = options => {
         var newId = this.guid();
@@ -15,7 +27,7 @@ export class LanguageActionCreator {
                 rating: options.rating
             }
         }).then(results => {
-            this.dispatcher.dispatch(new AddLanguageAction(newId, results));
+            this.dispatcher.dispatch(new AddOrUpdateLanguageAction(newId, results));
         });
         return newId;
     }
@@ -39,8 +51,9 @@ export class LanguageActionCreator {
     }
 }
 
+export class LanguageByIdAction { constructor(public id, public entity) { } }
 
-export class AddLanguageAction { constructor(public id, public entity) { } }
+export class AddOrUpdateLanguageAction { constructor(public id, public entity) { } }
 
 export class AllLanguagesAction { constructor(public id, public entities) { } }
 

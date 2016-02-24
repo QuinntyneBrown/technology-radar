@@ -1,1 +1,17 @@
-﻿
+﻿.technologyList-name,
+.technologyList-actions {
+    position:relative;
+    float:left;
+}
+
+.technologyList-name {
+    min-width:200px;
+}
+
+.technologyList-item {
+    height:50px;
+}
+
+.technologyList-actions {
+    text-transform:uppercase;
+}

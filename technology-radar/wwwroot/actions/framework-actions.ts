@@ -1,7 +1,10 @@
 ﻿import { IDispatcher } from "../../libs/store";
+import { TechnologyActionCreator } from "./technology-actions";
 
-export class FrameworkActionCreator {
-    constructor(private dispatcher: IDispatcher, private frameworkService, private guid) { }
+export class FrameworkActionCreator extends TechnologyActionCreator  {
+    constructor($location: angular.ILocationService, private dispatcher: IDispatcher, private frameworkService, private guid) {
+        super($location);
+    }
 
     addOrUpdate = options => {
         var newId = this.guid();
@@ -14,7 +17,7 @@ export class FrameworkActionCreator {
                 rating: options.rating
             }
         })
-            .then(results => this.dispatcher.dispatch(new AddFrameworkAction(newId, results)));
+            .then(results => this.dispatcher.dispatch(new AddOrUpdateFrameworkAction(newId, results)));
         return newId;
     }
 
@@ -34,7 +37,7 @@ export class FrameworkActionCreator {
 }
 
 
-export class AddFrameworkAction { constructor(public id, public entity) { } }
+export class AddOrUpdateFrameworkAction { constructor(public id, public entity) { } }
 
 export class AllFrameworksAction { constructor(public id, public entities) { } }
 

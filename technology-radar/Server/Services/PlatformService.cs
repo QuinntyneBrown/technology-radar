@@ -49,6 +49,12 @@ namespace Chloe.Server.Services
             return id;
         }
 
+        public PlatformDto GetById(int id)
+        {
+            var entity = this.uow.Platforms.GetAll().Where(x => x.Id == id).Single();
+            return new PlatformDto(entity);
+        }
+
         protected readonly IChloeUow uow;
         protected readonly IRepository<Platform> repository;
     }

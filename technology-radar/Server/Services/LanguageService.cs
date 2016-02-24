@@ -49,6 +49,12 @@ namespace Chloe.Server.Services
             return id;
         }
 
+        public LanguageDto GetById(int id)
+        {
+            var entity = this.uow.Languages.GetAll().Where(x => x.Id == id).Single();
+            return new LanguageDto(entity);
+        }
+
         protected readonly IChloeUow uow;
         protected readonly IRepository<Language> repository;
     }

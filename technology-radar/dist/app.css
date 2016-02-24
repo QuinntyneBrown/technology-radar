@@ -111,6 +111,8 @@ body {
     padding-left:15px;
     line-height:2em;
     height:30px;
+    min-width:200px;
+    margin-bottom:15px;
 }
 
 
@@ -145,7 +147,23 @@ body {
 
 
 
+.technologyList-name,
+.technologyList-actions {
+    position:relative;
+    float:left;
+}
 
+.technologyList-name {
+    min-width:200px;
+}
+
+.technologyList-item {
+    height:50px;
+}
+
+.technologyList-actions {
+    text-transform:uppercase;
+}
 .technologyTile {
     float:left;
     position:relative;

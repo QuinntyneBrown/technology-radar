@@ -1,11 +1,11 @@
 ﻿import { AllPlatformsAction } from "../actions";
-import { AddPlatformAction } from "../actions";
+import { AddOrUpdatePlatformAction } from "../actions";
 import { RemovePlatformAction } from "../actions";
 import { pluckOut } from "../../libs";
 import { addOrUpdate } from "../../libs";
 
-export const addPlatformReducer = (state, action) => {
-    if (action instanceof AddPlatformAction) {
+export const addOrUpdatePlatformReducer = (state, action) => {
+    if (action instanceof AddOrUpdatePlatformAction) {
         addOrUpdate({ items: state.platforms, item: action.entity });
     }
     return state;

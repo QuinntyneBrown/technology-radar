@@ -1,4 +1,5 @@
 ﻿import { IDispatcher } from "../../libs/store";
+import { TechnologyActionCreator } from "./technology-actions";
 
 export class ArticleActionCreator {
     constructor(private articleService, private dispatcher: IDispatcher, private guid) { }
@@ -14,7 +15,7 @@ export class ArticleActionCreator {
                 rating: options.rating
             }
         })
-            .then(results => this.dispatcher.dispatch(new AddArticleAction(newId, results)));
+            .then(results => this.dispatcher.dispatch(new AddOrUpdateArticleAction(newId, results)));
         return newId;
     }
 
@@ -34,7 +35,7 @@ export class ArticleActionCreator {
 }
 
 
-export class AddArticleAction { constructor(public id, public entity) { } }
+export class AddOrUpdateArticleAction { constructor(public id, public entity) { } }
 
 export class AllArticlesAction { constructor(public id, public entities) { } }
 

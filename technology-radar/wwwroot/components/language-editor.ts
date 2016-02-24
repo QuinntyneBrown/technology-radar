@@ -1,5 +1,8 @@
 ﻿export class LanguageEditorComponent {
-    constructor(private invokeAsync, private languageActionCreator) { }
+    constructor(private invokeAsync, private languageActionCreator) {
+
+
+    }
 
     addOrUpdate = () => {
         this.invokeAsync({
@@ -27,5 +30,13 @@
     rating;
     description;
     abstract;
+
+    //static canActivate = () => {
+    //    return ["$route", "invokeAsync", "languageActionCreator", ($route, invokeAsync, languageActionCreator) => {
+
+    //    }];
+    //}
+
+
 
 }

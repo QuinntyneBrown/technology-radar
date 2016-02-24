@@ -1,11 +1,11 @@
 ﻿import { AllTechniquesAction } from "../actions";
-import { AddTechniqueAction } from "../actions";
+import { AddOrUpdateTechniqueAction } from "../actions";
 import { RemoveTechniqueAction } from "../actions";
 import { pluckOut } from "../../libs";
 import { addOrUpdate } from "../../libs";
 
-export const addTechniqueReducer = (state, action) => {
-    if (action instanceof AddTechniqueAction) {
+export const addOrUpdateTechniqueReducer = (state, action) => {
+    if (action instanceof AddOrUpdateTechniqueAction) {
         addOrUpdate({ items: state.techniques, item: action.entity });
     }
     return state;

@@ -1,8 +1,10 @@
 ﻿import { IDispatcher } from "../../libs/store";
+import { TechnologyActionCreator } from "./technology-actions";
 
-
-export class PlatformActionCreator {
-    constructor(private dispatcher: IDispatcher, private guid, private platformService) { }
+export class PlatformActionCreator extends TechnologyActionCreator {
+    constructor($location: angular.ILocationService, private dispatcher: IDispatcher, private guid, private platformService) {
+        super($location);
+    }
 
     addOrUpdate = options => {
         var newId = this.guid();
@@ -15,7 +17,7 @@ export class PlatformActionCreator {
                 rating: options.rating
             }
         }).then(results => {
-            this.dispatcher.dispatch(new AddPlatformAction(newId, results));
+            this.dispatcher.dispatch(new AddOrUpdatePlatformAction(newId, results));
         });
         return newId;
     }
@@ -40,7 +42,7 @@ export class PlatformActionCreator {
 }
 
 
-export class AddPlatformAction { constructor(public id, public entity) { } }
+export class AddOrUpdatePlatformAction { constructor(public id, public entity) { } }
 
 export class AllPlatformsAction { constructor(public id, public entities) { } }
 

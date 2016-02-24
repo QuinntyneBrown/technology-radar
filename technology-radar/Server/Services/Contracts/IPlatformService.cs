@@ -8,6 +8,7 @@ namespace Chloe.Server.Services.Contracts
     {
         PlatformAddOrUpdateResponseDto AddOrUpdate(PlatformAddOrUpdateRequestDto request);
         ICollection<PlatformDto> GetAll();
+        PlatformDto GetById(int id);
         dynamic Remove(int id);
     }
 }

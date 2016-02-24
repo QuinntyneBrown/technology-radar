@@ -1,7 +1,13 @@
-﻿<div>
+﻿<div class="technologyList">
     <h1>{{ ::vm.title }}</h1>
 
-    <div data-ng-repeat="entity in vm.entities" data-ng-click="vm.remove(entity)">
-        <h1>{{ entity.name }}</h1>
+    <div data-ng-repeat="entity in vm.entities" class="technologyList-item">
+        <div class="technologyList-name">
+            {{ entity.name }}
+        </div>
+        <div class="technologyList-actions">
+            <span data-ng-click="vm.edit(entity)">edit</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span data-ng-click="vm.remove(entity)">remove</span>
+        </div>
+        <div style="clear:both;"></div>
     </div>
 </div>

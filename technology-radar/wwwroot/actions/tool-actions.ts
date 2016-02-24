@@ -1,8 +1,10 @@
 ﻿import { IDispatcher } from "../../libs/store";
+import { TechnologyActionCreator } from "./technology-actions";
 
-
-export class ToolActionCreator {
-    constructor(private dispatcher: IDispatcher, private guid, private toolService) { }
+export class ToolActionCreator extends TechnologyActionCreator {
+    constructor($location: angular.ILocationService, private dispatcher: IDispatcher, private guid, private toolService) {
+        super($location);
+    }
 
     addOrUpdate = options => {
         var newId = this.guid();
@@ -15,7 +17,7 @@ export class ToolActionCreator {
                 rating: options.rating
             }
         }).then(results => {
-            this.dispatcher.dispatch(new AddToolAction(newId, results));
+            this.dispatcher.dispatch(new AddOrUpdateToolAction(newId, results));
         });
         return newId;
     }
@@ -40,7 +42,7 @@ export class ToolActionCreator {
 }
 
 
-export class AddToolAction { constructor(public id, public entity) { } }
+export class AddOrUpdateToolAction { constructor(public id, public entity) { } }
 
 export class AllToolsAction { constructor(public id, public entities) { } }
 

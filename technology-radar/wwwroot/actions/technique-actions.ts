@@ -1,8 +1,10 @@
 ﻿import { IDispatcher } from "../../libs/store";
+import { TechnologyActionCreator } from "./technology-actions";
 
-
-export class TechniqueActionCreator {
-    constructor(private dispatcher: IDispatcher, private guid, private techniqueService) { }
+export class TechniqueActionCreator extends TechnologyActionCreator {
+    constructor($location: angular.ILocationService, private dispatcher: IDispatcher, private guid, private techniqueService) {
+        super($location);
+    }
 
     addOrUpdate = options => {
         var newId = this.guid();
@@ -15,7 +17,7 @@ export class TechniqueActionCreator {
                 rating: options.rating
             }
         }).then(results => {
-            this.dispatcher.dispatch(new AddTechniqueAction(newId, results));
+            this.dispatcher.dispatch(new AddOrUpdateTechniqueAction(newId, results));
         });
         return newId;
     }
@@ -40,7 +42,7 @@ export class TechniqueActionCreator {
 }
 
 
-export class AddTechniqueAction { constructor(public id, public entity) { } }
+export class AddOrUpdateTechniqueAction { constructor(public id, public entity) { } }
 
 export class AllTechniquesAction { constructor(public id, public entities) { } }
 

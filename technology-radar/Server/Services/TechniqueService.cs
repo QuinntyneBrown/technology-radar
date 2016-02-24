@@ -49,6 +49,12 @@ namespace Chloe.Server.Services
             return id;
         }
 
+        public TechniqueDto GetById(int id)
+        {
+            var entity = this.uow.Techniques.GetAll().Where(x => x.Id == id).Single();
+            return new TechniqueDto(entity);
+        }
+
         protected readonly IChloeUow uow;
         protected readonly IRepository<Technique> repository;
     }

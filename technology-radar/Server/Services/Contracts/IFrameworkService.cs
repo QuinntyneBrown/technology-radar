@@ -8,6 +8,7 @@ namespace Chloe.Server.Services.Contracts
     {
         FrameworkAddOrUpdateResponseDto AddOrUpdate(FrameworkAddOrUpdateRequestDto request);
         ICollection<FrameworkDto> GetAll();
+        FrameworkDto GetById(int id);
         dynamic Remove(int id);
     }
 }

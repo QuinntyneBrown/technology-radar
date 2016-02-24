@@ -1,11 +1,11 @@
 ﻿import { AllYouTubeVideosAction } from "../actions";
-import { AddYouTubeVideoAction } from "../actions";
+import { AddOrUpdateYouTubeVideoAction } from "../actions";
 import { RemoveYouTubeVideoAction } from "../actions";
 import { pluckOut } from "../../libs";
 import { addOrUpdate } from "../../libs";
 
-export const addYouTubeVideoReducer = (state, action) => {
-    if (action instanceof AddYouTubeVideoAction) {
+export const addOrUpdateYouTubeVideoReducer = (state, action) => {
+    if (action instanceof AddOrUpdateYouTubeVideoAction) {
         addOrUpdate({ items: state.youTubeVideos, item: action.entity });
     }
     return state;

@@ -1,11 +1,11 @@
 ﻿import { AllFrameworksAction } from "../actions";
-import { AddFrameworkAction } from "../actions";
+import { AddOrUpdateFrameworkAction } from "../actions";
 import { RemoveFrameworkAction } from "../actions";
 import { pluckOut } from "../../libs";
 import { addOrUpdate } from "../../libs";
 
-export const addFrameworkReducer = (state, action) => {
-    if (action instanceof AddFrameworkAction) {
+export const addOrUpdateFrameworkReducer = (state, action) => {
+    if (action instanceof AddOrUpdateFrameworkAction) {
         addOrUpdate({ items: state.frameworks, item: action.entity });
     }
     return state;

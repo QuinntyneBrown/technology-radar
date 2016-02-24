@@ -11,6 +11,7 @@ namespace Chloe.Server.Dtos
             this.Abstract = entity.Abstract;
             this.Description = entity.Description;
             this.Rating = entity.Rating;
+            this.TechnologyType = entity.TechnologyType;
         }
     }
 }

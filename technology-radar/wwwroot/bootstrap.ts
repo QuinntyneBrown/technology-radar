@@ -60,11 +60,18 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "lo
     $routeProvider
         .when("/", { template: "<home></home>" })
         .when("/login", { template: "<login></login>" })
+
         .when("/framework/list", { template: "<framework-list></framework-list>" })
         .when("/language/list", { template: "<language-list></language-list>" })
         .when("/platform/list", { template: "<platform-list></platform-list>" })
         .when("/technique/list", { template: "<technique-list></technique-list>" })
         .when("/tool/list", { template: "<tool-list></tool-list>" })
+
+        .when("/framework/edit/:id", { template: "<framework-list></framework-list>" })
+        .when("/language/edit/:id", { template: "<language-list></language-list>" })
+        .when("/platform/edit/:id", { template: "<platform-list></platform-list>" })
+        .when("/technique/edit/:id", { template: "<technique-list></technique-list>" })
+        .when("/tool/edit/:id", { template: "<tool-list></tool-list>" })
 
         .when("/frameworks", { template: "<technologies></technologies>" })
         .when("/languages", { template: "<technologies></technologies>" })

@@ -28,4 +28,9 @@
     description;
     abstract;
 
+    //static canActivate = () => {
+    //    return ["$route", "invokeAsync", "toolActionCreator", ($route, invokeAsync, toolActionCreator) => {
+
+    //    }];
+    //}
 }

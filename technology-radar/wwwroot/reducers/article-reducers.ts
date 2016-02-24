@@ -1,11 +1,11 @@
 ﻿import { AllArticlesAction } from "../actions";
-import { AddArticleAction } from "../actions";
+import { AddOrUpdateArticleAction } from "../actions";
 import { RemoveArticleAction } from "../actions";
 import { pluckOut } from "../../libs";
 import { addOrUpdate } from "../../libs";
 
-export const addArticleReducer = (state, action) => {
-    if (action instanceof AddArticleAction) {
+export const addOrUpdateArticleReducer = (state, action) => {
+    if (action instanceof AddOrUpdateArticleAction) {
         addOrUpdate({ items: state.articles, item: action.entity });
     }
     return state;

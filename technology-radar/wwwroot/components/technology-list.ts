@@ -8,9 +8,12 @@ export class TechnologyListComponent {
         private platformActionCreator,
         private techniqueActionCreator,
         private toolActionCreator
-    ) { }
+    ) {
+        
+    }
 
     get title() {
+        
         switch (this.technologyType) {
             case technologyType.framework:
                 return "Frameworks";
@@ -32,7 +35,6 @@ export class TechnologyListComponent {
                 return "Tools";
                 break;
         }
-
     }
 
     remove = entity => this.technologyActionCreator.remove({ entity: entity });

@@ -8,6 +8,13 @@
         return deferred.promise;
     };
 
+    getById(options) {
+        let deferred = this.$q.defer();
+        this.fetch.fromCacheOrService({ method: "GET", url: this.baseUri + "/getById", params: { id: options.id } })
+            .then(results => deferred.resolve(results.data));
+        return deferred.promise;
+    };
+    
     add(options) {
         let deferred = this.$q.defer();
         this.fetch.fromService({ method: "POST", url: this.baseUri + "/add", data: options.data })

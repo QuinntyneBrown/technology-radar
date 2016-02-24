@@ -600,6 +600,7 @@
     <TypeScriptCompile Include="wwwroot\actions\tab-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\tag-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\technique-actions.ts" />
+    <TypeScriptCompile Include="wwwroot\actions\technology-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\tool-actions.ts" />
     <TypeScriptCompile Include="libs\addOrUpdate.ts" />
     <TypeScriptCompile Include="libs\apiEndpointProvider.ts" />

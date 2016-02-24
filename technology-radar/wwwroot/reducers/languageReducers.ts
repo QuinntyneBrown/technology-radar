@@ -1,12 +1,12 @@
 ﻿import { AllLanguagesAction } from "../actions";
-import { AddLanguageAction } from "../actions";
+import { AddOrUpdateLanguageAction } from "../actions";
 import { RemoveLanguageAction } from "../actions";
 import { pluckOut } from "../../libs";
 import { addOrUpdate } from "../../libs";
 
-export const addLanguageReducer = (state, action) => {
-    if (action instanceof AddLanguageAction) {
-        state.lastTriggeredByAction = AddLanguageAction;
+export const addOrUpdateLanguageReducer = (state, action) => {
+    if (action instanceof AddOrUpdateLanguageAction) {
+        state.lastTriggeredByAction = AddOrUpdateLanguageAction;
         addOrUpdate({ items: state.languages, item: action.entity });
     }
     return state;

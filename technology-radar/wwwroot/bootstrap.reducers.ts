@@ -7,23 +7,23 @@ var app = (<any>angular.module("reducers", ["store"]))
         reducersProvider.configure(reducers.userLoggedOutReducer);
 
         reducersProvider.configure(reducers.allFrameworksReducer);
-        reducersProvider.configure(reducers.addFrameworkReducer);
+        reducersProvider.configure(reducers.addOrUpdateFrameworkReducer);
         reducersProvider.configure(reducers.removeFrameworkReducer);
 
         reducersProvider.configure(reducers.allLanguagesReducer);
-        reducersProvider.configure(reducers.addLanguageReducer);
+        reducersProvider.configure(reducers.addOrUpdateLanguageReducer);
         reducersProvider.configure(reducers.removeLanguageReducer);
 
         reducersProvider.configure(reducers.allPlatformsReducer);
-        reducersProvider.configure(reducers.addPlatformReducer);
+        reducersProvider.configure(reducers.addOrUpdatePlatformReducer);
         reducersProvider.configure(reducers.removePlatformReducer);
 
         reducersProvider.configure(reducers.allTechniquesReducer);
-        reducersProvider.configure(reducers.addTechniqueReducer);
+        reducersProvider.configure(reducers.addOrUpdateTechniqueReducer);
         reducersProvider.configure(reducers.removeTechniqueReducer);
 
         reducersProvider.configure(reducers.allToolsReducer);
-        reducersProvider.configure(reducers.addToolReducer);
+        reducersProvider.configure(reducers.addOrUpdateToolReducer);
         reducersProvider.configure(reducers.removeToolReducer);
 
         reducersProvider.configure(reducers.setCurrentTabReducer);

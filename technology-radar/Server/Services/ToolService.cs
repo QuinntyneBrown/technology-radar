@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Chloe.Server.Dtos;
 using Chloe.Server.Services.Contracts;
 using Chloe.Server.Models;
 using Chloe.Server.Data.Contracts;
 using System.Linq;
-
 
 namespace Chloe.Server.Services
 {
@@ -16,6 +14,7 @@ namespace Chloe.Server.Services
             this.uow = uow;
             this.repository = uow.Tools;
         }
+
         public ToolAddOrUpdateResponseDto AddOrUpdate(ToolAddOrUpdateRequestDto request)
         {
             var entity = repository.GetAll()
@@ -46,6 +45,12 @@ namespace Chloe.Server.Services
             entity.IsDeleted = true;
             uow.SaveChanges();
             return id;
+        }
+
+        public ToolDto GetById(int id)
+        {
+            var entity = this.uow.Tools.GetAll().Where(x => x.Id == id).Single();
+            return new ToolDto(entity);
         }
 
         protected readonly IChloeUow uow;

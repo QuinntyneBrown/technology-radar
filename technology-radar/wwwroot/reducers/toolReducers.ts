@@ -1,11 +1,11 @@
 ﻿import { AllToolsAction } from "../actions";
-import { AddToolAction } from "../actions";
+import { AddOrUpdateToolAction } from "../actions";
 import { RemoveToolAction } from "../actions";
 import { pluckOut } from "../../libs";
 import { addOrUpdate } from "../../libs";
 
-export const addToolReducer = (state, action) => {
-    if (action instanceof AddToolAction) {
+export const addOrUpdateToolReducer = (state, action) => {
+    if (action instanceof AddOrUpdateToolAction) {
         addOrUpdate({ items: state.tools, item: action.entity });
     }
     return state;

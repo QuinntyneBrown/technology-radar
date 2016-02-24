@@ -14,7 +14,7 @@ export class YouTubeVideoActionCreator {
                 rating: options.rating
             }
         })
-            .then(results => this.dispatcher.dispatch(new AddYouTubeVideoAction(newId, results)));
+            .then(results => this.dispatcher.dispatch(new AddOrUpdateYouTubeVideoAction(newId, results)));
         return newId;
     }
 
@@ -34,7 +34,7 @@ export class YouTubeVideoActionCreator {
 }
 
 
-export class AddYouTubeVideoAction { constructor(public id, public entity) { } }
+export class AddOrUpdateYouTubeVideoAction { constructor(public id, public entity) { } }
 
 export class AllYouTubeVideosAction { constructor(public id, public entities) { } }
 
