@@ -34,7 +34,12 @@ angular.module = function () {
         options.component.$inject = options.providers;
         if (options.inputs && options.inputs.length > 0) {
             for (var i = 0; i < options.inputs.length; i++) {
-                directiveDefinitionObject.bindToController[options.inputs[i]] = "=";
+                if (options.inputs[i].substring(0, 2) === "on") {
+                    directiveDefinitionObject.bindToController[options.inputs[i]] = "&";
+                }
+                else {
+                    directiveDefinitionObject.bindToController[options.inputs[i]] = "=";
+                }
             }
         }
         if ((options.component && options.component.styles) || options.styles) {
@@ -96,4 +101,3 @@ angular.module = function () {
     };
     return m;
 };
-//# sourceMappingURL=component-extension.js.map

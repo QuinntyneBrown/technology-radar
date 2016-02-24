@@ -101,6 +101,12 @@ app.component({
 });
 
 app.component({
+    templateUrl: "wwwroot/components/technology-list.html",
+    component: components.TechnologyListComponent,
+    selector: "technology-list"
+});
+
+app.component({
     templateUrl: "wwwroot/components/app.html",
     component: components.AppComponent,
     selector: "app"
@@ -132,6 +138,14 @@ app.component({
     component: components.HomeComponent,
     selector: "home",
     providers:["$location"]
+});
+
+app.component({
+    templateUrl: "wwwroot/components/button.html",
+    componentName: "trButtonComponent",
+    component: components.ButtonComponent,
+    inputs: ['caption','onClick'],
+    selector: "tr-button"
 });
 
 app.component({
