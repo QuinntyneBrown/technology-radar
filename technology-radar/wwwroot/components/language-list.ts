@@ -1,9 +1,13 @@
-﻿export class LanguageListComponent {
+﻿import { technologyType }  from "./technology-type";
+
+export class LanguageListComponent {
     constructor(private languageActionCreator) { }
 
     storeOnChange = state => this.entities = state.languages;
 
     entities;
+
+    get technologyType() { return technologyType.language; }
 
     remove = entity => this.languageActionCreator.remove({ entity: entity });
     

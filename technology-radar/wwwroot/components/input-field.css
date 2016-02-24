@@ -1,3 +1,6 @@
 ﻿.inputField {
-
+    padding-right:15px;
+    padding-left:15px;
+    line-height:2em;
+    height:30px;
 }

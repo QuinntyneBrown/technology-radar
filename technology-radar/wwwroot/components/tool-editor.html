@@ -1,7 +1,7 @@
 ﻿<div class="toolEditor">
-    <h1>Create Tool</h1>
+    <h1>Create Tool <span data-ng-if="vm.name.length > 0">: {{ vm.name }}</span></h1>
     <div>
-        <input type="text" placeholder="Tool Name" data-ng-model="vm.name" />
+        <input class="inputField" type="text" placeholder="Tool Name" data-ng-model="vm.name" />
     </div>
     <tabs tabs-name="tool-editor">
         <tab-title>Abstract</tab-title>

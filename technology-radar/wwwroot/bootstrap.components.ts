@@ -103,7 +103,15 @@ app.component({
 app.component({
     templateUrl: "wwwroot/components/technology-list.html",
     component: components.TechnologyListComponent,
-    selector: "technology-list"
+    selector: "technology-list",
+    inputs: ['entities'],
+    providers: [
+        '$attrs',
+        'frameworkActionCreator',
+        'languageActionCreator',
+        'platformActionCreator',
+        'techniqueActionCreator',
+        'toolActionCreator']
 });
 
 app.component({
@@ -159,6 +167,7 @@ app.component({
     templateUrl: "wwwroot/components/input-field.html",
     componentName: "inputFieldComponent",
     component: components.InputFieldComponent,
+    inputs: ['placeholder'],
     selector: "input-field"
 });
 
