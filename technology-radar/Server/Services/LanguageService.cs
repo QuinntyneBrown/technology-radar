@@ -23,6 +23,7 @@ namespace Chloe.Server.Services
                         .FirstOrDefault();
             if (entity == null) repository.Add(entity = new Language());
             entity.Name = request.Name;
+            entity.Abstract = request.Abstract;
             entity.Description = request.Description;
             entity.Rating = request.Rating;
             uow.SaveChanges();
@@ -31,13 +32,11 @@ namespace Chloe.Server.Services
 
         public ICollection<LanguageDto> GetAll()
         {
-            ICollection<LanguageDto> response = new HashSet<LanguageDto>();
-
+            var response = new HashSet<LanguageDto>();
             foreach (var entity in repository.GetAll().Where(x => x.IsDeleted == false))
             {
                 response.Add(new LanguageDto(entity));
             }
-
             return response;
         }
 

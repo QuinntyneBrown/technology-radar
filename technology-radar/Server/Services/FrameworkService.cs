@@ -23,6 +23,7 @@ namespace Chloe.Server.Services
                 .FirstOrDefault();
             if (entity == null) repository.Add(entity = new Framework());
             entity.Name = request.Name;
+            entity.Abstract = request.Abstract;
             entity.Description = request.Description;
             entity.Rating = request.Rating;
             entity.Abstract = request.Abstract;

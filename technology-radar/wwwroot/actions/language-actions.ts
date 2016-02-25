@@ -11,7 +11,7 @@ export class LanguageActionCreator extends TechnologyActionCreator {
         this.languageService.getById({
             id: options.id
         }).then(results => {
-            this.dispatcher.dispatch(new LanguageByIdAction(newId, results));
+            this.dispatcher.dispatch(new AddOrUpdateLanguageAction(newId, results));
         });
         return newId;
     }

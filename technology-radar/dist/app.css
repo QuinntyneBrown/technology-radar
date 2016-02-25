@@ -163,6 +163,7 @@ body {
 
 .technologyList-actions {
     text-transform:uppercase;
+    cursor:pointer;
 }
 .technologyTile {
     float:left;

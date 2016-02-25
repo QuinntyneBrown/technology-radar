@@ -26,10 +26,11 @@ app.component({
 });
 
 app.component({
+    route:"/language/edit/:id",
     templateUrl: "wwwroot/components/language-editor.html",
     component: components.LanguageEditorComponent,
     selector: "language-editor",
-    providers: ["invokeAsync","languageActionCreator"]
+    providers: ["$routeParams","invokeAsync","languageActionCreator"]
 });
 
 app.component({
@@ -113,6 +114,7 @@ app.component({
         'techniqueActionCreator',
         'toolActionCreator']
 });
+
 
 app.component({
     templateUrl: "wwwroot/components/app.html",

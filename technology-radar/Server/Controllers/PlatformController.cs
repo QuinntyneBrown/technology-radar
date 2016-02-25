@@ -30,6 +30,10 @@ namespace Chloe.Server.Controllers
         [HttpDelete]
         public IHttpActionResult Remove(int id) { return Ok(this.service.Remove(id)); }
 
+        [Route("getById")]
+        [HttpGet]
+        public IHttpActionResult GetById(int id) { return Ok(this.service.GetById(id)); }
+        
         protected readonly IPlatformService service;
     }
 }

@@ -10,7 +10,7 @@
 
     getById(options) {
         let deferred = this.$q.defer();
-        this.fetch.fromCacheOrService({ method: "GET", url: this.baseUri + "/getById", params: { id: options.id } })
+        this.fetch.fromService({ method: "GET", url: this.baseUri + "/getById", params: { id: options.id } })
             .then(results => deferred.resolve(results.data));
         return deferred.promise;
     };

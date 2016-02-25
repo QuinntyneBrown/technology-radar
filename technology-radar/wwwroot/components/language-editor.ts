@@ -1,7 +1,16 @@
 ﻿export class LanguageEditorComponent {
-    constructor(private invokeAsync, private languageActionCreator) {
+    constructor(private $routeParams: angular.route.IRouteParamsService, private invokeAsync, private languageActionCreator) {}
 
+    storeOnChange = state => this.languages = state.languages;
 
+    ngOnInit = () => {
+        if (this.$routeParams["id"])
+            for (var i = 0; i < this.languages.length; i++) {
+                if (this.languages[i].id == this.$routeParams["id"]) {
+                    var language = angular.copy(this.languages[i]);
+                    angular.extend(this, language);
+                }
+            }
     }
 
     addOrUpdate = () => {
@@ -23,19 +32,23 @@
         });
     } 
             
-    remove = () => this.languageActionCreator.remove({ id: this.id });
 
     id;
     name;
     rating;
     description;
     abstract;
+    languages;
 
-    //static canActivate = () => {
-    //    return ["$route", "invokeAsync", "languageActionCreator", ($route, invokeAsync, languageActionCreator) => {
-
-    //    }];
-    //}
+    static canActivate = () => {
+        return ["$route", "invokeAsync", "languageActionCreator", ($route, invokeAsync, languageActionCreator) => {
+            var id = $route.current.params.id;
+            return invokeAsync({
+                action: languageActionCreator.getById,
+                params: { id: id }
+            });
+        }];
+    }
 
 
 
