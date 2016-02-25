@@ -2,8 +2,8 @@
 import { TechnologyActionCreator } from "./technology-actions";
 
 export class FrameworkActionCreator extends TechnologyActionCreator  {
-    constructor($location: angular.ILocationService, private dispatcher: IDispatcher, private frameworkService, private guid) {
-        super($location);
+    constructor($location: angular.ILocationService, dispatcher: IDispatcher, private frameworkService, private guid) {
+        super($location,dispatcher);
     }
 
     addOrUpdate = options => {

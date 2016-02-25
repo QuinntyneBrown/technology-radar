@@ -2,8 +2,8 @@
 import { TechnologyActionCreator } from "./technology-actions";
 
 export class LanguageActionCreator extends TechnologyActionCreator {
-    constructor($location: angular.ILocationService, private dispatcher: IDispatcher, private guid, private languageService) {
-        super($location);
+    constructor($location: angular.ILocationService, dispatcher: IDispatcher, private guid, private languageService) {
+        super($location,dispatcher);
     }
 
     getById = options => {

@@ -2,8 +2,8 @@
 import { TechnologyActionCreator } from "./technology-actions";
 
 export class TechniqueActionCreator extends TechnologyActionCreator {
-    constructor($location: angular.ILocationService, private dispatcher: IDispatcher, private guid, private techniqueService) {
-        super($location);
+    constructor($location: angular.ILocationService, dispatcher: IDispatcher, private guid, private techniqueService) {
+        super($location,dispatcher);
     }
 
     addOrUpdate = options => {
@@ -16,7 +16,7 @@ export class TechniqueActionCreator extends TechnologyActionCreator {
                 description: options.description,
                 rating: options.rating
             }
-        }).then(results => {
+        }).then(results => {            
             this.dispatcher.dispatch(new AddOrUpdateTechniqueAction(newId, results));
         });
         return newId;
