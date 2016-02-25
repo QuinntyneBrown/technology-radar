@@ -1,4 +1,4 @@
-﻿import { TabChildLoadedAction, SetCurrentTabAction } from "../actions";
+﻿import { TabChildLoadedAction, SetCurrentTabAction } from "../../actions";
 
 export class TabsComponent {
     constructor(private $attrs: angular.IAttributes, private $element: angular.IAugmentedJQuery, private tabActionCreator) { }

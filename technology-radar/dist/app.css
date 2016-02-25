@@ -1,3 +1,6 @@
+
+
+
 body {
     font-family: 'Lato', sans-serif;
     color: #333;
@@ -11,15 +14,6 @@ body {
     padding-left:30px;
 }
 
-.button {
-    margin-top:15px;
-    margin-bottom:30px;
-    line-height:30px;
-    width:75px;
-    background-color:#FFF;
-    border: solid 1px;
-    cursor:pointer;
-}
 .footer {
     min-height:200px;
     background-color:#DB4886;
@@ -39,12 +33,6 @@ body {
     text-decoration:none;
     line-height:1.5em;
 }
-
-.formControl {
-
-}
-
-
 
 .appHeader {
     height:50px;
@@ -106,6 +94,26 @@ body {
     width:100%;
     text-align:center;
 }
+body {
+}
+
+
+
+
+
+
+.button {
+    margin-top:15px;
+    margin-bottom:30px;
+    line-height:30px;
+    width:75px;
+    background-color:#FFF;
+    border: solid 1px;
+    cursor:pointer;
+}
+.formControl {
+
+}
 .inputField {
     padding-right:15px;
     padding-left:15px;
@@ -114,14 +122,6 @@ body {
     min-width:200px;
     margin-bottom:15px;
 }
-
-
-body {
-}
-
-
-
-
 
 .tab-title {
     display:inline-block;

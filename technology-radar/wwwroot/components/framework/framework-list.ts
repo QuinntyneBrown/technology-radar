@@ -1,4 +1,4 @@
-﻿import { technologyType }  from "./technology-type";
+﻿import { technologyType }  from "../technology/technology-type";
 
 export class FrameworkListComponent {
     constructor(private frameworkActionCreator) { }

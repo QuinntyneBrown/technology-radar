@@ -1,4 +1,4 @@
-﻿import { technologyType } from "../components/technology-type";
+﻿import { technologyType } from "../components/technology/technology-type";
 
 export class TechnologyActionCreator {
     constructor(private $location: angular.ILocationService) { }

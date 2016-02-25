@@ -1,33 +1,34 @@
-﻿export * from "./home";
-export * from "./app";
-export * from "./header";
-export * from "./footer";
-export * from "./login";
-export * from "./button";
-export * from "./form-control";
-export * from "./input-field";
+﻿export * from "./general/home";
+export * from "./general/app";
+export * from "./general/header";
+export * from "./general/footer";
+export * from "./general/login";
 
-export * from "./technology-list";
+export * from "./shared/button";
+export * from "./shared/form-control";
+export * from "./shared/input-field";
 
-export * from "./framework-list";
-export * from "./framework-editor";
+export * from "./technology/technology-list";
 
-export * from "./language-list";
-export * from "./language-editor";
+export * from "./framework/framework-list";
+export * from "./framework/framework-editor";
 
-export * from "./platform-list";
-export * from "./platform-editor";
+export * from "./language/language-list";
+export * from "./language/language-editor";
 
-export * from "./technique-list";
-export * from "./technique-editor";
+export * from "./platform/platform-list";
+export * from "./platform/platform-editor";
 
-export * from "./tabs";
-export * from "./tab-content";
-export * from "./tab-title";
+export * from "./technique/technique-list";
+export * from "./technique/technique-editor";
 
-export * from "./tool-list";
-export * from "./tool-editor";
+export * from "./shared/tabs";
+export * from "./shared/tab-content";
+export * from "./shared/tab-title";
 
-export * from "./technology";
-export * from "./technology-tile";
-export * from "./technologies";
+export * from "./tool/tool-list";
+export * from "./tool/tool-editor";
+
+export * from "./technology/technology";
+export * from "./technology/technology-tile";
+export * from "./technology/technologies";

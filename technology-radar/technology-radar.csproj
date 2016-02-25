@@ -288,6 +288,7 @@
     <Content Include="bower_components\tinymce-dist\tinymce.js" />
     <Content Include="bower_components\tinymce-dist\tinymce.min.js" />
     <Content Include="dist\app.js" />
+    <Content Include="dist\appTemplates.js" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
     <Content Include="libs\angular-animate.min.js" />
@@ -301,155 +302,155 @@
     <Content Include="libs\uiTinymce.min.js" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
-    <Content Include="wwwroot\components\app.css">
+    <Content Include="wwwroot\components\general\app.css">
       <DependentUpon>app.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\app.html">
+    <Content Include="wwwroot\components\general\app.html">
       <DependentUpon>app.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\button.css">
+    <Content Include="wwwroot\components\shared\button.css">
       <DependentUpon>button.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\button.html">
+    <Content Include="wwwroot\components\shared\button.html">
       <DependentUpon>button.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\footer.css">
+    <Content Include="wwwroot\components\general\footer.css">
       <DependentUpon>footer.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\footer.html">
+    <Content Include="wwwroot\components\general\footer.html">
       <DependentUpon>footer.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\form-control.css">
+    <Content Include="wwwroot\components\shared\form-control.css">
       <DependentUpon>form-control.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\form-control.html">
+    <Content Include="wwwroot\components\shared\form-control.html">
       <DependentUpon>form-control.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\framework-editor.css">
+    <Content Include="wwwroot\components\framework\framework-editor.css">
       <DependentUpon>framework-editor.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\framework-editor.html">
+    <Content Include="wwwroot\components\framework\framework-editor.html">
       <DependentUpon>framework-editor.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\framework-list.css">
+    <Content Include="wwwroot\components\framework\framework-list.css">
       <DependentUpon>framework-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\framework-list.html">
+    <Content Include="wwwroot\components\framework\framework-list.html">
       <DependentUpon>framework-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\input-field.css">
+    <Content Include="wwwroot\components\shared\input-field.css">
       <DependentUpon>input-field.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\input-field.html">
+    <Content Include="wwwroot\components\shared\input-field.html">
       <DependentUpon>input-field.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\language-editor.css">
+    <Content Include="wwwroot\components\language\language-editor.css">
       <DependentUpon>language-editor.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\language-editor.html">
+    <Content Include="wwwroot\components\language\language-editor.html">
       <DependentUpon>language-editor.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\language-list.css">
+    <Content Include="wwwroot\components\language\language-list.css">
       <DependentUpon>language-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\language-list.html">
+    <Content Include="wwwroot\components\language\language-list.html">
       <DependentUpon>language-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\platform-editor.css">
+    <Content Include="wwwroot\components\platform\platform-editor.css">
       <DependentUpon>platform-editor.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\platform-editor.html">
+    <Content Include="wwwroot\components\platform\platform-editor.html">
       <DependentUpon>platform-editor.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\platform-list.css">
+    <Content Include="wwwroot\components\platform\platform-list.css">
       <DependentUpon>platform-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\header.css">
+    <Content Include="wwwroot\components\general\header.css">
       <DependentUpon>header.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\header.html">
+    <Content Include="wwwroot\components\general\header.html">
       <DependentUpon>header.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\home.css">
+    <Content Include="wwwroot\components\general\home.css">
       <DependentUpon>home.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\home.html">
+    <Content Include="wwwroot\components\general\home.html">
       <DependentUpon>home.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\login.css">
+    <Content Include="wwwroot\components\general\login.css">
       <DependentUpon>login.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\login.html">
+    <Content Include="wwwroot\components\general\login.html">
       <DependentUpon>login.ts</DependentUpon>
     </Content>
     <Content Include="typings.json" />
-    <Content Include="wwwroot\components\platform-list.html">
+    <Content Include="wwwroot\components\platform\platform-list.html">
       <DependentUpon>platform-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\tab-content.css">
+    <Content Include="wwwroot\components\shared\tab-content.css">
       <DependentUpon>tab-content.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\tab-content.html">
+    <Content Include="wwwroot\components\shared\tab-content.html">
       <DependentUpon>tab-content.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\tab-title.css">
+    <Content Include="wwwroot\components\shared\tab-title.css">
       <DependentUpon>tab-title.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\tab-title.html">
+    <Content Include="wwwroot\components\shared\tab-title.html">
       <DependentUpon>tab-title.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\tabs.css">
+    <Content Include="wwwroot\components\shared\tabs.css">
       <DependentUpon>tabs.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\tabs.html">
+    <Content Include="wwwroot\components\shared\tabs.html">
       <DependentUpon>tabs.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technique-editor.css">
+    <Content Include="wwwroot\components\technique\technique-editor.css">
       <DependentUpon>technique-editor.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technique-editor.html">
+    <Content Include="wwwroot\components\technique\technique-editor.html">
       <DependentUpon>technique-editor.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technique-list.css">
+    <Content Include="wwwroot\components\technique\technique-list.css">
       <DependentUpon>technique-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technique-list.html">
+    <Content Include="wwwroot\components\technique\technique-list.html">
       <DependentUpon>technique-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technologies.css">
+    <Content Include="wwwroot\components\technology\technologies.css">
       <DependentUpon>technologies.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technologies.html">
+    <Content Include="wwwroot\components\technology\technologies.html">
       <DependentUpon>technologies.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technology-list.css">
+    <Content Include="wwwroot\components\technology\technology-list.css">
       <DependentUpon>technology-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technology-list.html">
+    <Content Include="wwwroot\components\technology\technology-list.html">
       <DependentUpon>technology-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technology-tile.css">
+    <Content Include="wwwroot\components\technology\technology-tile.css">
       <DependentUpon>technology-tile.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technology-tile.html">
+    <Content Include="wwwroot\components\technology\technology-tile.html">
       <DependentUpon>technology-tile.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technology.css">
+    <Content Include="wwwroot\components\technology\technology.css">
       <DependentUpon>technology.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technology.html">
+    <Content Include="wwwroot\components\technology\technology.html">
       <DependentUpon>technology.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\tool-editor.css">
+    <Content Include="wwwroot\components\tool\tool-editor.css">
       <DependentUpon>tool-editor.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\tool-editor.html">
+    <Content Include="wwwroot\components\tool\tool-editor.html">
       <DependentUpon>tool-editor.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\tool-list.css">
+    <Content Include="wwwroot\components\tool\tool-list.css">
       <DependentUpon>tool-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\tool-list.html">
+    <Content Include="wwwroot\components\tool\tool-list.html">
       <DependentUpon>tool-list.ts</DependentUpon>
     </Content>
     <Content Include="bower_components\angular-ui-tinymce\.bower.json" />
@@ -622,37 +623,37 @@
     <TypeScriptCompile Include="wwwroot\bootstrap.reducers.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.services.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.ts" />
-    <TypeScriptCompile Include="wwwroot\components\app.ts" />
-    <TypeScriptCompile Include="wwwroot\components\button.ts" />
-    <TypeScriptCompile Include="wwwroot\components\footer.ts" />
-    <TypeScriptCompile Include="wwwroot\components\form-control.ts" />
-    <TypeScriptCompile Include="wwwroot\components\framework-editor.ts" />
-    <TypeScriptCompile Include="wwwroot\components\framework-list.ts" />
-    <TypeScriptCompile Include="wwwroot\components\header.ts" />
-    <TypeScriptCompile Include="wwwroot\components\home.ts" />
+    <TypeScriptCompile Include="wwwroot\components\general\app.ts" />
+    <TypeScriptCompile Include="wwwroot\components\shared\button.ts" />
+    <TypeScriptCompile Include="wwwroot\components\general\footer.ts" />
+    <TypeScriptCompile Include="wwwroot\components\shared\form-control.ts" />
+    <TypeScriptCompile Include="wwwroot\components\framework\framework-editor.ts" />
+    <TypeScriptCompile Include="wwwroot\components\framework\framework-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\general\header.ts" />
+    <TypeScriptCompile Include="wwwroot\components\general\home.ts" />
     <TypeScriptCompile Include="wwwroot\components\index.ts" />
-    <TypeScriptCompile Include="wwwroot\components\input-field.ts" />
-    <TypeScriptCompile Include="wwwroot\components\language-editor.ts" />
-    <TypeScriptCompile Include="wwwroot\components\language-list.ts" />
-    <TypeScriptCompile Include="wwwroot\components\login.ts" />
+    <TypeScriptCompile Include="wwwroot\components\shared\input-field.ts" />
+    <TypeScriptCompile Include="wwwroot\components\language\language-editor.ts" />
+    <TypeScriptCompile Include="wwwroot\components\language\language-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\general\login.ts" />
     <TypeScriptCompile Include="libs\component-extension.ts" />
     <TypeScriptCompile Include="libs\fetch.ts" />
     <TypeScriptCompile Include="libs\localStorageManager.ts" />
     <TypeScriptCompile Include="libs\safeDigest.ts" />
-    <TypeScriptCompile Include="wwwroot\components\platform-list.ts" />
-    <TypeScriptCompile Include="wwwroot\components\platform-editor.ts" />
-    <TypeScriptCompile Include="wwwroot\components\tab-content.ts" />
-    <TypeScriptCompile Include="wwwroot\components\tab-title.ts" />
-    <TypeScriptCompile Include="wwwroot\components\tabs.ts" />
-    <TypeScriptCompile Include="wwwroot\components\technique-editor.ts" />
-    <TypeScriptCompile Include="wwwroot\components\technique-list.ts" />
-    <TypeScriptCompile Include="wwwroot\components\technologies.ts" />
-    <TypeScriptCompile Include="wwwroot\components\technology-list.ts" />
-    <TypeScriptCompile Include="wwwroot\components\technology-tile.ts" />
-    <TypeScriptCompile Include="wwwroot\components\technology.ts" />
-    <TypeScriptCompile Include="wwwroot\components\technology-type.ts" />
-    <TypeScriptCompile Include="wwwroot\components\tool-editor.ts" />
-    <TypeScriptCompile Include="wwwroot\components\tool-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\platform\platform-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\platform\platform-editor.ts" />
+    <TypeScriptCompile Include="wwwroot\components\shared\tab-content.ts" />
+    <TypeScriptCompile Include="wwwroot\components\shared\tab-title.ts" />
+    <TypeScriptCompile Include="wwwroot\components\shared\tabs.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technique\technique-editor.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technique\technique-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technology\technologies.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technology\technology-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technology\technology-tile.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technology\technology.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technology\technology-type.ts" />
+    <TypeScriptCompile Include="wwwroot\components\tool\tool-editor.ts" />
+    <TypeScriptCompile Include="wwwroot\components\tool\tool-list.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\article-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\frameworkReducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\index.ts" />

@@ -52,3 +52,4 @@ var LocalStorageManagerProvider = (function () {
     return LocalStorageManagerProvider;
 })();
 angular.module("localStorageManager", []).provider("localStorageManager", LocalStorageManagerProvider);
+//# sourceMappingURL=localStorageManager.js.map
