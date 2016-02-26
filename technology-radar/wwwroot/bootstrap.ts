@@ -64,12 +64,14 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "lo
         .when("/framework/list", { template: "<framework-list></framework-list>" })
         .when("/language/list", { template: "<language-list></language-list>" })
         .when("/platform/list", { template: "<platform-list></platform-list>" })
+        .when("/tag/list", { template: "<tag-list></tag-list>" })
         .when("/technique/list", { template: "<technique-list></technique-list>" })
         .when("/tool/list", { template: "<tool-list></tool-list>" })
 
         .when("/framework/edit/:id", { template: "<framework-list></framework-list>" })
         .when("/language/edit/:id", { template: "<language-list></language-list>" })
         .when("/platform/edit/:id", { template: "<platform-list></platform-list>" })
+        .when("/tag/edit/:id", { template: "<tag-list></tag-list>" })
         .when("/technique/edit/:id", { template: "<technique-list></technique-list>" })
         .when("/tool/edit/:id", { template: "<tool-list></tool-list>" })
 

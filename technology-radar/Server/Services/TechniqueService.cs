@@ -20,7 +20,7 @@ namespace Chloe.Server.Services
         public TechniqueAddOrUpdateResponseDto AddOrUpdate(TechniqueAddOrUpdateRequestDto request)
         {
             var entity = repository.GetAll()
-                .Where(x => x.Name == request.Name && x.IsDeleted == false)
+                .Where(x => x.Id == request.Id && x.IsDeleted == false)
                 .FirstOrDefault();
             if (entity == null) repository.Add(entity = new Technique());
             entity.Name = request.Name;

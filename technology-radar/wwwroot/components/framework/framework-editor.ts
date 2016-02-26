@@ -1,5 +1,7 @@
-﻿export class FrameworkEditorComponent {
-    constructor(private invokeAsync, private frameworkActionCreator) { }
+﻿import { FrameworkActionCreator } from "../../actions";
+
+export class FrameworkEditorComponent {
+    constructor(private invokeAsync, private frameworkActionCreator: FrameworkActionCreator) { }
     
     addOrUpdate = () => {
         this.invokeAsync({

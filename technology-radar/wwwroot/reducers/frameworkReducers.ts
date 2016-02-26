@@ -12,8 +12,10 @@ export const addOrUpdateFrameworkReducer = (state, action) => {
 }
 
 export const removeFrameworkReducer = (state, action) => {
-    if (action instanceof RemoveFrameworkAction)
+    if (action instanceof RemoveFrameworkAction) {
+        state.lastTriggeredByAction = RemoveFrameworkAction;
         pluckOut({ items: state.frameworks, value: action.entity.id });
+    }
     return state;
 }
 

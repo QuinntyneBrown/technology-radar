@@ -1,8 +1,9 @@
 ﻿import { IDispatcher } from "../../libs/store";
 import { TechnologyActionCreator } from "./technology-actions";
+import { PlatformService } from "../services";
 
 export class PlatformActionCreator extends TechnologyActionCreator {
-    constructor($location: angular.ILocationService, dispatcher: IDispatcher, private guid, private platformService) {
+    constructor($location: angular.ILocationService, dispatcher: IDispatcher, private guid, private platformService: PlatformService) {
         super($location,dispatcher);
     }
 

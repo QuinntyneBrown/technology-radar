@@ -19,7 +19,7 @@ namespace Chloe.Server.Services
         public LanguageAddOrUpdateResponseDto AddOrUpdate(LanguageAddOrUpdateRequestDto request)
         {
             var entity = repository.GetAll()
-                        .Where(x => x.Name == request.Name && x.IsDeleted == false)
+                        .Where(x => x.Id == request.Id && x.IsDeleted == false)
                         .FirstOrDefault();
             if (entity == null) repository.Add(entity = new Language());
             entity.Name = request.Name;

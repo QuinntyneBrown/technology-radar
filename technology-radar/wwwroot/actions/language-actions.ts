@@ -1,8 +1,9 @@
 ﻿import { IDispatcher } from "../../libs/store";
 import { TechnologyActionCreator } from "./technology-actions";
+import { LanguageService } from "../services";
 
 export class LanguageActionCreator extends TechnologyActionCreator {
-    constructor($location: angular.ILocationService, dispatcher: IDispatcher, private guid, private languageService) {
+    constructor($location: angular.ILocationService, dispatcher: IDispatcher, private guid, private languageService: LanguageService) {
         super($location,dispatcher);
     }
 
@@ -39,7 +40,7 @@ export class LanguageActionCreator extends TechnologyActionCreator {
         });
         return newId;
     }
-
+    
     remove = options => {
         var newId = this.guid();
         this.languageService.remove({

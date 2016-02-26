@@ -13,8 +13,10 @@ export const addOrUpdateLanguageReducer = (state, action) => {
 }
 
 export const removeLanguageReducer = (state, action) => {
-    if (action instanceof RemoveLanguageAction)
+    if (action instanceof RemoveLanguageAction) {
+        state.lastTriggeredByAction = RemoveLanguageAction;
         pluckOut({ items: state.languages, value: action.entity.id });
+    }
     return state;
 }
 

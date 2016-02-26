@@ -1,5 +1,8 @@
 ﻿<div class="technologyList">
-    <h1>{{ ::vm.title }}</h1>
+    <div class="technologyList-header">
+        <h1>{{ ::vm.title }}</h1><span data-ng-click="vm.create()">Create</span>
+    </div>
+    
 
     <div data-ng-repeat="entity in vm.entities" class="technologyList-item">
         <div class="technologyList-name">

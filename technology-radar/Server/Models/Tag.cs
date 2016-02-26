@@ -2,6 +2,6 @@
 {
     public class Tag: BaseEntity
     {
-        public int Description { get; set; }
+        public string Description { get; set; }
     }
 }

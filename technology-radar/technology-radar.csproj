@@ -501,6 +501,7 @@
     <Compile Include="Server\Controllers\LanguageController.cs" />
     <Compile Include="Server\Controllers\PlatformController.cs" />
     <Compile Include="Server\Controllers\SearchController.cs" />
+    <Compile Include="Server\Controllers\TagController.cs" />
     <Compile Include="Server\Controllers\TechniqueController.cs" />
     <Compile Include="Server\Controllers\ToolController.cs" />
     <Compile Include="Server\Controllers\UserController.cs" />
@@ -528,6 +529,9 @@
     <Compile Include="Server\Dtos\PlatformDto.cs" />
     <Compile Include="Server\Dtos\RegistrationRequestDto.cs" />
     <Compile Include="Server\Dtos\SignInDto.cs" />
+    <Compile Include="Server\Dtos\TagAddOrUpdateRequestDto.cs" />
+    <Compile Include="Server\Dtos\TagAddOrUpdateResponseDto.cs" />
+    <Compile Include="Server\Dtos\TagDto.cs" />
     <Compile Include="Server\Dtos\TechniqueAddOrUpdateRequestDto.cs" />
     <Compile Include="Server\Dtos\TechniqueAddOrUpdateResponseDto.cs" />
     <Compile Include="Server\Dtos\TechniqueDto.cs" />
@@ -542,8 +546,10 @@
     <Compile Include="Server\Models\Article.cs" />
     <Compile Include="Server\Models\BaseEntity.cs" />
     <Compile Include="Server\Models\BaseTechnology.cs" />
+    <Compile Include="Server\Models\Book.cs" />
     <Compile Include="Server\Models\Tag.cs" />
     <Compile Include="Server\Models\TechnologyArticle.cs" />
+    <Compile Include="Server\Models\TechnologyTag.cs" />
     <Compile Include="Server\Models\TechnologyType.cs" />
     <Compile Include="Server\Models\Framework.cs" />
     <Compile Include="Server\Models\ILoggable.cs" />

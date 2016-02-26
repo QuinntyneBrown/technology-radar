@@ -1,4 +1,5 @@
 ﻿import { IDispatcher } from "../../libs/store";
+import { TagService } from "../services";
 
 export class TagActionCreator {
     constructor(private dispatcher: IDispatcher, private tagService, private guid) { }
@@ -13,6 +14,16 @@ export class TagActionCreator {
             }
         })
             .then(results => this.dispatcher.dispatch(new AddOrUpdateTagAction(newId, results)));
+        return newId;
+    }
+
+    getById = options => {
+        var newId = this.guid();
+        this.tagService.getById({
+            id: options.id
+        }).then(results => {
+            this.dispatcher.dispatch(new AddOrUpdateTagAction(newId, results));
+        });
         return newId;
     }
 

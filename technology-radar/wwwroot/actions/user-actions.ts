@@ -1,8 +1,8 @@
 ﻿import { IDispatcher } from "../../libs/store";
-
+import { UserService } from "../services";
 
 export class UserActionCreator {
-    constructor(private dispatcher: IDispatcher, private guid, private userService) {}
+    constructor(private dispatcher: IDispatcher, private guid, private userService: UserService) {}
 
     tryToLogin = options => {
         var newId = this.guid();

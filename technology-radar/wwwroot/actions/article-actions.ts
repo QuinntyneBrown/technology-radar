@@ -1,8 +1,9 @@
 ﻿import { IDispatcher } from "../../libs/store";
 import { TechnologyActionCreator } from "./technology-actions";
+import { ArticleService } from "../services";
 
 export class ArticleActionCreator {
-    constructor(private articleService, private dispatcher: IDispatcher, private guid) { }
+    constructor(private articleService: ArticleService, private dispatcher: IDispatcher, private guid) { }
 
     addOrUpdate = options => {
         var newId = this.guid();

@@ -30,7 +30,7 @@ app.component({
     templateUrl: "wwwroot/components/language/language-editor.html",
     component: components.LanguageEditorComponent,
     selector: "language-editor",
-    providers: ["$routeParams","invokeAsync","languageActionCreator"]
+    providers: ["$location","$routeParams","invokeAsync","languageActionCreator"]
 });
 
 app.component({

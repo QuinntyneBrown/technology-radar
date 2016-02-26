@@ -1,19 +1,25 @@
 ﻿import { technologyType }  from "./technology-type";
+import {
+FrameworkActionCreator,
+LanguageActionCreator,
+PlatformActionCreator,
+TechniqueActionCreator,
+ToolActionCreator
+} from "../../actions";
 
 export class TechnologyListComponent {
 
     constructor(private $attrs: angular.IAttributes,
-        private frameworkActionCreator,
-        private languageActionCreator,
-        private platformActionCreator,
-        private techniqueActionCreator,
-        private toolActionCreator
+        private frameworkActionCreator: FrameworkActionCreator,
+        private languageActionCreator: LanguageActionCreator,
+        private platformActionCreator: PlatformActionCreator,
+        private techniqueActionCreator: TechniqueActionCreator,
+        private toolActionCreator: ToolActionCreator
     ) {
         
     }
 
-    get title() {
-        
+    get title(): string {        
         switch (this.technologyType) {
             case technologyType.framework:
                 return "Frameworks";
@@ -41,7 +47,7 @@ export class TechnologyListComponent {
 
     edit = entity => this.technologyActionCreator.edit({ entity: entity });
 
-    get technologyActionCreator() {
+    get technologyActionCreator():FrameworkActionCreator | LanguageActionCreator | PlatformActionCreator | TechniqueActionCreator | ToolActionCreator {
         switch (this.technologyType) {
             case technologyType.framework:
                 return this.frameworkActionCreator;
@@ -64,6 +70,8 @@ export class TechnologyListComponent {
                 break;
         }
     }
+
+    create = () => this.technologyActionCreator.create({ technologyType: this.technologyType });
 
     get technologyType() { return Number(this.$attrs["technologyType"]); }
 

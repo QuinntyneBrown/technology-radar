@@ -19,7 +19,7 @@ namespace Chloe.Server.Services
         public FrameworkAddOrUpdateResponseDto AddOrUpdate(FrameworkAddOrUpdateRequestDto request)
         {
             var entity = repository.GetAll()
-                .Where(x => x.Name == request.Name && x.IsDeleted == false)
+                .Where(x => x.Id == request.Id && x.IsDeleted == false)
                 .FirstOrDefault();
             if (entity == null) repository.Add(entity = new Framework());
             entity.Name = request.Name;

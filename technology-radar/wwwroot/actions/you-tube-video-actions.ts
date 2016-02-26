@@ -18,6 +18,16 @@ export class YouTubeVideoActionCreator {
         return newId;
     }
 
+    getById = options => {
+        var newId = this.guid();
+        this.youTubeVideoService.getById({
+            id: options.id
+        }).then(results => {
+            this.dispatcher.dispatch(new AddOrUpdateYouTubeVideoAction(newId, results));
+        });
+        return newId;
+    }
+
     all = options => {
         var newId = this.guid();
         this.youTubeVideoService.get()

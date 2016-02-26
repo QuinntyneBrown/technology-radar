@@ -1,7 +1,13 @@
-﻿export class LanguageEditorComponent {
-    constructor(private $routeParams: angular.route.IRouteParamsService, private invokeAsync, private languageActionCreator) {}
+﻿import { LanguageActionCreator, RemoveLanguageAction } from "../../actions";
 
-    storeOnChange = state => this.languages = state.languages;
+export class LanguageEditorComponent {
+    constructor(private $location: angular.ILocationService, private $routeParams: angular.route.IRouteParamsService, private invokeAsync, private languageActionCreator: LanguageActionCreator) {}
+
+    storeOnChange = state => {
+        if (state.lastTriggeredByAction == RemoveLanguageAction && this.languages.filter(lanaguage => lanaguage.id === this.id).length < 1)
+            this.$location.path("/language/list");
+        this.languages = state.languages;
+    };
 
     ngOnInit = () => {
         if (this.$routeParams["id"])
@@ -24,11 +30,12 @@
                 abstract: this.abstract
             }
         }).then(() => {
-            this.id = null;
-            this.name = null;
-            this.rating = null;
-            this.description = null;
-            this.abstract = null;
+            if (!this.id && this.languages.filter(lanaguage => lanaguage.name === this.name).length > 0) {
+                this.$location.path("/language/edit/" + this.languages.filter(lanaguage => lanaguage.name === this.name)[0].id);
+            }
+            else {
+                
+            }
         });
     } 
             

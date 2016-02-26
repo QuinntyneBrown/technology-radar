@@ -1,5 +1,6 @@
 ﻿import { IDispatcher } from "../../libs/store";
 import { TechnologyActionCreator } from "./technology-actions";
+import { TechniqueService } from "../services";
 
 export class TechniqueActionCreator extends TechnologyActionCreator {
     constructor($location: angular.ILocationService, dispatcher: IDispatcher, private guid, private techniqueService) {

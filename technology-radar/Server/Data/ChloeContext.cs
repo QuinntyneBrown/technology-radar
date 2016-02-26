@@ -28,6 +28,8 @@ namespace Chloe.Server.Data
         public DbSet<Article> Articles { get; set; }
         public DbSet<TechnologyArticle> TechnologyArticles { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<YouTubeVideo> YouTubeVideos { get; set; }
+        public DbSet<Book> Books { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -1,8 +1,10 @@
 ﻿import { IDispatcher } from "../../libs/store";
 import { TechnologyActionCreator } from "./technology-actions";
+import { FrameworkService } from "../services";
+
 
 export class FrameworkActionCreator extends TechnologyActionCreator  {
-    constructor($location: angular.ILocationService, dispatcher: IDispatcher, private frameworkService, private guid) {
+    constructor($location: angular.ILocationService, dispatcher: IDispatcher, private frameworkService: FrameworkService, private guid) {
         super($location,dispatcher);
     }
 
