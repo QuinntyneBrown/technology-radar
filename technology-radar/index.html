@@ -13,8 +13,9 @@
               target-densitydpi=device-dpi" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
     <link href="dist/app.css" rel="stylesheet" />
+
 </head>
-<body data-ng-app="app">
+<body data-ng-app="app" id="some-id">
     <app>
 
     </app>
@@ -44,5 +45,25 @@
 
     <script src="dist/app.js"></script>
     <script src="dist/appTemplates.js"></script>
+    <script>
+        // select the target node
+        var target = document.querySelector('#some-id');
+
+        // create an observer instance
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                console.log(mutation.type);
+            });
+        });
+
+        // configuration of the observer:
+        var config = { attributes: true, childList: true, characterData: true };
+
+        // pass in the target node, as well as the observer options
+        observer.observe(target, config);
+
+        // later, you can stop observing
+        observer.disconnect();
+    </script>
 </body>
 </html>

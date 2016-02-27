@@ -71,8 +71,6 @@ export class TechnologyListComponent {
         }
     }
 
-    create = () => this.technologyActionCreator.create({ technologyType: this.technologyType });
-
     get technologyType() { return Number(this.$attrs["technologyType"]); }
 
 }

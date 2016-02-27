@@ -1,22 +1,18 @@
 ﻿import { LanguageActionCreator, RemoveLanguageAction } from "../../actions";
+import { technologyType }  from "../technology/technology-type";
 
 export class LanguageEditorComponent {
     constructor(private $location: angular.ILocationService, private $routeParams: angular.route.IRouteParamsService, private invokeAsync, private languageActionCreator: LanguageActionCreator) {}
 
     storeOnChange = state => {
-        if (state.lastTriggeredByAction == RemoveLanguageAction && this.languages.filter(lanaguage => lanaguage.id === this.id).length < 1)
-            this.$location.path("/language/list");
-        this.languages = state.languages;
+        if (state.lastTriggeredByAction == RemoveLanguageAction && this.entities.filter(entity => entity.id === this.id).length < 1)
+            this.$location.path(this.baseUrl + "/list");
+        this.entities = state.languages;
     };
 
     ngOnInit = () => {
-        if (this.$routeParams["id"])
-            for (var i = 0; i < this.languages.length; i++) {
-                if (this.languages[i].id == this.$routeParams["id"]) {
-                    var language = angular.copy(this.languages[i]);
-                    angular.extend(this, language);
-                }
-            }
+        if (this.$routeParams["id"])                       
+            angular.extend(this, angular.copy(this.entities.filter(entity => entity.id == this.$routeParams["id"])[0]));                                
     }
 
     addOrUpdate = () => {
@@ -30,8 +26,8 @@ export class LanguageEditorComponent {
                 abstract: this.abstract
             }
         }).then(() => {
-            if (!this.id && this.languages.filter(lanaguage => lanaguage.name === this.name).length > 0) {
-                this.$location.path("/language/edit/" + this.languages.filter(lanaguage => lanaguage.name === this.name)[0].id);
+            if (!this.id && this.entities.filter(entity => entity.name === this.name).length > 0) {
+                this.$location.path(this.baseUrl + "/edit/" + this.entities.filter(entity => entity.name === this.name)[0].id);
             }
             else {
                 
@@ -39,13 +35,15 @@ export class LanguageEditorComponent {
         });
     } 
             
+    create = () => this.languageActionCreator.create({ technologyType: technologyType.language });
 
+    get baseUrl() { return "/language"; }
     id;
     name;
     rating;
     description;
     abstract;
-    languages;
+    entities;
 
     static canActivate = () => {
         return ["$route", "invokeAsync", "languageActionCreator", ($route, invokeAsync, languageActionCreator) => {
