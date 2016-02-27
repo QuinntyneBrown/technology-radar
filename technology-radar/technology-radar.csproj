@@ -696,6 +696,7 @@
     <TypeScriptCompile Include="wwwroot\reducers\userReducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\you-tube-video-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\services\article-service.ts" />
+    <TypeScriptCompile Include="wwwroot\services\base-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\framework-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\index.ts" />
     <TypeScriptCompile Include="libs\store.ts" />
