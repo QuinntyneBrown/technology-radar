@@ -1,1 +1,15 @@
-﻿
+﻿.technology {
+    font-size:1.25em;
+}
+
+.technology h1 {
+    font-size: 3em;
+    margin:0;
+    letter-spacing:-1px;
+}
+
+.technology p {
+    padding:0;
+    margin-top:0;
+    margin-bottom:30px;
+}

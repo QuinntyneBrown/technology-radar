@@ -15,6 +15,7 @@ namespace Chloe.Server.Data.Contracts
         IRepository<Tag> Tags { get; }
         IRepository<Article> Articles { get; }
         IRepository<TechnologyArticle> TechnologyArticles { get; }
+        IRepository<BlogStory> BlogStories { get; }
         void SaveChanges();
     }
 }

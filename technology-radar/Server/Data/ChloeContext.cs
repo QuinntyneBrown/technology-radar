@@ -31,6 +31,8 @@ namespace Chloe.Server.Data
         public DbSet<YouTubeVideo> YouTubeVideos { get; set; }
         public DbSet<Book> Books { get; set; }
 
+        public DbSet<BlogStory> BlogStories { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
      

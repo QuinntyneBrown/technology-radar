@@ -1,0 +1,19 @@
+﻿.adminHeader {
+    min-height:200px;
+    background-color:#DB4886;
+    color:#FFF;
+    padding-right:30px;
+    padding-left:30px;
+    padding-top:30px;
+}
+
+
+.adminHeader a,
+.adminHeader a:link,
+.adminHeader a:visited,
+.adminHeader a:hover {
+    display:block;
+    color:white;
+    text-decoration:none;
+    line-height:1.5em;
+}

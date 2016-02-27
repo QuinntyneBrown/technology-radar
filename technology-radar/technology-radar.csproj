@@ -287,6 +287,7 @@
     <Content Include="bower_components\tinymce-dist\tinymce.jquery.min.js" />
     <Content Include="bower_components\tinymce-dist\tinymce.js" />
     <Content Include="bower_components\tinymce-dist\tinymce.min.js" />
+    <Content Include="dist\app.css" />
     <Content Include="dist\app.js" />
     <Content Include="dist\appTemplates.js" />
     <Content Include="gulpfile.js" />
@@ -302,6 +303,12 @@
     <Content Include="libs\uiTinymce.min.js" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
+    <Content Include="wwwroot\components\general\admin-header.css">
+      <DependentUpon>admin-header.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\general\admin-header.html">
+      <DependentUpon>admin-header.ts</DependentUpon>
+    </Content>
     <Content Include="wwwroot\components\general\app.css">
       <DependentUpon>app.ts</DependentUpon>
     </Content>
@@ -417,6 +424,7 @@
     <Content Include="wwwroot\components\technique\technique-list.html">
       <DependentUpon>technique-list.ts</DependentUpon>
     </Content>
+    <Content Include="wwwroot\components\technology\meta-item.css" />
     <Content Include="wwwroot\components\technology\technologies.css">
       <DependentUpon>technologies.ts</DependentUpon>
     </Content>
@@ -429,6 +437,13 @@
     <Content Include="wwwroot\components\technology\technology-list.html">
       <DependentUpon>technology-list.ts</DependentUpon>
     </Content>
+    <Content Include="wwwroot\components\technology\technology-meta-item-list.css">
+      <DependentUpon>technology-meta-item-list.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\technology\technology-meta-item-list.html">
+      <DependentUpon>technology-meta-item-list.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\technology\technology-meta-item.html" />
     <Content Include="wwwroot\components\technology\technology-tile.css">
       <DependentUpon>technology-tile.ts</DependentUpon>
     </Content>
@@ -497,6 +512,7 @@
     <Compile Include="Server\Config\Contracts\IAuthConfiguration.cs" />
     <Compile Include="Server\Config\Contracts\IConfigurationProvider.cs" />
     <Compile Include="Server\Controllers\ArticleController.cs" />
+    <Compile Include="Server\Controllers\BlogStoryController.cs" />
     <Compile Include="Server\Controllers\FrameworkController.cs" />
     <Compile Include="Server\Controllers\LanguageController.cs" />
     <Compile Include="Server\Controllers\PlatformController.cs" />
@@ -546,7 +562,9 @@
     <Compile Include="Server\Models\Article.cs" />
     <Compile Include="Server\Models\BaseEntity.cs" />
     <Compile Include="Server\Models\BaseTechnology.cs" />
+    <Compile Include="Server\Models\BlogStoryTag.cs" />
     <Compile Include="Server\Models\Book.cs" />
+    <Compile Include="Server\Models\BlogStory.cs" />
     <Compile Include="Server\Models\Tag.cs" />
     <Compile Include="Server\Models\TechnologyArticle.cs" />
     <Compile Include="Server\Models\TechnologyTag.cs" />
@@ -563,8 +581,10 @@
     <Compile Include="Server\Models\User.cs" />
     <Compile Include="Server\Models\YouTubeVideo.cs" />
     <Compile Include="Server\Services\ArticleService.cs" />
+    <Compile Include="Server\Services\BlogStoryService.cs" />
     <Compile Include="Server\Services\CacheProvider.cs" />
     <Compile Include="Server\Services\Contracts\IArticleService.cs" />
+    <Compile Include="Server\Services\Contracts\IBlogStoryService.cs" />
     <Compile Include="Server\Services\Contracts\ICache.cs" />
     <Compile Include="Server\Services\Contracts\ICacheProvider.cs" />
     <Compile Include="Server\Services\Contracts\IEncryptionService.cs" />
@@ -596,6 +616,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="wwwroot\components\story\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="libs\responsivir.ts" />
@@ -629,6 +650,7 @@
     <TypeScriptCompile Include="wwwroot\bootstrap.reducers.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.services.ts" />
     <TypeScriptCompile Include="wwwroot\bootstrap.ts" />
+    <TypeScriptCompile Include="wwwroot\components\general\admin-header.ts" />
     <TypeScriptCompile Include="wwwroot\components\general\app.ts" />
     <TypeScriptCompile Include="wwwroot\components\shared\button.ts" />
     <TypeScriptCompile Include="wwwroot\components\general\footer.ts" />
@@ -655,9 +677,11 @@
     <TypeScriptCompile Include="wwwroot\components\technique\technique-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\technology\technologies.ts" />
     <TypeScriptCompile Include="wwwroot\components\technology\technology-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technology\technology-meta-item-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\technology\technology-tile.ts" />
     <TypeScriptCompile Include="wwwroot\components\technology\technology.ts" />
     <TypeScriptCompile Include="wwwroot\components\technology\technology-type.ts" />
+    <TypeScriptCompile Include="wwwroot\components\technology\technology-meta-item.ts" />
     <TypeScriptCompile Include="wwwroot\components\tool\tool-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\tool\tool-list.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\article-reducers.ts" />

@@ -115,11 +115,11 @@ app.component({
         'toolActionCreator']
 });
 
-
 app.component({
     templateUrl: "wwwroot/components/general/app.html",
     component: components.AppComponent,
-    selector: "app"
+    selector: "app",
+    providers:["userActionCreator"]
 });
 
 app.component({
@@ -131,7 +131,7 @@ app.component({
 
 app.component({
     templateUrl: "wwwroot/components/general/header.html",
-    providers: ["$rootScope", "$route"],
+    providers: ["$rootScope", "$route","userActionCreator"],
     component: components.HeaderComponent,
     selector: "app-header"
 });
@@ -139,7 +139,15 @@ app.component({
 app.component({
     templateUrl: "wwwroot/components/general/footer.html",
     component: components.FooterComponent,
-    selector: "app-footer"
+    selector: "app-footer",
+    providers: ["userActionCreator"]
+});
+
+app.component({
+    templateUrl: "wwwroot/components/general/admin-header.html",
+    component: components.AdminHeaderComponent,
+    selector: "admin-header",
+    providers: ["userActionCreator"]
 });
 
 app.component({

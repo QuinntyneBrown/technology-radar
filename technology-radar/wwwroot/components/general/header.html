@@ -5,4 +5,6 @@
     <a href="#/platforms" data-ng-class="{ 'selected': vm.currentPath == '/platforms' }">Platforms</a>
     <a href="#/techniques" data-ng-class="{ 'selected': vm.currentPath == '/techniques' }">Techniques</a>
     <a href="#/tools" data-ng-class="{ 'selected': vm.currentPath == '/tools' }">Tools</a>
+    <a data-ng-if="!vm.isLoggedIn()"  href="#/login" data-ng-class="{ 'selected': vm.currentPath == '/login' }">Login</a>
+    <a data-ng-if="vm.isLoggedIn()" data-ng-click="vm.logOut()">Log Out</a>
 </div>

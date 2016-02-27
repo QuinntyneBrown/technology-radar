@@ -1,7 +1,8 @@
 ﻿<div class="app">
     <app-header></app-header>
+    <admin-header data-ng-if="vm.isLoggedIn()"></admin-header>
     <div data-ng-view="" class="mainContent">
 
     </div>
-    <app-footer></app-footer>
+    <app-footer data-ng-if="!vm.isLoggedIn()"></app-footer>
 </div>

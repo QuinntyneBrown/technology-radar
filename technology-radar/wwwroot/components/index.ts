@@ -3,6 +3,7 @@ export * from "./general/app";
 export * from "./general/header";
 export * from "./general/footer";
 export * from "./general/login";
+export * from "./general/admin-header";
 
 export * from "./shared/button";
 export * from "./shared/form-control";
