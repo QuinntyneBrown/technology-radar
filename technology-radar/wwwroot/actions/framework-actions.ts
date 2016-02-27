@@ -8,6 +8,16 @@ export class FrameworkActionCreator extends TechnologyActionCreator  {
         super($location,dispatcher);
     }
 
+    getById = options => {
+        var newId = this.guid();
+        this.frameworkService.getById({
+            id: options.id
+        }).then(results => {
+            this.dispatcher.dispatch(new AddOrUpdateFrameworkAction(newId, results));
+        });
+        return newId;
+    }
+
     addOrUpdate = options => {
         var newId = this.guid();
         this.frameworkService.add({

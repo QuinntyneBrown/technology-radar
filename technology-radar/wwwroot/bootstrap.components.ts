@@ -11,10 +11,11 @@ app.component({
 });
 
 app.component({
+    route: "/framework/edit/:id",
     templateUrl: "wwwroot/components/framework/framework-editor.html",
     component: components.FrameworkEditorComponent,
     selector: "framework-editor",
-    providers: ["invokeAsync", "frameworkActionCreator"]
+    providers: ["$location","$routeParams","invokeAsync", "frameworkActionCreator"]
 });
 
 app.component({
@@ -42,10 +43,11 @@ app.component({
 });
 
 app.component({
+    route: "/platform/edit/:id",
     templateUrl: "wwwroot/components/platform/platform-editor.html",
     component: components.PlatformEditorComponent,
     selector: "platform-editor",
-    providers: ["invokeAsync", "platformActionCreator"]
+    providers: ["$location", "$routeParams", "invokeAsync", "platformActionCreator"]
 });
 
 
@@ -58,10 +60,11 @@ app.component({
 });
 
 app.component({
+    route: "/technqiue/edit/:id",
     templateUrl: "wwwroot/components/technique/technique-editor.html",
     component: components.TechniqueEditorComponent,
     selector: "technique-editor",
-    providers: ["invokeAsync", "techniqueActionCreator"]
+    providers: ["$location", "$routeParams", "invokeAsync", "techniqueActionCreator"]
 });
 
 app.component({
@@ -73,10 +76,11 @@ app.component({
 });
 
 app.component({
+    route: "/tool/edit/:id",
     templateUrl: "wwwroot/components/tool/tool-editor.html",
     component: components.ToolEditorComponent,
     selector: "tool-editor",
-    providers: ["invokeAsync", "toolActionCreator"]
+    providers: ["$location", "$routeParams", "invokeAsync", "toolActionCreator"]
 });
 
 app.component({

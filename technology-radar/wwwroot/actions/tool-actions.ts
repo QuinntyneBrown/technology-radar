@@ -8,6 +8,16 @@ export class ToolActionCreator extends TechnologyActionCreator {
         super($location,dispatcher);
     }
 
+    getById = options => {
+        var newId = this.guid();
+        this.toolService.getById({
+            id: options.id
+        }).then(results => {
+            this.dispatcher.dispatch(new AddOrUpdateToolAction(newId, results));
+        });
+        return newId;
+    }
+
     addOrUpdate = options => {
         var newId = this.guid();
         this.toolService.add({

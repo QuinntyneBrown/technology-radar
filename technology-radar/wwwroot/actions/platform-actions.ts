@@ -7,6 +7,16 @@ export class PlatformActionCreator extends TechnologyActionCreator {
         super($location,dispatcher);
     }
 
+    getById = options => {
+        var newId = this.guid();
+        this.platformService.getById({
+            id: options.id
+        }).then(results => {
+            this.dispatcher.dispatch(new AddOrUpdatePlatformAction(newId, results));
+        });
+        return newId;
+    }
+
     addOrUpdate = options => {
         var newId = this.guid();
         this.platformService.add({

@@ -7,6 +7,16 @@ export class TechniqueActionCreator extends TechnologyActionCreator {
         super($location,dispatcher);
     }
 
+    getById = options => {
+        var newId = this.guid();
+        this.techniqueService.getById({
+            id: options.id
+        }).then(results => {
+            this.dispatcher.dispatch(new AddOrUpdateTechniqueAction(newId, results));
+        });
+        return newId;
+    }
+
     addOrUpdate = options => {
         var newId = this.guid();
         this.techniqueService.add({

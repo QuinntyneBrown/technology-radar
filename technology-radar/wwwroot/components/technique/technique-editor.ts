@@ -1,5 +1,20 @@
-﻿export class TechniqueEditorComponent {
-    constructor(private invokeAsync, private techniqueActionCreator) { }
+﻿import { TechniqueActionCreator, RemoveTechniqueAction } from "../../actions";
+import { technologyType }  from "../technology/technology-type";
+
+
+export class TechniqueEditorComponent {
+    constructor(private $location: angular.ILocationService, private $routeParams: angular.route.IRouteParamsService, private invokeAsync, private techniqueActionCreator: TechniqueActionCreator) { }
+
+    storeOnChange = state => {
+        if (state.lastTriggeredByAction == RemoveTechniqueAction && state.techniques.filter(entity => entity.id === this.id).length < 1)
+            this.$location.path(this.baseUrl + "/list");
+        this.entities = state.techniques;
+    };
+
+    ngOnInit = () => {
+        if (this.$routeParams["id"])
+            angular.extend(this, angular.copy(this.entities.filter(entity => entity.id == this.$routeParams["id"])[0]));
+    }
 
     addOrUpdate = () => {
         this.invokeAsync({
@@ -12,15 +27,22 @@
                 abstract: this.abstract
             }
         }).then(() => {
-            this.id = null;
-            this.name = null;
-            this.rating = null;
-            this.description = null;
-            this.abstract = null;
+            if (!this.id && this.entities.filter(entity => entity.name === this.name).length > 0) {
+                this.$location.path(this.baseUrl + "/edit/" + this.entities.filter(entity => entity.name === this.name)[0].id);
+            }
+            else {
+
+            }
         });
     } 
 
+    get baseUrl() { return "/technique"; }
+
     remove = () => this.techniqueActionCreator.remove({ id: this.id });
+
+    create = () => this.techniqueActionCreator.create({ technologyType: technologyType.technique });
+
+    entities;
 
     id;
     name;
@@ -28,10 +50,14 @@
     description;
     abstract;
 
-    //static canActivate = () => {
-    //    return ["$route", "invokeAsync", "techniqueActionCreator", ($route, invokeAsync, techniqueActionCreator) => {
-
-    //    }];
-    //}
+    static canActivate = () => {
+        return ["$route", "invokeAsync", "techniqueActionCreator", ($route, invokeAsync, techniqueActionCreator) => {
+            var id = $route.current.params.id;
+            return invokeAsync({
+                action: techniqueActionCreator.getById,
+                params: { id: id }
+            });
+        }];
+    }
 
 }

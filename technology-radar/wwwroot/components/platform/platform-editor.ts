@@ -1,5 +1,19 @@
-﻿export class PlatformEditorComponent {
-    constructor(private invokeAsync, private platformActionCreator) { }
+﻿import { PlatformActionCreator, RemovePlatformAction } from "../../actions";
+import { technologyType }  from "../technology/technology-type";
+
+export class PlatformEditorComponent {
+    constructor(private $location: angular.ILocationService, private $routeParams: angular.route.IRouteParamsService, private invokeAsync, private platformActionCreator: PlatformActionCreator) { }
+
+    storeOnChange = state => {
+        if (state.lastTriggeredByAction == RemovePlatformAction && state.platforms.filter(entity => entity.id === this.id).length < 1)
+            this.$location.path(this.baseUrl + "/list");
+        this.entities = state.platforms;
+    };
+
+    ngOnInit = () => {
+        if (this.$routeParams["id"])
+            angular.extend(this, angular.copy(this.entities.filter(entity => entity.id == this.$routeParams["id"])[0]));
+    }
 
     addOrUpdate = () => {
         this.invokeAsync({
@@ -12,15 +26,22 @@
                 abstract: this.abstract
             }
         }).then(() => {
-            this.id = null;
-            this.name = null;
-            this.rating = null;
-            this.description = null;
-            this.abstract = null;
+            if (!this.id && this.entities.filter(entity => entity.name === this.name).length > 0) {
+                this.$location.path(this.baseUrl + "/edit/" + this.entities.filter(entity => entity.name === this.name)[0].id);
+            }
+            else {
+
+            }
         });
     } 
 
+    get baseUrl() { return "/platform"; }
+
     remove = () => this.platformActionCreator.remove({ id: this.id });
+
+    create = () => this.platformActionCreator.create({ technologyType: technologyType.platform });
+
+    entities;
 
     id;
     name;
@@ -28,9 +49,13 @@
     description;
     abstract;
 
-    //static canActivate = () => {
-    //    return ["$route", "invokeAsync", "platformActionCreator", ($route, invokeAsync, platformActionCreator) => {
-
-    //    }];
-    //}
+    static canActivate = () => {
+        return ["$route", "invokeAsync", "platformActionCreator", ($route, invokeAsync, platformActionCreator) => {
+            var id = $route.current.params.id;
+            return invokeAsync({
+                action: platformActionCreator.getById,
+                params: { id: id }
+            });
+        }];
+    }
 }
