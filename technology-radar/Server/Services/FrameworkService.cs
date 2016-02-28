@@ -59,7 +59,5 @@ namespace Chloe.Server.Services
 
         protected readonly IChloeUow uow;
         protected readonly IRepository<Framework> repository;
-
-
     }
 }

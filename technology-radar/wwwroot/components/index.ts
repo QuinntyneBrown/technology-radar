@@ -30,6 +30,12 @@ export * from "./shared/tab-title";
 export * from "./tool/tool-list";
 export * from "./tool/tool-editor";
 
+export * from "./tag/tag-list";
+export * from "./tag/tag-editor";
+
+export * from "./blog-story/blog-story-list";
+export * from "./blog-story/blog-story-editor";
+
 export * from "./technology/technology";
 export * from "./technology/technology-tile";
 export * from "./technology/technologies";

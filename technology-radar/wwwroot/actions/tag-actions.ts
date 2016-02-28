@@ -2,7 +2,7 @@
 import { TagService } from "../services";
 
 export class TagActionCreator {
-    constructor(private dispatcher: IDispatcher, private tagService, private guid) { }
+    constructor(private $location: angular.ILocationService, private dispatcher: IDispatcher, private guid, private tagService) { }
 
     addOrUpdate = options => {
         var newId = this.guid();
@@ -12,18 +12,25 @@ export class TagActionCreator {
                 name: options.name,
                 description: options.description
             }
-        })
-            .then(results => this.dispatcher.dispatch(new AddOrUpdateTagAction(newId, results)));
+        }).then(results => this.dispatcher.dispatch(new AddOrUpdateTagAction(newId, results)));
         return newId;
+    }
+
+    create = () => {
+        this.dispatcher.dispatch(new SetCurrentTagAction(null));
+        this.$location.path("/tag/list");
+    }
+
+    edit = (options) => {
+        this.dispatcher.dispatch(new SetCurrentTagAction(options.entity));
+        this.$location.path("/tag/edit/" + options.entity.id);
     }
 
     getById = options => {
         var newId = this.guid();
         this.tagService.getById({
             id: options.id
-        }).then(results => {
-            this.dispatcher.dispatch(new AddOrUpdateTagAction(newId, results));
-        });
+        }).then(results => this.dispatcher.dispatch(new AddOrUpdateTagAction(newId, results)));
         return newId;
     }
 
@@ -42,13 +49,8 @@ export class TagActionCreator {
     }
 }
 
-
 export class AddOrUpdateTagAction { constructor(public id, public entity) { } }
-
 export class AllTagsAction { constructor(public id, public entities) { } }
-
 export class RemoveTagAction { constructor(public id, public entity) { } }
-
 export class TagsFilterAction { constructor(public id, public term) { } }
-
-export class SetCurrentTagAction { constructor(public id, public entityId) { } }
+export class SetCurrentTagAction { constructor(public entity) { } }

@@ -8,10 +8,9 @@ export class YouTubeVideoActionCreator {
         this.youTubeVideoService.add({
             data: {
                 id: options.id,
-                abstract: options.abstract,
+                videoId: options.videoId,
                 name: options.name,
                 description: options.description,
-                rating: options.rating
             }
         })
             .then(results => this.dispatcher.dispatch(new AddOrUpdateYouTubeVideoAction(newId, results)));

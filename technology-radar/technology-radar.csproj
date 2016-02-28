@@ -412,6 +412,12 @@
     <Content Include="wwwroot\components\shared\tabs.html">
       <DependentUpon>tabs.ts</DependentUpon>
     </Content>
+    <Content Include="wwwroot\components\tag\tag-editor.html">
+      <DependentUpon>tag-editor.ts</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\components\tag\tag-list.html">
+      <DependentUpon>tag-list.ts</DependentUpon>
+    </Content>
     <Content Include="wwwroot\components\technique\technique-editor.css">
       <DependentUpon>technique-editor.ts</DependentUpon>
     </Content>
@@ -534,6 +540,9 @@
     <Compile Include="Server\Dtos\ArticleAddOrUpdateRequestDto.cs" />
     <Compile Include="Server\Dtos\ArticleAddOrUpdateResponseDto.cs" />
     <Compile Include="Server\Dtos\ArticleDto.cs" />
+    <Compile Include="Server\Dtos\BlogStoryAddOrUpdateRequestDto.cs" />
+    <Compile Include="Server\Dtos\BlogStoryAddOrUpdateResponseDto.cs" />
+    <Compile Include="Server\Dtos\BlogStoryDto.cs" />
     <Compile Include="Server\Dtos\FrameworkAddOrUpdateRequestDto.cs" />
     <Compile Include="Server\Dtos\FrameworkAddOrUpdateResponseDto.cs" />
     <Compile Include="Server\Dtos\FrameworkDto.cs" />
@@ -616,11 +625,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="wwwroot\components\story\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="libs\responsivir.ts" />
     <TypeScriptCompile Include="wwwroot\actions\article-actions.ts" />
+    <TypeScriptCompile Include="wwwroot\actions\blog-story-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\framework-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\language-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\platform-actions.ts" />
@@ -670,9 +679,14 @@
     <TypeScriptCompile Include="libs\safeDigest.ts" />
     <TypeScriptCompile Include="wwwroot\components\platform\platform-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\platform\platform-editor.ts" />
+    <TypeScriptCompile Include="wwwroot\components\shared\story.ts" />
     <TypeScriptCompile Include="wwwroot\components\shared\tab-content.ts" />
     <TypeScriptCompile Include="wwwroot\components\shared\tab-title.ts" />
     <TypeScriptCompile Include="wwwroot\components\shared\tabs.ts" />
+    <TypeScriptCompile Include="wwwroot\components\blog-story\blog-story-list.ts" />
+    <TypeScriptCompile Include="wwwroot\components\blog-story\blog-story-editor.ts" />
+    <TypeScriptCompile Include="wwwroot\components\tag\tag-editor.ts" />
+    <TypeScriptCompile Include="wwwroot\components\tag\tag-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\technique\technique-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\technique\technique-list.ts" />
     <TypeScriptCompile Include="wwwroot\components\technology\technologies.ts" />
@@ -685,6 +699,7 @@
     <TypeScriptCompile Include="wwwroot\components\tool\tool-editor.ts" />
     <TypeScriptCompile Include="wwwroot\components\tool\tool-list.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\article-reducers.ts" />
+    <TypeScriptCompile Include="wwwroot\reducers\blog-story-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\framework-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\index.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\language-reducers.ts" />
@@ -697,6 +712,7 @@
     <TypeScriptCompile Include="wwwroot\reducers\you-tube-video-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\services\article-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\base-service.ts" />
+    <TypeScriptCompile Include="wwwroot\services\blog-story-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\framework-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\index.ts" />
     <TypeScriptCompile Include="libs\store.ts" />

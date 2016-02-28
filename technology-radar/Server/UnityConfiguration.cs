@@ -27,7 +27,8 @@ namespace Chloe.Server
             container.RegisterType<IPlatformService, PlatformService>();
             container.RegisterType<ITechniqueService, TechniqueService>();
             container.RegisterType<IToolService, ToolService>();
-            
+
+            container.RegisterType<ITagService, TagService>();
             container.RegisterType<IBlogStoryService, BlogStoryService>();
 
             return container;

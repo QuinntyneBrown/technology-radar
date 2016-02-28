@@ -52,6 +52,23 @@ app.component({
 
 
 app.component({
+    route: "/tag/list",
+    templateUrl: "wwwroot/components/tag/tag-list.html",
+    component: components.TagListComponent,
+    selector: "tag-list",
+    providers: ["tagActionCreator"]
+});
+
+app.component({
+    route: "/tag/edit/:id",
+    templateUrl: "wwwroot/components/tag/tag-editor.html",
+    component: components.TagEditorComponent,
+    selector: "tag-editor",
+    providers: ["$location", "$routeParams", "invokeAsync", "tagActionCreator"]
+});
+
+
+app.component({
     route: "/technique/list",
     templateUrl: "wwwroot/components/technique/technique-list.html",
     component: components.TechniqueListComponent,

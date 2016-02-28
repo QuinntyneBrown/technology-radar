@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Chloe.Server.Dtos;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Chloe.Server.Services.Contracts
 {
     public interface IBlogStoryService
     {
+        BlogStoryAddOrUpdateResponseDto AddOrUpdate(BlogStoryAddOrUpdateRequestDto request);
+        ICollection<BlogStoryDto> GetAll();
+        BlogStoryDto GetById(int id);
+        dynamic Remove(int id);
     }
 }

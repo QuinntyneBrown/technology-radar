@@ -30,17 +30,26 @@ namespace Chloe.Server.Services
 
         public ICollection<TagDto> GetAll()
         {
-            throw new NotImplementedException();
+            var response = new HashSet<TagDto>();
+            foreach (var entity in repository.GetAll().Where(x => x.IsDeleted == false))
+            {
+                response.Add(new TagDto(entity));
+            }
+            return response;
         }
 
         public TagDto GetById(int id)
         {
-            throw new NotImplementedException();
+            var entity = repository.GetAll().Where(x => x.Id == id).Single();
+            return new TagDto(entity);
         }
 
         public dynamic Remove(int id)
         {
-            throw new NotImplementedException();
+            var entity = repository.GetById(id);
+            entity.IsDeleted = true;
+            uow.SaveChanges();
+            return id;
         }
 
         protected readonly IChloeUow uow;
