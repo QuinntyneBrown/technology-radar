@@ -1,0 +1,1 @@
+{"version":3,"file":"component-decorator.js","sourceRoot":"","sources":["component-decorator.ts"],"names":["Component"],"mappings":"AAAA,mBAA0B,MAAgB;IAAhBA,sBAAgBA,GAAhBA,WAAgBA;IACtCA,MAAMA,CAACA,UAAUA,GAAGA;QAChB,MAAM,CAAC,SAAS,GAAG,GAAG,CAAC;QACvB,GAAG,CAAC,MAAM,GAAG,MAAM,CAAC;IACxB,CAAC,CAACA;AACNA,CAACA;AALe,iBAAS,YAKxB,CAAA"}

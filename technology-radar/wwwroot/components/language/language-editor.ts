@@ -1,6 +1,21 @@
 ﻿import { LanguageActionCreator, RemoveLanguageAction } from "../../actions";
 import { technologyType }  from "../technology/technology-type";
+import { Component } from "../../../libs/component-decorator";
+import { CanActivate } from "../../../libs/can-activate-decorator";
 
+@Component({
+    route: "/language/edit/:id",
+    templateUrl: "wwwroot/components/language/language-editor.html",
+    selector: "language-editor",
+    providers: ["$location", "$routeParams", "invokeAsync", "languageActionCreator"]
+})
+@CanActivate(["$route", "invokeAsync", "languageActionCreator", ($route, invokeAsync, languageActionCreator: LanguageActionCreator) => {
+    var id = $route.current.params.id;
+    return invokeAsync({
+        action: languageActionCreator.getById,
+        params: { id: id }
+    });
+}])
 export class LanguageEditorComponent {
     constructor(private $location: angular.ILocationService, private $routeParams: angular.route.IRouteParamsService, private invokeAsync, private languageActionCreator: LanguageActionCreator) {}
 
@@ -45,14 +60,5 @@ export class LanguageEditorComponent {
     abstract;
     entities;
 
-    static canActivate = () => {
-        return ["$route", "invokeAsync", "languageActionCreator", ($route, invokeAsync, languageActionCreator) => {
-            var id = $route.current.params.id;
-            return invokeAsync({
-                action: languageActionCreator.getById,
-                params: { id: id }
-            });
-        }];
-    }
 
 }

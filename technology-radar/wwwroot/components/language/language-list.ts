@@ -1,5 +1,12 @@
 ﻿import { technologyType }  from "../technology/technology-type";
+import { Component } from "../../../libs/component-decorator";
 
+@Component({
+    route: "/language/list",
+    templateUrl: "wwwroot/components/language/language-list.html",
+    selector: "language-list",
+    providers: ["languageActionCreator"]
+})
 export class LanguageListComponent {
     constructor(private languageActionCreator) { }
 

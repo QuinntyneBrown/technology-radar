@@ -1,6 +1,6 @@
 ﻿import * as components from "./components";
 
-var app = (<any>angular.module("components", [ "store" ]));
+var app = (<any>angular.module("components", ["store"]));
 
 app.component({
     route:"/framework/list",
@@ -18,21 +18,9 @@ app.component({
     providers: ["$location","$routeParams","invokeAsync", "frameworkActionCreator"]
 });
 
-app.component({
-    route: "/language/list",
-    templateUrl: "wwwroot/components/language/language-list.html",
-    component: components.LanguageListComponent,
-    selector: "language-list",
-    providers: ["languageActionCreator"]
-});
+app.component((<any>components.LanguageListComponent).config);
 
-app.component({
-    route:"/language/edit/:id",
-    templateUrl: "wwwroot/components/language/language-editor.html",
-    component: components.LanguageEditorComponent,
-    selector: "language-editor",
-    providers: ["$location","$routeParams","invokeAsync","languageActionCreator"]
-});
+app.component((<any>components.LanguageEditorComponent).config);
 
 app.component({
     route: "/platform/list",

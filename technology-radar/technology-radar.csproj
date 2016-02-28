@@ -627,6 +627,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="libs\can-activate-decorator.ts" />
+    <TypeScriptCompile Include="libs\component-decorator.ts" />
     <TypeScriptCompile Include="libs\responsivir.ts" />
     <TypeScriptCompile Include="wwwroot\actions\article-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\blog-story-actions.ts" />
