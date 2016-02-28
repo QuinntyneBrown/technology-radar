@@ -1,6 +1,17 @@
 ﻿import { technologyType }  from "../technology/technology-type";
 import { FrameworkActionCreator } from "../../actions";
+import { CanActivate, Component } from "../../../libs/component-decorators";
 
+@Component({
+    route: "/framework/list",
+    templateUrl: "wwwroot/components/language/language-editor.html",
+    selector: "language-editor",
+    providers: ["$location", "$routeParams", "invokeAsync", "languageActionCreator"]
+})
+@CanActivate([
+    "frameworkActionCreator", "invokeAsync",
+    (frameworkActionCreator, invokeAsync) => invokeAsync(frameworkActionCreator.all)
+])
 export class FrameworkListComponent {
     constructor(private frameworkActionCreator: FrameworkActionCreator) { }
 
@@ -12,8 +23,4 @@ export class FrameworkListComponent {
 
     remove = entity => this.frameworkActionCreator.remove({ entity: entity });
     
-    static canActivate = () => [
-        "frameworkActionCreator", "invokeAsync",
-        (frameworkActionCreator, invokeAsync) => invokeAsync(frameworkActionCreator.all)
-    ]
 }

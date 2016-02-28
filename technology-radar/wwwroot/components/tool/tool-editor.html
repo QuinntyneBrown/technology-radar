@@ -1,5 +1,9 @@
 ﻿<div class="toolEditor">
-    <h1>Create Tool <span data-ng-if="vm.name.length > 0">: {{ vm.name }}</span></h1>
+
+    <h1 data-ng-if="!vm.id">Create Tool <span data-ng-if="vm.name.length > 0">: {{ vm.name }}</span></h1>
+
+    <h1 data-ng-if="vm.id">Edit Tool : {{ vm.name }}</h1>
+
     <div>
         <input class="inputField" type="text" placeholder="Tool Name" data-ng-model="vm.name" />
     </div>

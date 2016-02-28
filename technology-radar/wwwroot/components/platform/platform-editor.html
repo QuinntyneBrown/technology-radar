@@ -1,6 +1,8 @@
 ﻿<div class="platformEditor">
 
-    <h1>Create Platform <span data-ng-if="vm.name.length > 0">: {{ vm.name }}</span></h1>
+    <h1 data-ng-if="!vm.id">Create Platform  <span data-ng-if="vm.name.length > 0">: {{ vm.name }}</span></h1>
+
+    <h1 data-ng-if="vm.id">Edit Platform : {{ vm.name }}</h1>
 
     <div>
         <input class="inputField" type="text" placeholder="Platform Name" data-ng-model="vm.name" />

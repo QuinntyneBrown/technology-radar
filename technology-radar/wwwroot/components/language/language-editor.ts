@@ -1,7 +1,6 @@
 ﻿import { LanguageActionCreator, RemoveLanguageAction } from "../../actions";
 import { technologyType }  from "../technology/technology-type";
-import { Component } from "../../../libs/component-decorator";
-import { CanActivate } from "../../../libs/can-activate-decorator";
+import { CanActivate, Component } from "../../../libs/component-decorators";
 
 @Component({
     route: "/language/edit/:id",

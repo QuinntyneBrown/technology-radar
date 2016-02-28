@@ -1,20 +1,21 @@
 ﻿import { technologyType }  from "./technology-type";
-import {
-FrameworkActionCreator,
-LanguageActionCreator,
-PlatformActionCreator,
-TechniqueActionCreator,
-ToolActionCreator
-} from "../../actions";
+import * as actions from "../../actions";
+import { CanActivate, Component } from "../../../libs/component-decorators";
 
+@Component({
+    route: "/technology/list",
+    templateUrl: "wwwroot/components/technology/technology-list.html",
+    selector: "technology-list",
+    providers: ["$attrs", "frameworkActionCreator", "languageActionCreator", "platformActionCreator", "techniqueActionCreator", "toolActionCreator"]
+})
 export class TechnologyListComponent {
 
     constructor(private $attrs: angular.IAttributes,
-        private frameworkActionCreator: FrameworkActionCreator,
-        private languageActionCreator: LanguageActionCreator,
-        private platformActionCreator: PlatformActionCreator,
-        private techniqueActionCreator: TechniqueActionCreator,
-        private toolActionCreator: ToolActionCreator
+        private frameworkActionCreator: actions.FrameworkActionCreator,
+        private languageActionCreator: actions.LanguageActionCreator,
+        private platformActionCreator: actions.PlatformActionCreator,
+        private techniqueActionCreator: actions.TechniqueActionCreator,
+        private toolActionCreator: actions.ToolActionCreator
     ) {
         
     }
@@ -47,7 +48,7 @@ export class TechnologyListComponent {
 
     edit = entity => this.technologyActionCreator.edit({ entity: entity });
 
-    get technologyActionCreator():FrameworkActionCreator | LanguageActionCreator | PlatformActionCreator | TechniqueActionCreator | ToolActionCreator {
+    get technologyActionCreator(): actions.FrameworkActionCreator | actions.LanguageActionCreator | actions.PlatformActionCreator | actions.TechniqueActionCreator | actions.ToolActionCreator {
         switch (this.technologyType) {
             case technologyType.framework:
                 return this.frameworkActionCreator;

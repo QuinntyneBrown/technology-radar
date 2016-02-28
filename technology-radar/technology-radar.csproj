@@ -449,7 +449,9 @@
     <Content Include="wwwroot\components\technology\technology-meta-item-list.html">
       <DependentUpon>technology-meta-item-list.ts</DependentUpon>
     </Content>
-    <Content Include="wwwroot\components\technology\technology-meta-item.html" />
+    <Content Include="wwwroot\components\technology\technology-meta-item.html">
+      <DependentUpon>technology-meta-item.ts</DependentUpon>
+    </Content>
     <Content Include="wwwroot\components\technology\technology-tile.css">
       <DependentUpon>technology-tile.ts</DependentUpon>
     </Content>
@@ -627,8 +629,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="libs\can-activate-decorator.ts" />
-    <TypeScriptCompile Include="libs\component-decorator.ts" />
+    <TypeScriptCompile Include="libs\component-decorators.ts" />
     <TypeScriptCompile Include="libs\responsivir.ts" />
     <TypeScriptCompile Include="wwwroot\actions\article-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\blog-story-actions.ts" />

@@ -1,5 +1,9 @@
 ﻿<div class="techniqueEditor">
-    <h1>Create Technique <span data-ng-if="vm.name.length > 0">: {{ vm.name }}</span></h1>
+
+    <h1 data-ng-if="!vm.id">Create Technique  <span data-ng-if="vm.name.length > 0">: {{ vm.name }}</span></h1>
+
+    <h1 data-ng-if="vm.id">Edit Technique : {{ vm.name }}</h1>
+
     <div>
         <input class="inputField" type="text" placeholder="Technique Name" data-ng-model="vm.name" />
     </div>

@@ -1,4 +1,45 @@
-﻿export class TechnologiesComponent {
+﻿import { CanActivate, Component } from "../../../libs/component-decorators";
+
+@Component({
+    route: "/language/edit/:id",
+    templateUrl: "wwwroot/components/language/language-editor.html",
+    selector: "language-editor",
+    providers: ["$location", "$routeParams", "invokeAsync", "languageActionCreator"]
+})
+@CanActivate([
+    "$route", "invokeAsync",
+    "frameworkActionCreator",
+    "languageActionCreator",
+    "platformActionCreator",
+    "techniqueActionCreator",
+    "toolActionCreator",
+    ($route: any,
+        invokeAsync,
+        frameworkActionCreator,
+        languageActionCreator,
+        platformActionCreator,
+        techniqueActionCreator,
+        toolActionCreator) => {
+
+        switch ($route.current.$$route.originalPath) {
+            case "/frameworks":
+                return invokeAsync(frameworkActionCreator.all);
+                break;
+            case "/languages":
+                return invokeAsync(languageActionCreator.all);
+                break;
+            case "/platforms":
+                return invokeAsync(platformActionCreator.all);
+                break;
+            case "/techniques":
+                return invokeAsync(techniqueActionCreator.all);
+                break;
+            case "/tools":
+                return invokeAsync(toolActionCreator.all);
+                break;
+        }
+}])
+export class TechnologiesComponent {
     constructor(private $route) { }
 
     storeOnChange = state => {
@@ -27,41 +68,5 @@
     };
 
     entities = [];
-    title;
-
-    static canActivate = () => [
-        "$route", "invokeAsync",
-        "frameworkActionCreator",
-        "languageActionCreator",
-        "platformActionCreator",
-        "techniqueActionCreator",
-        "toolActionCreator",
-        ($route: any, invokeAsync,
-
-            frameworkActionCreator,
-            languageActionCreator,
-            platformActionCreator,
-            techniqueActionCreator,
-            toolActionCreator) => {
-
-            switch ($route.current.$$route.originalPath) {
-                case "/frameworks":
-                    return invokeAsync(frameworkActionCreator.all);
-                    break;
-                case "/languages":
-                    return invokeAsync(languageActionCreator.all);
-                    break;
-                case "/platforms":
-                    return invokeAsync(platformActionCreator.all);
-                    break;
-                case "/techniques":
-                    return invokeAsync(techniqueActionCreator.all);
-                    break;
-                case "/tools":
-                    return invokeAsync(toolActionCreator.all);
-                    break;
-            }
-
-        }];
-    
+    title;    
 }

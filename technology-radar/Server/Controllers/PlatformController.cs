@@ -30,6 +30,7 @@ namespace Chloe.Server.Controllers
         [HttpDelete]
         public IHttpActionResult Remove(int id) { return Ok(this.service.Remove(id)); }
 
+        [AllowAnonymous]
         [Route("getById")]
         [HttpGet]
         public IHttpActionResult GetById(int id) { return Ok(this.service.GetById(id)); }

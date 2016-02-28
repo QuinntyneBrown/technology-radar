@@ -1,5 +1,5 @@
 ﻿import { technologyType }  from "../technology/technology-type";
-import { Component } from "../../../libs/component-decorator";
+import { CanActivate, Component } from "../../../libs/component-decorators";
 
 @Component({
     route: "/language/list",
@@ -7,19 +7,13 @@ import { Component } from "../../../libs/component-decorator";
     selector: "language-list",
     providers: ["languageActionCreator"]
 })
+@CanActivate([
+    "languageActionCreator", "invokeAsync",
+    (languageActionCreator, invokeAsync) => invokeAsync(languageActionCreator.all)
+])
 export class LanguageListComponent {
     constructor(private languageActionCreator) { }
-
     storeOnChange = state => this.entities = state.languages;
-
     entities;
-
-    get technologyType() { return technologyType.language; }
-
-    remove = entity => this.languageActionCreator.remove({ entity: entity });
-    
-    static canActivate = () => [
-        "languageActionCreator", "invokeAsync",
-        (languageActionCreator, invokeAsync) => invokeAsync(languageActionCreator.all)
-    ]
+    get technologyType() { return technologyType.language; }    
 }
