@@ -1,8 +1,7 @@
-﻿import { CanActivate, Component } from "../../../libs/component-decorators";
+﻿import { Component } from "../../../libs/component-decorators";
 import { SearchActionCreator } from "../../actions";
 
 @Component({
-    route: "/search",
     templateUrl: "wwwroot/components/search/search.html",
     selector: "search",
     providers: ["$element","searchActionCreator"]
@@ -10,24 +9,17 @@ import { SearchActionCreator } from "../../actions";
 export class SearchComponent {
     constructor(private $element: angular.IAugmentedJQuery, private searchActionCreator: SearchActionCreator) { }
 
-    storeOnChange = state => {
-        (<HTMLInputElement>this.$element[0].querySelector("#search-input-field")).value = state.searchTerm;
-        this.searchResults = state.searchResults;
-    }
+    storeOnChange = state => [this.searchInputElement.value, this.searchResults] = [state.searchTerm, state.searchResults];
 
-    ngOnInit = () => {        
-        this.textChanged$.subscribe(term => this.searchActionCreator.query({ term: term }));
-    }
+    ngOnInit = () => { this.inputChanged$.subscribe(term => this.searchActionCreator.query({ term: term })); }
 
     searchResults: Array<any>;
 
-    textChanged$: Rx.Observable<any> = Rx.Observable.fromEvent(this.$element[0].querySelector("#search-input-field"), "keyup")
-        .map(function (e: any) {
-            return e.target.value;
-        }).filter(function (text) {
-            return text.length > 2;
-        })
-        .debounce(100)
+    inputChanged$: Rx.Observable<any> = Rx.Observable.fromEvent(this.searchInputElement, "keyup")
+        .map( e => (<any>e).target.value)
+        .filter(text => text.length > 1)
+        .debounce(750)
         .distinctUntilChanged();
 
+    get searchInputElement(): HTMLInputElement { return <HTMLInputElement>this.$element[0].querySelector("#search-input-field"); }
 }
