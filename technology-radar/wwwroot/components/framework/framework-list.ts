@@ -4,9 +4,9 @@ import { CanActivate, Component } from "../../../libs/component-decorators";
 
 @Component({
     route: "/framework/list",
-    templateUrl: "wwwroot/components/language/language-editor.html",
-    selector: "language-editor",
-    providers: ["$location", "$routeParams", "invokeAsync", "languageActionCreator"]
+    templateUrl: "wwwroot/components/framework/framework-list.html",
+    selector: "framework-list",
+    providers: ["frameworkActionCreator"]
 })
 @CanActivate([
     "frameworkActionCreator", "invokeAsync",

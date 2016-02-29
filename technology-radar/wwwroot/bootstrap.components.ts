@@ -4,21 +4,9 @@ var app = (<any>angular.module("components", ["store"]));
 
 app.component((<any>components.SearchComponent).config);
 
-app.component({
-    route:"/framework/list",
-    templateUrl: "wwwroot/components/framework/framework-list.html",
-    component: components.FrameworkListComponent,
-    selector: "framework-list",
-    providers: ["frameworkActionCreator"]
-});
+app.component((<any>components.FrameworkListComponent).config);
 
-app.component({
-    route: "/framework/edit/:id",
-    templateUrl: "wwwroot/components/framework/framework-editor.html",
-    component: components.FrameworkEditorComponent,
-    selector: "framework-editor",
-    providers: ["$location","$routeParams","invokeAsync", "frameworkActionCreator"]
-});
+app.component((<any>components.FrameworkEditorComponent).config);
 
 app.component((<any>components.LanguageListComponent).config);
 
