@@ -1,22 +1,23 @@
 ﻿import { FrameworkActionCreator, RemoveFrameworkAction } from "../../actions";
 import { technologyType }  from "../technology/technology-type";
 import { CanActivate, Component } from "../../../libs/component-decorators";
+import { RouteParams } from "../../../libs";
 
 @Component({
-    route: "/language/edit/:id",
-    templateUrl: "wwwroot/components/language/language-editor.html",
-    selector: "language-editor",
-    providers: ["$location", "$routeParams", "invokeAsync", "languageActionCreator"]
+    route: "/framework/edit/:id",
+    templateUrl: "wwwroot/components/framework/framework-editor.html",
+    selector: "framework-editor",
+    providers: ["$location", "routeParams", "invokeAsync", "frameworkActionCreator"]
 })
-@CanActivate(["$route", "invokeAsync", "languageActionCreator", ($route, invokeAsync, languageActionCreator) => {
+@CanActivate(["$route", "invokeAsync", "frameworkActionCreator", ($route, invokeAsync, frameworkActionCreator: FrameworkActionCreator) => {
     var id = $route.current.params.id;
     return invokeAsync({
-        action: languageActionCreator.getById,
+        action: frameworkActionCreator.getById,
         params: { id: id }
     });
 }])
 export class FrameworkEditorComponent {
-    constructor(private $location, private $routeParams: angular.route.IRouteParamsService, private invokeAsync, private frameworkActionCreator: FrameworkActionCreator) { }
+    constructor(private $location, private routeParams: RouteParams, private invokeAsync, private frameworkActionCreator: FrameworkActionCreator) { }
     
     storeOnChange = state => {
         if (state.lastTriggeredByAction == RemoveFrameworkAction && state.frameworks.filter(entity => entity.id === this.id).length < 1)
@@ -25,8 +26,8 @@ export class FrameworkEditorComponent {
     };
 
     ngOnInit = () => {
-        if (this.$routeParams["id"])
-            angular.extend(this, angular.copy(this.entities.filter(entity => entity.id == this.$routeParams["id"])[0]));
+        if (this.routeParams.get("id"))
+            angular.extend(this, angular.copy(this.entities.filter(entity => entity.id == this.routeParams.get("id"))[0]));
     }
 
     addOrUpdate = () => {

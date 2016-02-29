@@ -5,7 +5,7 @@ require("./bootstrap.components");
 require("./bootstrap.actions");
 require("./bootstrap.reducers");
 
-import { Responsivir } from "../libs";
+import { Responsivir, RouteParams } from "../libs";
 
 var app = (<any>angular.module("app", [
 
@@ -32,6 +32,8 @@ var app = (<any>angular.module("app", [
     "ui.tinymce"
 
 ]));
+
+app.service("routeParams", ["$routeParams", RouteParams]);
 
 app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "localStorageManagerProvider", ($routeProvider, apiEndpointProvider, initialStateProvider, localStorageManagerProvider) => {
 

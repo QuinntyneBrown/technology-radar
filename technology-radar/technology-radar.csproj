@@ -638,6 +638,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="libs\component-decorators.ts" />
     <TypeScriptCompile Include="libs\responsivir.ts" />
+    <TypeScriptCompile Include="libs\routeParams.ts" />
     <TypeScriptCompile Include="wwwroot\actions\article-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\blog-story-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\framework-actions.ts" />

@@ -2,3 +2,4 @@
 
 export * from "./pluckOut";
 export * from "./responsivir";
+export * from "./routeParams";
