@@ -40,6 +40,8 @@ namespace Chloe.Server.Data
         public IRepository<Tag> Tags { get { return GetStandardRepo<Tag>(); } }
 
         public IRepository<BlogStory> BlogStories { get { return GetStandardRepo<BlogStory>(); } }
+        public IRepository<BaseTechnology> Technologies { get { return GetStandardRepo<BaseTechnology>(); } }
+
 
         protected void ConfigureDbContext(IDbContext dbContext)
         {

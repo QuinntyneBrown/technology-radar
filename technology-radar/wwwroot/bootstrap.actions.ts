@@ -10,4 +10,5 @@ app.service("techniqueActionCreator", ["$location","dispatcher", "guid", "techni
 app.service("toolActionCreator", ["$location","dispatcher", "guid", "toolService", actions.ToolActionCreator]);
 app.service("tabActionCreator", ["dispatcher", actions.TabActionCreator]);
 app.service("tagActionCreator", ["$location", "dispatcher", "guid","tagService", actions.TagActionCreator]);
-app.service("blogStoryActionCreator", ["$location","blogStoryService","dispatcher", "guid", actions.BlogStoryActionCreator]);
+app.service("blogStoryActionCreator", ["$location", "blogStoryService", "dispatcher", "guid", actions.BlogStoryActionCreator]);
+app.service("searchActionCreator", ["dispatcher", "guid", "searchService", actions.SearchActionCreator]);

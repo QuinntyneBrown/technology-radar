@@ -315,6 +315,9 @@
     <Content Include="wwwroot\components\general\app.html">
       <DependentUpon>app.ts</DependentUpon>
     </Content>
+    <Content Include="wwwroot\components\search\search.html">
+      <DependentUpon>search.ts</DependentUpon>
+    </Content>
     <Content Include="wwwroot\components\shared\button.css">
       <DependentUpon>button.ts</DependentUpon>
     </Content>
@@ -554,6 +557,8 @@
     <Compile Include="Server\Dtos\PlatformAddOrUpdateRequestDto.cs" />
     <Compile Include="Server\Dtos\PlatformAddOrUpdateResponseDto.cs" />
     <Compile Include="Server\Dtos\PlatformDto.cs" />
+    <Compile Include="Server\Dtos\QueryRequestDto.cs" />
+    <Compile Include="Server\Dtos\QueryResponseDto.cs" />
     <Compile Include="Server\Dtos\RegistrationRequestDto.cs" />
     <Compile Include="Server\Dtos\SignInDto.cs" />
     <Compile Include="Server\Dtos\TagAddOrUpdateRequestDto.cs" />
@@ -603,6 +608,7 @@
     <Compile Include="Server\Services\Contracts\IIdentityService.cs" />
     <Compile Include="Server\Services\Contracts\ILanguageService.cs" />
     <Compile Include="Server\Services\Contracts\IPlatformService.cs" />
+    <Compile Include="Server\Services\Contracts\ISearchService.cs" />
     <Compile Include="Server\Services\Contracts\ITagService.cs" />
     <Compile Include="Server\Services\Contracts\ITechniqueService.cs" />
     <Compile Include="Server\Services\Contracts\ITechnologyService.cs" />
@@ -615,6 +621,7 @@
     <Compile Include="Server\Services\IdentityService.cs" />
     <Compile Include="Server\Services\LanguageService.cs" />
     <Compile Include="Server\Services\PlatformService.cs" />
+    <Compile Include="Server\Services\SearchService.cs" />
     <Compile Include="Server\Services\StreamHelper.cs" />
     <Compile Include="Server\Services\TagService.cs" />
     <Compile Include="Server\Services\TechniqueService.cs" />
@@ -637,6 +644,7 @@
     <TypeScriptCompile Include="wwwroot\actions\language-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\platform-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\rating-actions.ts" />
+    <TypeScriptCompile Include="wwwroot\actions\search-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\tab-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\tag-actions.ts" />
     <TypeScriptCompile Include="wwwroot\actions\technique-actions.ts" />
@@ -664,6 +672,7 @@
     <TypeScriptCompile Include="wwwroot\bootstrap.ts" />
     <TypeScriptCompile Include="wwwroot\components\general\admin-header.ts" />
     <TypeScriptCompile Include="wwwroot\components\general\app.ts" />
+    <TypeScriptCompile Include="wwwroot\components\search\search.ts" />
     <TypeScriptCompile Include="wwwroot\components\shared\button.ts" />
     <TypeScriptCompile Include="wwwroot\components\general\footer.ts" />
     <TypeScriptCompile Include="wwwroot\components\shared\form-control.ts" />
@@ -707,6 +716,7 @@
     <TypeScriptCompile Include="wwwroot\reducers\index.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\language-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\platform-reducers.ts" />
+    <TypeScriptCompile Include="wwwroot\reducers\search-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\tab-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\tag-reducers.ts" />
     <TypeScriptCompile Include="wwwroot\reducers\technique-reducers.ts" />
@@ -721,6 +731,7 @@
     <TypeScriptCompile Include="libs\store.ts" />
     <TypeScriptCompile Include="wwwroot\services\language-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\platform-service.ts" />
+    <TypeScriptCompile Include="wwwroot\services\search-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\tag-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\technique-service.ts" />
     <TypeScriptCompile Include="wwwroot\services\tool-service.ts" />

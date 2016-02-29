@@ -48,6 +48,8 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "lo
                 techniques: [],
                 tools: [],
                 youTubeVideos: [],
+                searchResults: null,
+                searchTerm:null,
                 tabIndex: {},
                 currentUser: null
             }
@@ -81,6 +83,8 @@ app.config(["$routeProvider", "apiEndpointProvider", "initialStateProvider", "lo
         .when("/techniques", { template: "<technologies></technologies>" })
         .when("/tools", { template: "<technologies></technologies>" })
         .when('/technology/:technology/:id', { template: "<technology></technology>" })
+
+        .when('/search', { template: "<search></search>" })
 
         .otherwise("/");
 

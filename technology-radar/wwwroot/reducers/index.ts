@@ -8,3 +8,4 @@ export * from "./tab-reducers";
 export * from "./blog-story-reducers";
 export * from "./tag-reducers";
 export * from "./you-tube-video-reducers";
+export * from "./search-reducers";

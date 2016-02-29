@@ -30,6 +30,7 @@ namespace Chloe.Server.Data
         public DbSet<Tag> Tags { get; set; }
         public DbSet<YouTubeVideo> YouTubeVideos { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<BaseTechnology> Technologies { get; set; }
 
         public DbSet<BlogStory> BlogStories { get; set; }
 

@@ -30,6 +30,7 @@ namespace Chloe.Server
 
             container.RegisterType<ITagService, TagService>();
             container.RegisterType<IBlogStoryService, BlogStoryService>();
+            container.RegisterType<ISearchService, SearchService>();
 
             return container;
         }

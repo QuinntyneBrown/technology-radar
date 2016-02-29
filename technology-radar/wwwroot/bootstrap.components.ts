@@ -2,6 +2,8 @@
 
 var app = (<any>angular.module("components", ["store"]));
 
+app.component((<any>components.SearchComponent).config);
+
 app.component({
     route:"/framework/list",
     templateUrl: "wwwroot/components/framework/framework-list.html",

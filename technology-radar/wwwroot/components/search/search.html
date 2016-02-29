@@ -1,0 +1,12 @@
+﻿<div class="search">
+
+    <h1>Search</h1>
+
+    <input id="search-input-field" placeholder="Input Query" class="inputField" />
+
+    <div class="results">
+        <div data-ng-repeat="result in vm.searchResults">
+            <h1>{{ result.name }}</h1>
+        </div>
+    </div>
+</div>

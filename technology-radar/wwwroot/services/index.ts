@@ -4,6 +4,7 @@ export * from "./framework-service";
 export * from "./language-service";
 export * from "./platform-service";
 export * from "./technique-service";
+export * from "./search-service";
 export * from "./tool-service";
 export * from "./article-service";
 export * from "./tag-service";

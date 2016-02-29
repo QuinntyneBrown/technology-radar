@@ -39,3 +39,5 @@ export * from "./blog-story/blog-story-editor";
 export * from "./technology/technology";
 export * from "./technology/technology-tile";
 export * from "./technology/technologies";
+
+export * from "./search/search";
