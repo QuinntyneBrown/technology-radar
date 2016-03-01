@@ -2,8 +2,8 @@
 import { CanActivate, Component } from "../../../libs/component-decorators";
 
 @Component({
-    templateUrl: "wwwroot/components/general/app.html",
-    selector: "app",
+    templateUrl: "wwwroot/components/general/admin-header.html",
+    selector: "admin-header",
     providers: ["userActionCreator"]
 })
 export class AdminHeaderComponent {

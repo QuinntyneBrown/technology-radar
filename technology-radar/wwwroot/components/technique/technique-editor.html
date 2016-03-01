@@ -4,10 +4,15 @@
 
     <h1 data-ng-if="vm.id">Edit Technique : {{ vm.name }}</h1>
 
-    <div>
-        <input class="inputField" type="text" placeholder="Technique Name" data-ng-model="vm.name" />
-    </div>
     <tabs tabs-name="technique-editor">
+        <tab-title>General</tab-title>
+
+        <tab-content>
+            <div>
+                <input class="inputField" type="text" placeholder="Technique Name" data-ng-model="vm.name" />
+            </div>
+        </tab-content>
+
         <tab-title>Abstract</tab-title>
 
         <tab-content>
@@ -17,10 +22,17 @@
         </tab-content>
 
         <tab-title>Description</tab-title>
+
         <tab-content>
             <div>
                 <textarea ui-tinymce ng-model="vm.description"></textarea>
             </div>
+        </tab-content>
+
+        <tab-title>Tags</tab-title>
+
+        <tab-content>
+
         </tab-content>
     </tabs>
     <div>

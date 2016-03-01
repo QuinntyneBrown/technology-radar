@@ -2,7 +2,7 @@
 import { CanActivate, Component } from "../../../libs/component-decorators";
 
 @Component({
-    templateUrl: "wwwroot/components/general/app.html",
+    templateUrl: "wwwroot/components/general/footer.html",
     selector: "app-footer",
     providers: ["userActionCreator"]
 })

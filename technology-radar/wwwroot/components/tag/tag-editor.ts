@@ -3,15 +3,15 @@ import { technologyType }  from "../technology/technology-type";
 import { CanActivate, Component } from "../../../libs/component-decorators";
 
 @Component({
-    route: "/language/edit/:id",
-    templateUrl: "wwwroot/components/language/language-editor.html",
-    selector: "language-editor",
-    providers: ["$location", "$routeParams", "invokeAsync", "languageActionCreator"]
+    route: "/tag/edit/:id",
+    templateUrl: "wwwroot/components/tag/tag-editor.html",
+    selector: "tag-editor",
+    providers: ["$location", "$routeParams", "invokeAsync", "tagActionCreator"]
 })
-@CanActivate(["$route", "invokeAsync", "languageActionCreator", ($route, invokeAsync, languageActionCreator) => {
+@CanActivate(["$route", "invokeAsync", "tagActionCreator", ($route, invokeAsync, tagActionCreator) => {
     var id = $route.current.params.id;
     return invokeAsync({
-        action: languageActionCreator.getById,
+        action: tagActionCreator.getById,
         params: { id: id }
     });
 }])

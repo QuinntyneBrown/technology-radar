@@ -7,3 +7,4 @@ var RouteParams = (function () {
     return RouteParams;
 })();
 exports.RouteParams = RouteParams;
+//# sourceMappingURL=routeParams.js.map

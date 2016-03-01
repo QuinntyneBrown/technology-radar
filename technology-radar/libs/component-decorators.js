@@ -14,3 +14,4 @@ function CanActivate(fnDefinition) {
     };
 }
 exports.CanActivate = CanActivate;
+//# sourceMappingURL=component-decorators.js.map

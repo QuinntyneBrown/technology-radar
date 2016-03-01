@@ -5,8 +5,4 @@
     selector: "home",
     providers: ["$location"]
 })
-export class HomeComponent {
-
-    constructor(private $location) { }
-    
-}
+export class HomeComponent { constructor(private $location) { } }

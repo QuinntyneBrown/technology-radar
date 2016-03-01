@@ -2,15 +2,15 @@
 import { CanActivate, Component } from "../../../libs/component-decorators";
 
 @Component({
-    route: "/language/edit/:id",
-    templateUrl: "wwwroot/components/language/language-editor.html",
-    selector: "language-editor",
+    route: "/blogstory/edit/:id",
+    templateUrl: "wwwroot/components/blog-story/blog-story-editor.html",
+    selector: "blog-story-editor",
     providers: ["$location", "$routeParams", "invokeAsync", "languageActionCreator"]
 })
-@CanActivate(["$route", "invokeAsync", "languageActionCreator", ($route, invokeAsync, languageActionCreator) => {
+    @CanActivate(["$route", "invokeAsync", "blogStoryActionCreator", ($route, invokeAsync, blogStoryActionCreator) => {
     var id = $route.current.params.id;
     return invokeAsync({
-        action: languageActionCreator.getById,
+        action: blogStoryActionCreator.getById,
         params: { id: id }
     });
 }])

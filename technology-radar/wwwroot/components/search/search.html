@@ -5,8 +5,6 @@
     <input id="search-input-field" placeholder="Input Query" class="inputField" />
 
     <div class="results">
-        <h1 data-ng-show="vm.searchInputElement.value && vm.searchInputElement.value.length > 1">{{ vm.searchInputElement.value.length }}</h1>
-
         <div data-ng-repeat="result in vm.searchResults" data-ng-if="vm.searchInputElement.value && vm.searchInputElement.value.length > 1">
             <h1>{{ result.name }}</h1>
         </div>
