@@ -39,7 +39,6 @@ namespace Chloe.Server.Services
             {
                 response.Add(new FrameworkDto(entity));
             }
-
             return response;
         }
 

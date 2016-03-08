@@ -10,4 +10,3 @@ var RouterProvider = (function () {
     return RouterProvider;
 })();
 exports.RouterProvider = RouterProvider;
-//# sourceMappingURL=router.js.map

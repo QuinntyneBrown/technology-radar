@@ -5,4 +5,3 @@ exports.addOrUpdate = angular.injector(['addOrUpdate']).get("addOrUpdate");
 __export(require("./pluckOut"));
 __export(require("./responsivir"));
 __export(require("./routeParams"));
-//# sourceMappingURL=index.js.map
